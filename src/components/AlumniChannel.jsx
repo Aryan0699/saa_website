@@ -77,15 +77,15 @@ const AlumniChannelSection = () => {
         />
       </div>
       
-      <div className="wrapper-rtl">
+      <div className="wrapper-rtl  ">
         <div className="item-rtl item-rtl1">
           <div className="image-holder">
             <a href="https://www.instagram.com/techhacksbyn.nirmal/">
               <img className="image"  src={nirmal} alt="Nirmal Kumawat"/>
             </a>
           </div>
-          <div className="Text">
-            <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <div className="Text ">
+            <h3 className="text-xl font-bold tracking-tight  text-gray-900 dark:text-white">
               <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Nirmal Kumawat</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
@@ -94,7 +94,7 @@ const AlumniChannelSection = () => {
           </div>
         </div>
 
-        <div className="item-rtl item-rtl2">
+        <div className="item-rtl item-rtl2 ">
           <div className="image-holder">
             <a href="https://www.instagram.com/lalchandbisu/">
               <img className="image" src={lalchand} alt="Lal Chand Bisu"/>
@@ -320,7 +320,7 @@ const AlumniChannelSection = () => {
               <img className="image" src={aditya}  alt="Aditya Ranjan"/>
             </a>
           </div>
-          <div className="Text">
+          <div className="Text ">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
               <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Aditya Ranjan</a>
             </h3>
