@@ -149,7 +149,6 @@ export default function Initiatives() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <ParticlesBg />
 
       <div className="relative z-10 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <header className="relative w-full overflow-hidden">

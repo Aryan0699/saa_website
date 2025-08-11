@@ -271,7 +271,6 @@ export default function VisitIITJ() {
         />
       </Helmet>
       <style>{styles}</style>
-      <ParticlesBg />
 
       {/* Hero Section */}
       <section className="text-black dark:text-white">

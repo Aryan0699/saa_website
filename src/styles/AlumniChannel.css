@@ -80,10 +80,6 @@
   border-bottom-left-radius: 10px;  
 }
 
-.text {
-  /* Additional text styling can be added here if needed */
-}
-
 .item-rtl1 {
   animation-delay: calc(30s / 8 * (8 - 1) * -1);
 }

@@ -40,7 +40,7 @@ export default function ParticlesBg() {
         particles: {
           ...commonOptions.particles,
           color: { value: '#1662de' },
-          number: { value: 250, density: { enable: true, area: 800 } },
+          number: { value: 200, density: { enable: true, area: 800 } },
           opacity: { value: 0.3 },
           links: { ...commonOptions.particles.links, color: '#60a5fa', opacity: 0.4 },
         },
