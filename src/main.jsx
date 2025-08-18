@@ -22,6 +22,8 @@ import AlumniInduction from './components/AlumniInduction.jsx';
 import AlumniSessions from './components/AlumniSessions.jsx';
 import MemoirsLane from './components/MemoirsLane.jsx';
 import InternBridge from './components/InternBridge.jsx';
+import CrackTheCall from './components/CrackTheCall.jsx';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,6 +49,7 @@ const router = createBrowserRouter(
       <Route path="/ib" element={<InternBridge/>}/>
       <Route path="/ml" element={<MemoirsLane/>}/>
       <Route path="/alumniMap" element={<Alumni_Map/>}/>
+      <Route path="/ctc" element={<CrackTheCall/>}/>
     </Route>
   )
 );

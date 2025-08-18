@@ -28,6 +28,7 @@ export default function Initiatives() {
     { title: "Farewell", desc: "A heartfelt send-off for our graduating students, filled with nostalgia, celebration, and wishes for a bright future ahead.", link: "/farewell" },
     { title: "Alumni Induction Dinner", desc: "A special dinner welcoming graduating students into the alumni community, fostering connections and celebrating their journey.", link: "/aid" },
     { title: "Alumni Sessions", desc: "Interactive talks and networking opportunities where distinguished alumni share career insights, experiences, and guidance with current students.", link: "/as" },
+    { title: "Crack The Call", desc: "Alumni-led mock internship interviews where 3rd-year students gain real-world practice, insider feedback, and confidence to crack their internship calls.", link: "/ctc" },
   ];
 
   function InitiativeCard({ item, image, delay }) {

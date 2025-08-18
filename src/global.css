@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth theme transitions */
-/* * {
+/* Smooth theme transitions with initial prevention */
+html {
+  transition: none; /* Prevent flash on initial load */
+}
+
+html.loaded {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-} */
+}
 
 /* Prevent transition on mount to avoid flash */
 .no-transition * {

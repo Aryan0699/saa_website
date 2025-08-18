@@ -11,6 +11,7 @@ import Convocation from './components/Convocation';
 import Dashak from './components/Dashak';
 import AlumniInduction from './components/AlumniInduction';
 import AlumniSessions from './components/AlumniSessions';
+import CrackTheCall from './components/CrackTheCall';
 
 function App() {
   const [count, setCount] = useState(0)
