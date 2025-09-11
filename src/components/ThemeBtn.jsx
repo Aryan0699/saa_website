@@ -49,14 +49,14 @@ function ThemeBtn() {
     return (
         <motion.button
             onClick={handleThemeChange}
-            className={`p-2 rounded-full flex items-center justify-center shadow-md transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-yellow-300'
+            className={`xl:m-8 p-2 rounded-full flex items-center justify-center  shadow-md transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-yellow-300'
                 }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
         >
             <motion.div
-                className="w-6 h-6 flex items-center justify-center"
+                className="w-6 h-6  flex items-center justify-center"
                 initial={false}
                 animate={{ rotate: isDarkMode ? 0 : 180 }}
                 transition={{ duration: 0.3 }}

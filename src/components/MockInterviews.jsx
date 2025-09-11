@@ -65,9 +65,6 @@ export default function MockInterviews() {
         <title>Mock Interviews - Interview Preparation Program</title>
         <meta name="description" content="Prepare for success with Mock Interviews, offering realistic practice and expert feedback to ace your job interviews" />
       </Helmet>
-
-      <ParticlesBg />
-
       <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-10 text-center">
         <div className="relative w-full max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
           <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">

@@ -68,9 +68,6 @@ export default function ASMP() {
         <meta name="description" content="Connect with alumni mentors and accelerate your career through the Alumni Student Mentorship Program" />
       </Helmet>
 
-      {/* Particle background */}
-      <ParticlesBg />
-
       {/* Foreground content with proper top spacing */}
       <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-10 text-center">
         

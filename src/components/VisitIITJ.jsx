@@ -276,10 +276,10 @@ export default function VisitIITJ() {
       <section className="text-black dark:text-white">
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 justify-items-center">
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 text-5xl tracking-tight font-semibold text-black dark:text-white">
+            <h2 className="mb-4 mt-24 flex justify-center md:block lg:mt-0 text-5xl tracking-tight font-semibold text-black dark:text-white">
               Visit IIT Jodhpur
             </h2>
-            <p className="mb-6 font-light md:text-xl text-gray-950 dark:text-gray-200">
+            <p className="mb-6 font-light text-xl text-center md:text-start md:text-2xl text-gray-950 dark:text-gray-200">
               We invite you to tour IIT Jodhpur’s impressive and picturesque campus, where you can see the foundation of our impactful endeavors.
             </p>
           </div>
@@ -287,7 +287,7 @@ export default function VisitIITJ() {
             <img
               src={VisitIITj}
               alt="dashboard image"
-              className="rounded-2xl shadow-lg bloom-effect"
+              className="rounded-2xl shadow-lg bloom-effect mt-16"
               width={600}
               height={400}
             />

@@ -248,7 +248,7 @@ const Footer = () => {
         <div className="mt-8 pt-6 border-t border-gray-200/50 dark:border-white/10">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-sm text-gray-600 dark:text-[#A7ADBE] text-center sm:text-left">
-              © 2023 Society of Alumni Affairs, IIT Jodhpur. All rights reserved.
+              © 2025 Society of Alumni Affairs, IIT Jodhpur. All rights reserved.
             </div>
             <div className="flex items-center text-sm text-gray-600 dark:text-[#A7ADBE]">
               <span>Made with</span>

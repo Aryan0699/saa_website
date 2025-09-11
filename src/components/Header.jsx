@@ -67,7 +67,7 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Menu"
-          className="mr-3 p-2 rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
+          className="mr-3 p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
         >
           <svg
             className="h-6 w-6"

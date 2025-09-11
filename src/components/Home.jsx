@@ -8,8 +8,6 @@ import logo from "../assets/saa_logo_no_background.png"
 import AlumniChannelSection from './AlumniChannel';
 import AlumniMemoir from './AlumniMemoir';
 import FlagshipEvents from './FlagshipEvents';
-import Footer from './Footer';
-
 const Home = () => {
   return (
     <motion.div
@@ -19,7 +17,7 @@ const Home = () => {
     >
       <div className="w-screen min-h-screen bg-gradient-to-br from-slate-500/10 to-blue-50/10 dark:bg-transparent flex flex-col items-center">
 
-        <div className="relative w-10/12 pb-8 mt-32 lg:mt-28 rounded-3xl  dark:border-white/10 
+        <div className="relative w-10/12 pb-8 mt-32 lg:mt-30 rounded-3xl  dark:border-white/10 
                 bg-white dark:bg-[#18181b] text-gray-900 dark:text-white 
                  dark:shadow-black/90 
                 overflow-hidden z-10 backdrop-blur-md dark:ring-white/10">

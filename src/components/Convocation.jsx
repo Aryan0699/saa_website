@@ -13,8 +13,6 @@ export default function Convocation() {
         <meta name="description" content="Welcome to the Convocation website" />
       </Helmet>
 
-      {/* Particle background */}
-      <ParticlesBg />
 
       {/* Foreground content */}
       <main className="relative z-10 max-w-3xl px-6 py-10 text-center">

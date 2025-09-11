@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import ParticlesBg from './ParticlesBg';
 import { Helmet } from 'react-helmet';
 import about1 from "../assets/about_1.jpg";
 import about2 from "../assets/about_2.jpg";
@@ -65,8 +64,6 @@ export default function RoommateRewind() {
         <title>Roommate Rewind - Alumni Reunion Initiative</title>
         <meta name="description" content="Join Roommate Rewind by IIT Jodhpur’s Society of Alumni Affairs to reconnect juniors with seniors for memories and mentorship" />
       </Helmet>
-
-      <ParticlesBg />
 
       <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-10 text-center">
         <div className="relative w-full max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
