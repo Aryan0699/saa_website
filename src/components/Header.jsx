@@ -2,8 +2,21 @@ import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import ThemeBtn from "./ThemeBtn";
 import logo from "../assets/saa_logo_no_background.png";
+import React, { useState, useRef, useEffect } from "react";
+function useClickOutside(ref, onClose) {
+  useEffect(() => {
+    function handle(e) {
+      if (ref.current && !ref.current.contains(e.target)) onClose();
+    }
+    document.addEventListener("mousedown", handle);
+    return () => document.removeEventListener("mousedown", handle);
+  }, [ref, onClose]);
+}
 
 export default function Navbar() {
+   const [qaOpen, setQaOpen] = useState(false);
+  const qaRef = useRef(null);
+  useClickOutside(qaRef, () => setQaOpen(false));
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
       <div className="text-gray-900 dark:text-white text-2xl flex items-center">
@@ -48,12 +61,56 @@ export default function Navbar() {
         >
           VisitIITJ
         </Link>
-        <Link
-          to="/quickAccess"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
+        {/* QuickAccess with dropdown */}
+        <div
+          className="relative"
+          ref={qaRef}
+          onKeyDown={(e) => {
+            // basic keyboard support
+            if (e.key === "Escape") setQaOpen(false);
+          }}
         >
-          QuickAccess
-        </Link>
+          <button
+            type="button"
+            onClick={() => setQaOpen((v) => !v)}
+            aria-haspopup="menu"
+            aria-expanded={qaOpen}
+            className={`text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition ${
+              qaOpen ? "bg-gray-200/80 dark:bg-[#2a2a2a]" : ""
+            }`}
+          >
+            QuickAccess
+          </button>
+
+          {/* Dropdown panel */}
+          {qaOpen && (
+            <div
+              role="menu"
+              tabIndex={-1}
+              className="absolute left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1 z-50"
+            >
+              <Link
+                to="/community" // update route if different
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setQaOpen(false)}
+              >
+                Community Links
+              </Link>
+              <Link
+                to="/gallery" // update route if different
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setQaOpen(false)}
+              >
+                Gallery
+              </Link>
+            </div>
+          )}
+        </div>
+
         <Link
           to="/alumniMap"
           className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full"
@@ -87,3 +144,4 @@ export default function Navbar() {
     </header>
   );
 }
+

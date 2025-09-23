@@ -23,6 +23,7 @@ import AlumniSessions from './components/AlumniSessions.jsx';
 import MemoirsLane from './components/MemoirsLane.jsx';
 import InternBridge from './components/InternBridge.jsx';
 import CrackTheCall from './components/CrackTheCall.jsx';
+import Gallery from './components/Gallery.jsx';
 
 
 const router = createBrowserRouter(
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
       <Route path="/ml" element={<MemoirsLane/>}/>
       {/* <Route path="/alumniMap" element={<Alumni_Map/>}/> */}
       <Route path="/ctc" element={<CrackTheCall/>}/>
+      <Route path="/gallery" element={<Gallery/>}/>
     </Route>
   )
 );
