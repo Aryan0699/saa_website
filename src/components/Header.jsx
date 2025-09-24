@@ -14,16 +14,19 @@ function useClickOutside(ref, onClose) {
 }
 
 export default function Navbar() {
-   const [qaOpen, setQaOpen] = useState(false);
+  const [menuOpen,setmenuOpen]=useState(false); 
+  const menuref=useRef(null);
+  const [qaOpen, setQaOpen] = useState(false);
   const qaRef = useRef(null);
   useClickOutside(qaRef, () => setQaOpen(false));
+  useClickOutside(menuref, () => setmenuOpen(false));
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
-      <div className="text-gray-900 dark:text-white text-2xl flex items-center">
+      <div className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center">
         <img
           src={logo}
           alt="SAA logo"
-          className="dark:invert w-[100px] h-[100px]"
+          className="dark:invert w-[75px] h-[75px] sm:w-[100px] sm:h-[100px]"
         />
         <Typewriter
           words={["Society of Alumni Affairs"]}
@@ -124,7 +127,10 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Menu"
-          className="mr-3 p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
+          className="mr-3 p-1 sm:p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
+          onClick={()=>
+            setmenuOpen((prev)=>!prev)
+          }
         >
           <svg
             className="h-6 w-6"
@@ -139,6 +145,48 @@ export default function Navbar() {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
+  
+          <div className={`${menuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"} z-10 absolute right-2 top-20 mt-3 w-36 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1`}>
+            <ul className="text-sm flex flex-col gap-2 p-2" ref={menuref}>
+              <li>
+                <Link to="/" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400    dark:hover:bg-gray-800  dark:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/teams" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link to="initiatives" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Initiatives
+                </Link>
+              </li>
+              <li>
+                <Link to="visitIITJ" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  VisitIITJ
+                </Link>
+              </li>
+              <li>
+                <Link to="/community" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Community Links
+                </Link>
+              </li>
+              <li>
+                <Link to="gallery" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Gallery
+                </Link>
+              </li>
+             
+              <li>
+                <span className=" btn block p-1 hover:bg-gray-100 rounded-md cursor-pointer after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Map
+                </span>
+              </li>
+
+            </ul>
+          </div>
         </button>
       </div>
     </header>
