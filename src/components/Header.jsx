@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import { useState } from "react";
 import ThemeBtn from "./ThemeBtn";
 import logo from "../assets/saa_logo_no_background.png";
 
 export default function Navbar() {
+  const [isQuickAccessOpen, setIsQuickAccessOpen] = useState(false);
+
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
       <div className="text-gray-900 dark:text-white text-2xl flex items-center">
@@ -48,12 +51,49 @@ export default function Navbar() {
         >
           VisitIITJ
         </Link>
-        <Link
-          to="/quickAccess"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
+        
+        {/* QuickAccess with Dropdown */}
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsQuickAccessOpen(true)}
+          onMouseLeave={() => setIsQuickAccessOpen(false)}
         >
-          QuickAccess
-        </Link>
+          <button
+            type="button"
+            className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition inline-flex items-center gap-1 cursor-pointer"
+          >
+            QuickAccess
+            <svg 
+              className={`w-4 h-4 transition-transform ${isQuickAccessOpen ? 'rotate-180' : ''}`} 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {/* Dropdown Menu */}
+          {isQuickAccessOpen && (
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-lg shadow-lg border border-gray-200/50 dark:border-gray-700/50 py-2 z-50">
+              <Link
+                to="/gallery"
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-700/50 transition"
+                onClick={() => setIsQuickAccessOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/community"
+                className="block px-4 py-2 text-sm text-gray-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-700/50 transition"
+                onClick={() => setIsQuickAccessOpen(false)}
+              >
+                Community
+              </Link>
+            </div>
+          )}
+        </div>
+
         <Link
           to="/alumniMap"
           className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full"
