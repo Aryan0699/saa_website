@@ -140,14 +140,14 @@ const Footer = () => {
                 <svg className="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
-                +91 88157 26072
+                +91 74990 27852
               </div>
               <div className="flex items-center text-sm text-gray-600 dark:text-[#A7ADBE]">
                 <svg className="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
-                sarc@iitb.ac.in
+                saa@iitj.ac.in
               </div>
               <div className="text-sm text-gray-600 dark:text-[#A7ADBE]">
                 <div className="flex items-start">
@@ -155,9 +155,10 @@ const Footer = () => {
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                   <div>
-                    <div>SARC Office, Student Activity Center</div>
-                    <div>IIT Bombay, Powai</div>
-                    <div>Mumbai, Maharashtra - 400076</div>
+                    <div>Office of Alumni Relations</div>
+                    <div>Indian Institute of Technology Jodhpur</div>
+                    <div>NH 62 Nagaur Road</div>
+                    <div>Karwar - 342030</div>
                   </div>
                 </div>
               </div>
@@ -224,12 +225,15 @@ const Footer = () => {
               <div className="group">
                 <h4 className="text-sm font-medium text-gray-800 dark:text-white mb-2">Our Location</h4>
                 <div className="text-sm text-gray-600 dark:text-[#A7ADBE] leading-relaxed">
-                  <div>SARC Office, Student Activity Center</div>
-                  <div>IIT Bombay, Powai</div>
-                  <div>Mumbai, Maharashtra - 400076</div>
+                  <div>Office of Alumni Relations</div>
+                  <div>Indian Institute of Technology Jodhpur</div>
+                  <div>NH 62 Nagaur Road</div>
+                  <div>Karwar - 342030</div>
+                  
+
                 </div>
                 <a
-                  href="https://maps.google.com/?q=IIT+Bombay+Powai"
+                  href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(IIT),+Jodhpur/@26.4710115,73.1086586,17z/data=!4m10!1m2!2m1!1sIIT+JODHPUT!3m6!1s0x39418c5ea672337b:0xb6c9a5a9b08db22e!8m2!3d26.4710115!4d73.1134222!15sCgtJSVQgSk9ESFBVUpIBFHRlY2huaWNhbF91bml2ZXJzaXR5qgEzEAEyHhABIhq-jvzLu99otABrlFoPzb9UTf6DPfaHULyJezIPEAIiC2lpdCBqb2RocHVy4AEA!16s%2Fm%2F04ydk20?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-2 text-xs text-blue-500 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-200 group-hover:underline underline-offset-2"

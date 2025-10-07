@@ -1,19 +1,32 @@
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-import { useState } from "react";
 import ThemeBtn from "./ThemeBtn";
 import logo from "../assets/saa_logo_no_background.png";
+import React, { useState, useRef, useEffect } from "react";
+function useClickOutside(ref, onClose) {
+  useEffect(() => {
+    function handle(e) {
+      if (ref.current && !ref.current.contains(e.target)) onClose();
+    }
+    document.addEventListener("mousedown", handle);
+    return () => document.removeEventListener("mousedown", handle);
+  }, [ref, onClose]);
+}
 
 export default function Navbar() {
-  const [isQuickAccessOpen, setIsQuickAccessOpen] = useState(false);
-
+  const [menuOpen,setmenuOpen]=useState(false); 
+  const menuref=useRef(null);
+  const [qaOpen, setQaOpen] = useState(false);
+  const qaRef = useRef(null);
+  useClickOutside(qaRef, () => setQaOpen(false));
+  useClickOutside(menuref, () => setmenuOpen(false));
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
-      <div className="text-gray-900 dark:text-white text-2xl flex items-center">
+      <div className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center">
         <img
           src={logo}
           alt="SAA logo"
-          className="dark:invert w-[100px] h-[100px]"
+          className="dark:invert w-[75px] h-[75px] sm:w-[100px] sm:h-[100px]"
         />
         <Typewriter
           words={["Society of Alumni Affairs"]}
@@ -51,44 +64,51 @@ export default function Navbar() {
         >
           VisitIITJ
         </Link>
-        
-        {/* QuickAccess with Dropdown */}
-        <div 
+        {/* QuickAccess with dropdown */}
+        <div
           className="relative"
-          onMouseEnter={() => setIsQuickAccessOpen(true)}
-          onMouseLeave={() => setIsQuickAccessOpen(false)}
+          ref={qaRef}
+          onKeyDown={(e) => {
+            // basic keyboard support
+            if (e.key === "Escape") setQaOpen(false);
+          }}
         >
           <button
             type="button"
-            className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition inline-flex items-center gap-1 cursor-pointer"
+            onClick={() => setQaOpen((v) => !v)}
+            aria-haspopup="menu"
+            aria-expanded={qaOpen}
+            className={`text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition ${
+              qaOpen ? "bg-gray-200/80 dark:bg-[#2a2a2a]" : ""
+            }`}
           >
             QuickAccess
-            <svg 
-              className={`w-4 h-4 transition-transform ${isQuickAccessOpen ? 'rotate-180' : ''}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
           </button>
-          
-          {/* Dropdown Menu */}
-          {isQuickAccessOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-40 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-lg shadow-lg border border-gray-200/50 dark:border-gray-700/50 py-2 z-50">
+
+          {/* Dropdown panel */}
+          {qaOpen && (
+            <div
+              role="menu"
+              tabIndex={-1}
+              className="absolute left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1 z-50"
+            >
               <Link
-                to="/gallery"
-                className="block px-4 py-2 text-sm text-gray-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-700/50 transition"
-                onClick={() => setIsQuickAccessOpen(false)}
+                to="/community" // update route if different
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setQaOpen(false)}
               >
-                Gallery
+                Community Links
               </Link>
               <Link
-                to="/community"
-                className="block px-4 py-2 text-sm text-gray-700 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-slate-700/50 transition"
-                onClick={() => setIsQuickAccessOpen(false)}
+                to="/gallery" // update route if different
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setQaOpen(false)}
               >
-                Community
+                Gallery
               </Link>
             </div>
           )}
@@ -107,7 +127,10 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Menu"
-          className="mr-3 p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
+          className="mr-3 p-1 sm:p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
+          onClick={()=>
+            setmenuOpen((prev)=>!prev)
+          }
         >
           <svg
             className="h-6 w-6"
@@ -122,8 +145,51 @@ export default function Navbar() {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
+  
+          <div className={`${menuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"} z-10 absolute right-2 top-20 mt-3 w-36 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1`}>
+            <ul className="text-sm flex flex-col gap-2 p-2" ref={menuref}>
+              <li>
+                <Link to="/" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400    dark:hover:bg-gray-800  dark:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/teams" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link to="initiatives" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Initiatives
+                </Link>
+              </li>
+              <li>
+                <Link to="visitIITJ" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  VisitIITJ
+                </Link>
+              </li>
+              <li>
+                <Link to="/community" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Community Links
+                </Link>
+              </li>
+              <li>
+                <Link to="gallery" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Gallery
+                </Link>
+              </li>
+             
+              <li>
+                <span className=" btn block p-1 hover:bg-gray-100 rounded-md cursor-pointer after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                  Map
+                </span>
+              </li>
+
+            </ul>
+          </div>
         </button>
       </div>
     </header>
   );
 }
+

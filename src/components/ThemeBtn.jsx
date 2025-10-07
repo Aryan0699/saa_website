@@ -49,7 +49,7 @@ function ThemeBtn() {
     return (
         <motion.button
             onClick={handleThemeChange}
-            className={`xl:m-8 p-2 rounded-full flex items-center justify-center  shadow-md transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-yellow-300'
+            className={`xl:m-8 p-1 sm:p-2 rounded-full flex items-center justify-center  shadow-md transition-colors duration-200 ${isDarkMode ? 'bg-gray-800' : 'bg-yellow-300'
                 }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

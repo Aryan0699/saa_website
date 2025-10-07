@@ -44,11 +44,12 @@ const router = createBrowserRouter(
       <Route path="/rr" element={<RoomateRewind/>}/>
       <Route path="/dashak" element={<Dashak/>}/>
       <Route path="/convocation" element={<Convocation/>}/>
-      <Route path="/farewell" element={<Farewell/>}/>
+      <Route path="farewell" element={<Farewell/>}/>
       <Route path="/aid" element={<AlumniInduction/>}/>
       <Route path="/as" element={<AlumniSessions/>}/>
       <Route path="/ib" element={<InternBridge/>}/>
       <Route path="/ml" element={<MemoirsLane/>}/>
+      {/* <Route path="/alumniMap" element={<Alumni_Map/>}/> */}
       <Route path="/ctc" element={<CrackTheCall/>}/>
       <Route path="/gallery" element={<Gallery/>}/>
     </Route>
