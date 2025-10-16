@@ -23,21 +23,21 @@ import downArrow from "../assets/right_DownArrow.svg"
 import channelArt from "../assets/channelArt.jpg"
 const AlumniChannelSection = () => {
   return (
-    <div className="px-10">
-      <div className="grid max-w-screen-xl mt-12 px-4 py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-12 lg:px-0.5 lg:grid-cols-12">
+    <div className="px-4 sm:px-6 lg:px-10">
+      <div className="grid max-w-screen-xl mt-8 sm:mt-12 px-4 py-8 sm:py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-12 lg:px-0.5 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
-          <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-5xl dark:text-white ">
+          <h1 className="max-w-2xl mb-4 text-2xl sm:text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-5xl dark:text-white">
             Dashak 5.0 — Coming Soon
           </h1>
-          <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl dark:text-white/20">
+          <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 text-sm sm:text-base md:text-lg lg:text-xl dark:text-white/20">
             Gear up for the 5th edition of Dashak — our flagship event that blends innovation, inspiration, and impact. Stay tuned for the launch and join a legacy of brilliance and celebration!
           </p>
           <div className="event-link event-link-ltr animate-pulse">
             <a href="#">
-              <button className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+              <button className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-3 mr-3 text-sm sm:text-base font-medium text-center text-white bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
                 Notify Me
                 <svg
-                  className="w-5 h-5 ml-2 -mr-1"
+                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2 -mr-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -63,15 +63,15 @@ const AlumniChannelSection = () => {
         </div>
       </div>
       
-      <div id="companies-title" className="flex justify-center gap-2 mb-6 mt-2">
+      <div id="companies-title" className="flex justify-center items-center gap-1 sm:gap-2 mb-4 sm:mb-6 mt-2 px-4">
         <img
-          className="translate-y-2 dark:invert"
+          className="translate-y-2 dark:invert w-4 h-4 sm:w-6 sm:h-6"
           src={downArrow}
           alt=""
         />
-        <span className="font-extrabold text-gray-900 dark:text-white text-2xl text-center">OUR ESTEEMED ALUMNI</span>
+        <span className="font-extrabold text-gray-900 dark:text-white text-lg sm:text-xl lg:text-2xl text-center">OUR ESTEEMED ALUMNI</span>
         <img
-          className="-scale-x-100 translate-y-2 dark:invert"
+          className="-scale-x-100 translate-y-2 dark:invert w-4 h-4 sm:w-6 sm:h-6"
           src={downArrow}
           alt=""
         />

@@ -21,25 +21,29 @@ export default function Navbar() {
   useClickOutside(qaRef, () => setQaOpen(false));
   useClickOutside(menuref, () => setmenuOpen(false));
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
-      <div className="text-gray-900 dark:text-white text-sm sm:text-xl flex items-center">
+    <header className="fixed top-0 left-0 w-full flex items-center justify-between p-2 sm:p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
+      {/* Logo and Title Section */}
+      <div className="text-gray-900 dark:text-white text-xs sm:text-sm md:text-xl flex items-center min-w-0 flex-1">
         <img
           src={logo}
           alt="SAA logo"
-          className="dark:invert w-[75px] h-[75px] sm:w-[100px] sm:h-[100px]"
+          className="dark:invert w-[50px] h-[50px] sm:w-[75px] sm:h-[75px] md:w-[100px] md:h-[100px] flex-shrink-0"
         />
-        <Typewriter
-          words={["Society of Alumni Affairs"]}
-          cursor
-          cursorStyle="|"
-          typeSpeed={80}
-          deleteSpeed={50}
-          delaySpeed={1500}
-          loop={0}
-        />
+        <div className="ml-1 sm:ml-2 min-w-0 flex-1">
+          <Typewriter
+            words={["Society of Alumni Affairs"]}
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1500}
+            loop={0}
+          />
+        </div>
       </div>
 
-      <nav className="absolute left-1/2 transform -translate-x-1/2 xl:flex hidden space-x-3 bg-gradient-to-r from-gray-100/80 to-gray-50/80 dark:bg-[radial-gradient(ellipse_80%_60%_at_top,rgba(255,255,255,0.1),#18181b)] border border-gray-300/50 dark:border-[#2c2c2e] px-2 py-1 rounded-full shadow-md text-sm backdrop-blur-sm">
+      {/* Desktop Navigation */}
+      <nav className="hidden xl:flex absolute left-1/2 transform -translate-x-1/2 space-x-3 bg-gradient-to-r from-gray-100/80 to-gray-50/80 dark:bg-[radial-gradient(ellipse_80%_60%_at_top,rgba(255,255,255,0.1),#18181b)] border border-gray-300/50 dark:border-[#2c2c2e] px-2 py-1 rounded-full shadow-md text-sm backdrop-blur-sm">
         <Link
           to="/"
           className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
@@ -122,18 +126,17 @@ export default function Navbar() {
         </Link>
       </nav>
 
-      <div className="flex items-center space-x-3">
+      {/* Right Section - Theme Button and Mobile Menu */}
+      <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
         <ThemeBtn />
         <button
           type="button"
           aria-label="Menu"
-          className="mr-3 p-1 sm:p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
-          onClick={()=>
-            setmenuOpen((prev)=>!prev)
-          }
+          className="p-1 sm:p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] transition-colors"
+          onClick={() => setmenuOpen((prev) => !prev)}
         >
           <svg
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 24 24"
@@ -145,50 +148,81 @@ export default function Navbar() {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-  
-          <div className={`${menuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"} z-10 absolute right-2 top-20 mt-3 w-36 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1`}>
-            <ul className="text-sm flex flex-col gap-2 p-2" ref={menuref}>
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown - Positioned outside the button */}
+      {menuOpen && (
+        <div className="xl:hidden fixed top-full left-0 right-0 z-40 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10 shadow-lg">
+          <div className="px-4 py-3" ref={menuref}>
+            <ul className="text-sm flex flex-col gap-1">
               <li>
-                <Link to="/" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400    dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/teams" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/teams" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Team
                 </Link>
               </li>
               <li>
-                <Link to="initiatives" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/initiatives" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Initiatives
                 </Link>
               </li>
               <li>
-                <Link to="visitIITJ" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/visitIITJ" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   VisitIITJ
                 </Link>
               </li>
               <li>
-                <Link to="/community" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/community" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Community Links
                 </Link>
               </li>
               <li>
-                <Link to="gallery" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/gallery" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Gallery
                 </Link>
               </li>
-             
               <li>
-                <span className=" btn block p-1 hover:bg-gray-100 rounded-md cursor-pointer after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
+                <Link 
+                  to="/alumniMap" 
+                  className="block p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-gray-700 dark:text-gray-300"
+                  onClick={() => setmenuOpen(false)}
+                >
                   Map
-                </span>
+                </Link>
               </li>
-
             </ul>
           </div>
-        </button>
-      </div>
+        </div>
+      )}
     </header>
   );
 }
