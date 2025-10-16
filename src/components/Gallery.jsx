@@ -1,13 +1,10 @@
-'use client';
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectCoverflow } from 'swiper/modules';
+import { Autoplay, Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-
-
 
 import about1 from '../assets/about_1.jpg';
 import about2 from '../assets/about_2.jpg';
@@ -39,39 +36,44 @@ const galleryData = [
 function Card({ title, src, caption }) {
   return (
     <div
-      className="relative rounded-xl md:rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-lg"
-      style={{ width: '100%', height: 420, maxWidth: 720, margin: '0 auto' }}
+      className="relative rounded-lg md:rounded-xl overflow-hidden border border-gray-200 bg-white shadow-lg"
+      style={{ 
+        width: '100%', 
+        height: 'auto',
+        maxWidth: 600, 
+        margin: '0 auto' 
+      }}
     >
       {/* folded corner */}
       <div
-        className="absolute -top-5 -right-5 w-20 h-20 bg-[#4f46e5] rotate-45"
+        className="absolute -top-3 -right-3 w-12 h-12 sm:w-16 sm:h-16 bg-[#4f46e5] rotate-45"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
       />
       {/* header */}
-      <div className="flex items-center gap-3 px-5 pt-5">
-        <div className="h-12 w-12 rounded-sm overflow-hidden border border-gray-200 bg-white">
+      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4">
+        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-gray-200 bg-white">
           <img src={src} alt={`${title} thumb`} className="w-full h-full object-cover bg-white" />
         </div>
-        <h3 className="text-xl sm:text-2xl font-semibold text-white bg-[#4f46e5] px-3 py-1 rounded-md">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white bg-[#4f46e5] px-2 sm:px-3 py-1 rounded-md">
           {title}
         </h3>
       </div>
 
       {/* image */}
-      <div className="px-5 pt-4">
+      <div className="px-3 sm:px-4 pt-3 sm:pt-4">
         <div className="rounded-lg overflow-hidden border border-gray-200 bg-white">
           <img
             src={src}
             alt={title}
-            className="w-full h-[230px] sm:h-[260px] md:h-[280px] object-cover bg-white"
+            className="w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] object-cover bg-white"
           />
         </div>
       </div>
 
       {/* caption */}
       {caption && (
-        <div className="px-5 pb-4 pt-3">
-          <p className="text-gray-700">{caption}</p>
+        <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-2 sm:pt-3">
+          <p className="text-sm sm:text-base text-gray-700">{caption}</p>
         </div>
       )}
     </div>
@@ -81,52 +83,54 @@ function Card({ title, src, caption }) {
 function EventDeck({ title, images, captions = [] }) {
   return (
     <div className="relative mx-auto w-full px-2 sm:px-4">
-      <style jsx>{`
-        .swiper-pagination {
-          bottom: 10px !important;
-          text-align: center;
-        }
-        .swiper-pagination-bullet {
-          background: #4f46e5 !important;
-          opacity: 0.4 !important;
-          width: 12px !important;
-          height: 12px !important;
-          margin: 0 8px !important;
-          border-radius: 50% !important;
-          cursor: pointer !important;
-        }
-        .swiper-pagination-bullet-active {
-          opacity: 1 !important;
-          transform: scale(1.2);
-        }
-        .deck-swiper {
-          padding-bottom: 60px;
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .gallery-swiper .swiper-pagination {
+            bottom: 10px !important;
+            text-align: center;
+          }
+          .gallery-swiper .swiper-pagination-bullet {
+            background: #4f46e5 !important;
+            opacity: 0.4 !important;
+            width: 12px !important;
+            height: 12px !important;
+            margin: 0 8px !important;
+            border-radius: 50% !important;
+            cursor: pointer !important;
+          }
+          .gallery-swiper .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            transform: scale(1.2);
+          }
+          .gallery-swiper {
+            padding-bottom: 60px;
+          }
+        `
+      }} />
 
-      <div className="mx-auto deck-swiper" style={{ maxWidth: 860 }}>
+      <div className="mx-auto gallery-swiper" style={{ maxWidth: 700 }}>
         <Swiper
-          modules={[Autoplay, Pagination, EffectCoverflow]}
+          modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
           effect="coverflow"
           coverflowEffect={{
-            rotate: 12,
+            rotate: 10,
             stretch: 0,
-            depth: 180,
+            depth: 150,
             modifier: 1,
             slideShadows: false,
           }}
           centeredSlides={true}
-          slidesPerView={1.2}
+          slidesPerView={1.1}
           breakpoints={{
-            640: { slidesPerView: 1.25 },
-            768: { slidesPerView: 1.35 },
-            1024: { slidesPerView: 1.5 },
-            1280: { slidesPerView: 1.6 },
+            640: { slidesPerView: 1.15 },
+            768: { slidesPerView: 1.2 },
+            1024: { slidesPerView: 1.3 },
+            1280: { slidesPerView: 1.4 },
           }}
-          spaceBetween={24}
-          loop={true}
-          // ADD THIS LINE: It helps Swiper calculate the loop correctly with few slides.
-          loopedSlides={images.length}
+          spaceBetween={16}
+          loop={images.length > 3}
+          loopAdditionalSlides={images.length > 3 ? 2 : 0}
+          watchSlidesProgress={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
