@@ -23,11 +23,21 @@
     rgba(0, 0, 0, 1) 80%,
     rgba(0, 0, 0, 0)
   );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 @keyframes scrollLeft {
-  to {
-    left: -200px;
+  0% {
+    left: max(calc(300px * 8), 100%);
+  }
+  100% {
+    left: -300px;
   }
 }
 
@@ -40,15 +50,16 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   position: absolute;
-  left: max(calc(200px * 12), 100%);
+  left: max(calc(300px * 8), 100%);
   animation-name: scrollLeft;
-  animation-duration: 30s;
+  animation-duration: 35s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   display: flex;
   align-items: center;
   gap: 20px;
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: left;
 }
 
 /* Dark mode styling */
@@ -114,4 +125,38 @@
 
 .item-rtl9 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .item-rtl {
+    width: 280px;
+    animation-duration: 30s;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      left: max(calc(280px * 8), 100%);
+    }
+    100% {
+      left: -280px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .item-rtl {
+    width: 260px;
+    height: 90px;
+    gap: 15px;
+  }
+  
+  .image {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .wrapper-rtl {
+    height: 90px;
+  }
 }
