@@ -22,7 +22,7 @@ export default function Navbar() {
   useClickOutside(menuref, () => setmenuOpen(false));
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
-      <div className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center">
+      <div className="text-gray-900 dark:text-white text-sm sm:text-xl flex items-center">
         <img
           src={logo}
           alt="SAA logo"
