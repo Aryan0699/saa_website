@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -38,26 +38,30 @@ function Card({ title, src, caption }) {
     <div
       className="relative rounded-lg md:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300"
       style={{ 
-        width: '100%', 
-        height: 'auto',
+        width: '100%',
         maxWidth: 600, 
         margin: '0 auto',
-        willChange: 'transform'
+        willChange: 'transform',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
+        MozUserSelect: 'none',
+        msUserSelect: 'none'
       }}
     >
       {/* folded corner */}
       <div
-        className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#4f46e5] rotate-45 transition-all duration-300"
+        className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#4f46e5] rotate-45 transition-all duration-300 pointer-events-none"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
       />
       {/* header */}
-      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4 relative z-10">
+      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4 relative z-10 pointer-events-none">
         <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-gray-200 dark:border-gray-600 bg-white shrink-0">
           <img 
             src={src} 
             alt={`${title} thumb`} 
             className="w-full h-full object-cover bg-white"
             loading="lazy"
+            draggable="false"
           />
         </div>
         <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white bg-[#4f46e5] px-2 sm:px-3 py-1 rounded-md truncate">
@@ -66,20 +70,21 @@ function Card({ title, src, caption }) {
       </div>
 
       {/* image */}
-      <div className="px-3 sm:px-4 pt-3 sm:pt-4">
+      <div className="px-3 sm:px-4 pt-3 sm:pt-4 pointer-events-none">
         <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 bg-white">
           <img
             src={src}
             alt={title}
             className="w-full h-[180px] xs:h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] object-cover bg-white"
             loading="lazy"
+            draggable="false"
           />
         </div>
       </div>
 
       {/* caption */}
       {caption && (
-        <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-2 sm:pt-3">
+        <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-2 sm:pt-3 pointer-events-none">
           <p className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-gray-300 line-clamp-2">
             {caption}
           </p>
@@ -90,7 +95,17 @@ function Card({ title, src, caption }) {
 }
 
 function EventDeck({ title, images, captions = [] }) {
-  const [swiperInstance, setSwiperInstance] = useState(null);
+  // Duplicate slides to ensure proper infinite looping (minimum 9 slides for smooth loop)
+  const minimumSlides = 9;
+  const duplicatedImages = [];
+  const duplicatedCaptions = [];
+  
+  while (duplicatedImages.length < minimumSlides) {
+    images.forEach((img, idx) => {
+      duplicatedImages.push(img);
+      duplicatedCaptions.push(captions[idx] || '');
+    });
+  }
 
   return (
     <div className="relative mx-auto w-full px-2 sm:px-4">
@@ -124,6 +139,10 @@ function EventDeck({ title, images, captions = [] }) {
           }
           .gallery-swiper {
             padding-bottom: 60px;
+            overflow: visible !important;
+          }
+          .gallery-swiper .swiper-wrapper {
+            align-items: center;
           }
           .gallery-swiper .swiper-slide {
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -139,13 +158,42 @@ function EventDeck({ title, images, captions = [] }) {
           .gallery-swiper .swiper-slide-next {
             opacity: 0.85;
           }
+          .gallery-swiper .swiper-button-next,
+          .gallery-swiper .swiper-button-prev {
+            background: rgba(79, 70, 229, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white !important;
+            transition: all 0.3s ease;
+          }
+          .gallery-swiper .swiper-button-next:hover,
+          .gallery-swiper .swiper-button-prev:hover {
+            background: rgba(79, 70, 229, 1);
+            transform: scale(1.1);
+          }
+          .gallery-swiper .swiper-button-next::after,
+          .gallery-swiper .swiper-button-prev::after {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          @media (max-width: 640px) {
+            .gallery-swiper .swiper-button-next,
+            .gallery-swiper .swiper-button-prev {
+              width: 32px;
+              height: 32px;
+            }
+            .gallery-swiper .swiper-button-next::after,
+            .gallery-swiper .swiper-button-prev::after {
+              font-size: 14px;
+            }
+          }
         `
       }} />
 
       <div className="mx-auto gallery-swiper" style={{ maxWidth: 700 }}>
         <Swiper
           modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
-          onSwiper={setSwiperInstance}
           effect="coverflow"
           coverflowEffect={{
             rotate: 15,
@@ -154,8 +202,9 @@ function EventDeck({ title, images, captions = [] }) {
             modifier: 1,
             slideShadows: false,
           }}
+          navigation={true}
           centeredSlides={true}
-          slidesPerView={1}
+          slidesPerView="auto"
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -184,16 +233,30 @@ function EventDeck({ title, images, captions = [] }) {
           }}
           spaceBetween={8}
           loop={true}
+          loopedSlides={minimumSlides}
           loopAdditionalSlides={3}
-          loopedSlides={Math.max(images.length, 3)}
+          slideToClickedSlide={true}
           watchSlidesProgress={true}
+          watchOverflow={false}
           grabCursor={true}
-          touchRatio={1}
+          touchRatio={1.5}
           touchAngle={45}
-          threshold={5}
-          resistanceRatio={0.85}
+          threshold={10}
+          longSwipesRatio={0.3}
+          longSwipesMs={150}
+          shortSwipes={true}
+          resistanceRatio={0.5}
           allowTouchMove={true}
           simulateTouch={true}
+          touchStartPreventDefault={false}
+          touchMoveStopPropagation={false}
+          preventInteractionOnTransition={false}
+          runCallbacksOnInit={true}
+          observer={true}
+          observeParents={true}
+          observeSlideChildren={true}
+          updateOnWindowResize={true}
+          resizeObserver={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -207,11 +270,11 @@ function EventDeck({ title, images, captions = [] }) {
           }}
           className="w-full"
         >
-          {images.map((key, idx) => {
+          {duplicatedImages.map((key, idx) => {
             const src = IMG[key];
-            const caption = captions[idx] || '';
+            const caption = duplicatedCaptions[idx] || '';
             return (
-              <SwiperSlide key={`${title}-${idx}`}>
+              <SwiperSlide key={`${title}-slide-${idx}-${key}`}>
                 <Card title={title} src={src} caption={caption} />
               </SwiperSlide>
             );
