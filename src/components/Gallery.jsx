@@ -184,18 +184,21 @@ function EventDeck({ title, images, captions = [] }) {
           }}
           spaceBetween={8}
           loop={true}
-          loopAdditionalSlides={2}
-          loopedSlides={images.length}
+          loopAdditionalSlides={3}
+          loopedSlides={Math.max(images.length, 3)}
           watchSlidesProgress={true}
           grabCursor={true}
           touchRatio={1}
           touchAngle={45}
           threshold={5}
           resistanceRatio={0.85}
+          allowTouchMove={true}
+          simulateTouch={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
+            reverseDirection: false,
           }}
           speed={600}
           pagination={{

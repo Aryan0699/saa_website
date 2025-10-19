@@ -9,6 +9,10 @@ export default function Alumni_Map() {
   const [data, setData] = useState([]);
   const [countries, setCountries] = useState([]);
   const [arcs, setArcs] = useState([]);
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   const globeRef = useRef();
   const tooltipRef = useRef();
 
@@ -20,7 +24,7 @@ export default function Alumni_Map() {
   // Fetch alumni data
   useEffect(() => {
     axios
-      .get("/api/alumni_data")
+      .get("/alumni_data.json")
       .then((res) => {
         console.log(res.data)
         setData(res.data);
@@ -36,6 +40,19 @@ export default function Alumni_Map() {
       .catch((err) => {
         console.error("Cannot Fetch Details", err);
       });
+  }, []);
+
+  // Handle window resize for responsiveness
+  useEffect(() => {
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Group alumni by same city
@@ -63,16 +80,18 @@ export default function Alumni_Map() {
     globeRef.current.controls().autoRotateSpeed = 0.6;
   }, []);
 
-  // Focus on IITJ initially
+  // Focus on IITJ initially with responsive altitude
   useEffect(() => {
     const timeout = setTimeout(() => {
+      // Adjust altitude based on screen size
+      const altitude = dimensions.width < 768 ? 3 : dimensions.width < 1024 ? 2.5 : 2.5;
       globeRef.current?.pointOfView(
-        { lat: 26.4708, lng: 73.1169, altitude: 2.5 },
+        { lat: 26.4708, lng: 73.1169, altitude },
         1500
       );
     }, 1000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [dimensions.width]);
 
   // Load country borders
   useEffect(() => {
@@ -103,7 +122,7 @@ export default function Alumni_Map() {
   };
 
   return (
-    <div id="Globe" className="min-h-[100vh] bg-black relative">
+    <div id="Globe" className="min-h-[100vh] w-full bg-black relative overflow-hidden flex items-center justify-center">
       {/* Alumni Details Tooltip */}
       <div
         ref={tooltipRef}
@@ -112,6 +131,8 @@ export default function Alumni_Map() {
 
       <Globe
         ref={globeRef}
+        width={dimensions.width}
+        height={dimensions.height}
         globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
         bumpImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png"
         backgroundImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png"
