@@ -301,21 +301,49 @@ export default function VisitIITJ() {
           <h2 className="text-4xl font-extrabold text-black dark:text-white">Our Campus Highlights</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-2">Tap or hover to flip and explore</p>
         </div>
-        <div className="w-screen overflow-x-hidden">
+        <div className="w-full max-w-7xl mx-auto overflow-hidden px-4">
           <Swiper
             modules={[Autoplay]}
             loop={true}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            spaceBetween={30}
-            slidesPerView={1.3}
-            breakpoints={{
-              768: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 3.2 },
+            loopAdditionalSlides={2}
+            autoplay={{ 
+              delay: 3000, 
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
             }}
-            className="overflow-hidden"
+            spaceBetween={20}
+            slidesPerView={1.2}
+            centeredSlides={false}
+            grabCursor={true}
+            touchRatio={1}
+            threshold={5}
+            speed={600}
+            breakpoints={{
+              480: { 
+                slidesPerView: 1.3,
+                spaceBetween: 20
+              },
+              640: { 
+                slidesPerView: 1.5,
+                spaceBetween: 24
+              },
+              768: { 
+                slidesPerView: 2.2,
+                spaceBetween: 28
+              },
+              1024: { 
+                slidesPerView: 3,
+                spaceBetween: 30
+              },
+              1280: {
+                slidesPerView: 3.2,
+                spaceBetween: 32
+              }
+            }}
+            className="!overflow-visible"
           >
             {cards.map((card, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="h-auto">
                 <FlipCard imageSrc={card.imageSrc} name={card.name} />
               </SwiperSlide>
             ))}

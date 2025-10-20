@@ -184,6 +184,10 @@ const AlumniMemoir = () => {
               pauseOnMouseEnter: true 
             }}
             loop={true}
+            speed={600}
+            grabCursor={true}
+            touchRatio={1}
+            threshold={5}
             className="memoir-swiper bg-white/80 dark:bg-[#18181b]/80 rounded-2xl p-8 shadow-2xl backdrop-blur-md border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500"
           >
             {alumniData.map((alumnus, idx) => (

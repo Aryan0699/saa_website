@@ -359,10 +359,9 @@ export default function FlagshipEvents() {
   ];
 
   return (
-    <section className="mt-10 light:bg-gradient-to-br rounded-lg from-gray-50/10 to-blue-50/20 dark:bg-[#18181b]/20 px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full transition-colors duration-300">
+    <section className="light:bg-gradient-to-br rounded-lg from-gray-50/10 to-blue-50/20 dark:bg-[#18181b]/20 px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        <FlipHeading text="Flagship Events of SAA" />
-          
+        <FlipHeading  text="Flagship Events of SAA" />
         <div className="flex flex-col gap-8 lg:gap-12 xl:gap-16">
           {events.map((event, index) => (
             <div key={index} className="w-full">

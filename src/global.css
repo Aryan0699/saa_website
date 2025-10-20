@@ -53,3 +53,106 @@ html {
 html.dark {
   --glow-color: rgba(99, 102, 241, 0.5); /* Indigo glow for dark mode */
 }
+
+/* Swiper carousel improvements for responsiveness */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.7;
+}
+
+/* Smooth pagination bullets */
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+}
+
+/* Better touch handling on mobile */
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Prevent layout shift during carousel animations */
+.swiper-slide > * {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for coverflow effect on small screens */
+@media (max-width: 640px) {
+  .swiper-3d .swiper-slide-shadow-left,
+  .swiper-3d .swiper-slide-shadow-right {
+    display: none;
+  }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  /* Improve form elements */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 1024px) {
+  /* Ensure mobile menu is always on top */
+  .mobile-menu {
+    z-index: 9999;
+  }
+  
+  /* Better spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Improved accessibility for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Dark mode focus indicators */
+.dark *:focus {
+  outline-color: #60a5fa;
+}

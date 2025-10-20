@@ -94,6 +94,10 @@ export default function AlumniMemoir() {
               pauseOnMouseEnter: true 
             }}
             loop={true}
+            speed={600}
+            grabCursor={true}
+            touchRatio={1}
+            threshold={5}
             className="bg-white/80 dark:bg-[#18181b]/80 rounded-2xl"
           >
             {carouselImages.map((image, index) => (
@@ -103,6 +107,7 @@ export default function AlumniMemoir() {
                     src={image}
                     alt={`Alumni Memoir slide ${index + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                 </div>

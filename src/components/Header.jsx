@@ -3,6 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import ThemeBtn from "./ThemeBtn";
 import logo from "../assets/saa_logo_no_background.png";
 import React, { useState, useRef, useEffect } from "react";
+
 function useClickOutside(ref, onClose) {
   useEffect(() => {
     function handle(e) {
@@ -14,12 +15,19 @@ function useClickOutside(ref, onClose) {
 }
 
 export default function Navbar() {
-  const [menuOpen,setmenuOpen]=useState(false); 
-  const menuref=useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
   const [qaOpen, setQaOpen] = useState(false);
   const qaRef = useRef(null);
+  
   useClickOutside(qaRef, () => setQaOpen(false));
-  useClickOutside(menuref, () => setmenuOpen(false));
+  useClickOutside(menuRef, () => setMenuOpen(false));
+  
+  // Debug effect to see state changes
+  useEffect(() => {
+    console.log('menuOpen is now:', menuOpen);
+  }, [menuOpen]);
+  
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
       <div className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center">
@@ -64,12 +72,23 @@ export default function Navbar() {
         >
           VisitIITJ
         </Link>
-        {/* QuickAccess with dropdown */}
-        <div
-          className="relative"
+        <Link
+          to="/community"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
+        >
+          Community
+        </Link>
+        <Link
+          to="/gallery"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
+        >
+          Gallery
+        </Link>
+
+        {/* <div
+          className="relative"  
           ref={qaRef}
           onKeyDown={(e) => {
-            // basic keyboard support
             if (e.key === "Escape") setQaOpen(false);
           }}
         >
@@ -85,7 +104,6 @@ export default function Navbar() {
             QuickAccess
           </button>
 
-          {/* Dropdown panel */}
           {qaOpen && (
             <div
               role="menu"
@@ -93,7 +111,7 @@ export default function Navbar() {
               className="absolute left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1 z-50"
             >
               <Link
-                to="/community" // update route if different
+                to="/community"
                 role="menuitem"
                 tabIndex={0}
                 className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
@@ -102,7 +120,7 @@ export default function Navbar() {
                 Community Links
               </Link>
               <Link
-                to="/gallery" // update route if different
+                to="/gallery"
                 role="menuitem"
                 tabIndex={0}
                 className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
@@ -112,84 +130,121 @@ export default function Navbar() {
               </Link>
             </div>
           )}
-        </div>
+        </div> */}
 
-        <Link
+        {/* <Link
           to="/alumniMap"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
         >
           Map
-        </Link>
+        </Link> */}
       </nav>
 
       <div className="flex items-center space-x-3">
         <ThemeBtn />
-        <button
-          type="button"
-          aria-label="Menu"
-          className="mr-3 p-1 sm:p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d] mb-1.5"
-          onClick={()=>
-            setmenuOpen((prev)=>!prev)
-          }
-        >
-          <svg
-            className="h-6 w-6"
-            stroke="currentColor"
-            fill="none"
-            viewBox="0 0 24 24"
+        <div ref={menuRef}>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            className="mr-3 p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-[#3d3d3d]"
+            onClick={() => setMenuOpen((prev) => !prev)}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-  
-          <div className={`${menuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"} z-10 absolute right-2 top-20 mt-3 w-36 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1`}>
-            <ul className="text-sm flex flex-col gap-2 p-2" ref={menuref}>
-              <li>
-                <Link to="/" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400    dark:hover:bg-gray-800  dark:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/teams" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link to="initiatives" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  Initiatives
-                </Link>
-              </li>
-              <li>
-                <Link to="visitIITJ" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  VisitIITJ
-                </Link>
-              </li>
-              <li>
-                <Link to="/community" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  Community Links
-                </Link>
-              </li>
-              <li>
-                <Link to="gallery" className=" btn block p-1 hover:bg-gray-100 rounded-md after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  Gallery
-                </Link>
-              </li>
-             
-              <li>
-                <span className=" btn block p-1 hover:bg-gray-100 rounded-md cursor-pointer after:bottom-0 dark:hover:text-blue-400 dark:hover:bg-gray-800  dark:text-white">
-                  Map
-                </span>
-              </li>
-
-            </ul>
-          </div>
-        </button>
+            <svg
+              className="h-6 w-6 transition-transform duration-200"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        
+          {/* Mobile menu */}
+          {menuOpen && (
+            <div className="z-10 absolute right-2 top-20 mt-3 w-36 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1 text-center transition-all duration-200">
+              <ul className="text-sm flex flex-col gap-2 p-2">
+                <li>
+                  <Link
+                    to="/"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/teams"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Team
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/initiatives"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Initiatives
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/visitIITJ"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    VisitIITJ
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/community"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Community Links
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/gallery"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Gallery
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link
+                    to="/alumniMap"
+                    className="btn block p-1 hover:bg-gray-100 rounded-md cursor-pointer dark:hover:text-blue-400 dark:hover:bg-gray-800 dark:text-white"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Map
+                  </Link>
+                </li> */}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
 }
-
