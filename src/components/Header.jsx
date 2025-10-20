@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import ThemeBtn from "./ThemeBtn";
 import logo from "../assets/saa_logo_no_background.png";
 import React, { useState, useRef, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 function useClickOutside(ref, onClose) {
   useEffect(() => {
     function handle(e) {
@@ -15,6 +15,7 @@ function useClickOutside(ref, onClose) {
 }
 
 export default function Navbar() {
+  const navigate=useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const [qaOpen, setQaOpen] = useState(false);
@@ -30,7 +31,11 @@ export default function Navbar() {
   
   return (
     <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
-      <div className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center">
+      <div onClick={()=>
+        {
+          navigate("/");
+        }
+      } className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center cursor-pointer">
         <img
           src={logo}
           alt="SAA logo"

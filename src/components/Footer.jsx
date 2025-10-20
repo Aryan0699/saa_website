@@ -61,15 +61,7 @@ const Footer = () => {
                   to="/events"
                   className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/flagship-events"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
-                >
-                  Flagship Events
+                  Initiatives
                 </Link>
               </li>
             </ul>
@@ -84,29 +76,18 @@ const Footer = () => {
               <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-900 dark:from-indigo-300 dark:t0-blue-900"></div>
             </h3>
             <ul className="space-y-3">
+              
               <li>
-                <a
-                  href="https://dashak.iitb.ac.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/visitIITJ"
                   className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
-                  Dashak
-                </a>
+                  Visit IITJ
+                </Link>
               </li>
               <li>
                 <a
-                  href="https://www.iitb.ac.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
-                >
-                  Visit IITB
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.iitbombay.org/"
+                  href="https://www.iitj.ac.in/main/en/iitj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
@@ -115,12 +96,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/alumni-portal"
+                <Link
+                  to="https://alumni.iitj.ac.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Alumni Portal
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
