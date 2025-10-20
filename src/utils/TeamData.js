@@ -1,3 +1,19 @@
+import tharak from '../../asset/tarak_team.jpg'
+import yuvraj from '../../asset/yuvraj_team.jpg'
+import aditya from '../../asset/adi_team.jpg'
+import tanmay from '../../asset/tanmay_team.jpg'
+import danie from '../../asset/danie.jpg'
+import prakhar from '../../asset/prakhar_team.jpg'
+import pragati from '../../asset/pragati_team.jpg'
+import nitish from '../../asset/nitish_team.jpg'
+import shailpreet from '../../asset/sahil_team.jpg'
+import raghuveer from '../../asset/raghuveer_team.jpg'
+import nayan from  '../../asset/nayan_team.jpg'
+import abhishek from '../../asset/abhishek_team.jpg'
+import rudra from '../../asset/rudra_team.jpg'
+import tanvi from  '../../asset/tanvi_team.jpg'
+import mahi from '../../asset/mahi_team.jpg'
+
 export const teamDataByYear = {
   '2025': [
     {
@@ -85,59 +101,141 @@ export const teamDataByYear = {
   ],
   '2024': [
     {
-      name: 'Yuvraj Saran',
+      name: 'Tharakadatta Hegde',
       position: 'Vice President',
       verticle: '',
-      img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      img: tharak,
       instagram: 'https://instagram.com/yuvrajsaran',
       linkedin: 'https://linkedin.com/in/yuvrajsaran',
       github: 'https://github.com/yuvrajsaran'
     },
     {
-      name: 'Mike Johnson',
+      name: 'Yuvraj Saran',
       position: 'Overall Coordinator',
       verticle: '',
-      img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      img: yuvraj,
       instagram: 'https://instagram.com/mikejohnson',
       linkedin: 'https://linkedin.com/in/mikejohnson',
       github: 'https://github.com/mikejohnson'
     },
     {
-      name: 'Sarah Wilson',
+      name: 'Aditya Jha',
       position: 'Coordinator',
       verticle: 'Events',
-      img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+      img: aditya,
       instagram: 'https://instagram.com/sarahwilson',
       linkedin: 'https://linkedin.com/in/sarahwilson',
       github: 'https://github.com/sarahwilson'
     },
     {
-      name: 'Aman Gupta',
+      name: 'Tanmay Daga',
       position: 'Coordinator',
       verticle: 'Technical',
-      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+      img:tanmay,
       instagram: 'https://instagram.com/amangupta',
       linkedin: 'https://linkedin.com/in/amangupta',
       github: 'https://github.com/amangupta'
     },
     {
-      name: 'Neha Kapoor',
-      position: 'Core Member',
+      name: 'Danie George John',
+      position: 'Coordinator',
       verticle: 'Events',
-      img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
+      img: danie,
       instagram: 'https://instagram.com/nehakapoor',
       linkedin: 'https://linkedin.com/in/nehakapoor',
       github: 'https://github.com/nehakapoor'
     },
     {
-      name: 'Rahul Mehta',
-      position: 'Core Member',
+      name: 'Prakhar Goyal',
+      position: 'Coordinator',
       verticle: 'Technical',
-      img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=150&h=150&fit=crop&crop=face',
+      img: prakhar,
       instagram: 'https://instagram.com/rahulmehta',
       linkedin: 'https://linkedin.com/in/rahulmehta',
       github: 'https://github.com/rahulmehta'
-    }
+    },
+    {
+      name: 'Pragati Khandelwal',
+      position:'Coordinator',
+      verticle: 'Technical',
+      img: pragati,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Nitish Gupta',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: nitish,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Sahilpreet Singh',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: shailpreet,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Raghuveer Kulkarni',
+      position:'Coordinator',
+      verticle: 'Technical',
+      img: raghuveer,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Nayan Kute',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: nayan,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Abhishek Garg',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: abhishek,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Rudra Khokhani',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: rudra,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Uttla Tanvi Kumari',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: tanvi,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+    {
+      name: 'Mahi Chouhan',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: mahi,
+      instagram: 'https://instagram.com/rahulmehta',
+      linkedin: 'https://linkedin.com/in/rahulmehta',
+      github: 'https://github.com/rahulmehta'
+    },
+
   ],
   '2023': [
     {
