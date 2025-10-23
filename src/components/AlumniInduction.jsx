@@ -6,6 +6,15 @@ import { Helmet } from 'react-helmet';
 import about1 from "../assets/about_1.jpg";
 import about2 from "../assets/about_2.jpg";
 import about3 from "../assets/about_3.jpg";
+import aip_1 from '../assets/aip_1.jpg';
+import aip_2 from '../assets/aip_2.jpg';
+import aip_3 from '../assets/aip_3.jpg';
+import aip_4 from '../assets/aip_4.jpg';
+import aip_5 from '../assets/aip_5.jpg';
+import aip_6 from '../assets/aip_6.jpg';
+import aip_7 from '../assets/aip_7.jpg';
+import aip_8 from '../assets/aip_8.jpg';
+import aip_9 from '../assets/aip_9.jpg';
 
 const testimonials = [
   {
@@ -37,7 +46,7 @@ const testimonials = [
   }
 ];
 
-const carouselImages = [about1, about2, about3];
+const carouselImages = [aip_1,aip_2,aip_3,aip_4,aip_5,aip_6,aip_7,aip_8,aip_9];
 
 export default function AlumniInduction() {
   const [currentCard, setCurrentCard] = useState(0);

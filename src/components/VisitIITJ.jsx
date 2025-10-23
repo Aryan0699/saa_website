@@ -5,9 +5,16 @@ import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import about1 from "../assets/about_1.jpg";
-import about2 from "../assets/about_2.jpg";
-import about3 from "../assets/about_3.jpg";
+import g1 from "../assets/g1.jpg";
+import g2 from "../assets/g2.jpg";
+import g3 from "../assets/g3.jpg";
+import g4 from "../assets/g4.jpg";
+import g5 from "../assets/g5.jpg";
+import g6 from "../assets/g6.jpg";
+import g7 from "../assets/g7.jpg";
+import g8 from "../assets/g8.jpg";
+import g9 from "../assets/g9.png";
+import g10 from "../assets/g10.jpg";
 import VisitIITj from "../assets/Visitiitj.jpg";
 import yuvraj from '../assets/yuvraj_team.jpg';
 import ParticlesBg from './ParticlesBg';
@@ -252,14 +259,15 @@ function FlipCard({ imageSrc, name }) {
 
 export default function VisitIITJ() {
   const cards = [
-    { imageSrc: about1, name: 'Campus Life' },
-    { imageSrc: about2, name: 'Lecture Halls' },
-    { imageSrc: about3, name: 'Hostels' },
-    { imageSrc: about1, name: 'Research Labs' },
-    { imageSrc: about2, name: 'Sports Facilities' },
-    { imageSrc: about3, name: 'Cafeteria' },
-    { imageSrc: about1, name: 'Library' },
-    { imageSrc: about2, name: 'Green Spaces' },
+    { imageSrc: g1, name: 'Clock Tower' },
+    { imageSrc: g2, name: 'Campus Life' },
+    { imageSrc: g3, name: 'Cafeteria' },
+    { imageSrc: g4, name: 'Sports Facilities' },
+    { imageSrc: g5, name: 'Fountain' },
+    { imageSrc: g6, name: 'Knowledge Tree' },
+    { imageSrc: g7, name: 'Sports Facilities' },
+    { imageSrc: g8, name: 'PRITHVI DRDO' },
+    { imageSrc: g10, name: 'Green Spaces' },
   ];
 
   return (

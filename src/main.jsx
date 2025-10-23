@@ -15,9 +15,6 @@ import ASMP from './components/ASMP.jsx';
 import MockInterviews from './components/MockInterviews.jsx';
 import Legacy from './components/Legacy.jsx';
 import RoomateRewind from './components/RoomateRewind.jsx';
-import Farewell from './components/Farewell.jsx';
-import Convocation from './components/Convocation.jsx';
-import Dashak from './components/Dashak.jsx';
 import AlumniInduction from './components/AlumniInduction.jsx';
 import AlumniSessions from './components/AlumniSessions.jsx';
 import MemoirsLane from './components/MemoirsLane.jsx';
@@ -43,9 +40,6 @@ const router = createBrowserRouter(
       <Route path="/mi" element={<MockInterviews/>}/>
       <Route path="/legacy" element={<Legacy/>}/>
       <Route path="/rr" element={<RoomateRewind/>}/>
-      <Route path="/dashak" element={<Dashak/>}/>
-      <Route path="/convocation" element={<Convocation/>}/>
-      <Route path="farewell" element={<Farewell/>}/>
       <Route path="/aid" element={<AlumniInduction/>}/>
       <Route path="/as" element={<AlumniSessions/>}/>
       <Route path="/ib" element={<InternBridge/>}/>

@@ -1,8 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import about1 from '../assets/about_1.jpg';
-import about2 from '../assets/about_2.jpg';
-import about3 from '../assets/about_3.jpg';
+
+import dashak_1 from '../assets/dashak_1.jpg';
+import dashak_2 from '../assets/dashak_2.jpg';
+import dashak_3 from '../assets/dashak_3.jpg';
+import dashak_4 from '../assets/dashak_4.jpg';
+import dashak_5 from '../assets/dashak_5.jpg';
+import dashak_6 from '../assets/dashak_6.jpg';
+
+import convocation_1 from '../assets/convocation_1.jpg';
+import convocation_2 from '../assets/convocation_2.jpg';
+import convocation_3 from '../assets/convocation_3.jpg';
+import convocation_4 from '../assets/convocation_4.jpg';
+import convocation_5 from '../assets/convocation_5.jpg';
+import convocation_6 from '../assets/convocation_6.jpg';
+import convocation_7 from '../assets/convocation_7.jpg';
+import convocation_8 from '../assets/convocation_8.jpg';
+import convocation_9 from '../assets/convocation_9.jpg';
+
+
+
+import farewell_1 from '../assets/farewell_1.jpeg';
+import farewell_2 from '../assets/farewell_2.jpeg';
+import farewell_3 from '../assets/farewell_3.jpeg';
+import farewell_4 from '../assets/farewell_4.jpeg';
+import farewell_5 from '../assets/farewell_5.jpeg';
+import farewell_6 from '../assets/farewell_6.jpeg';
+
+
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
@@ -306,11 +331,11 @@ export default function FlagshipEvents() {
       title: 'Dashak',
       description:
         "Annual alumni gathering fostering interactions, celebrating IITJ's journey with community and enthusiasm.",
-      image: about1,
-      images: [about1, about2, about3],
+      image: dashak_2,
+      images: [dashak_1, dashak_2, dashak_3,dashak_4,dashak_5,dashak_6],
       imageFirst: true,
       fullDescription:
-        "Dashak is the annual homecoming event that brings together alumni from all batches to reconnect with their alma mater and fellow graduates. It's a celebration of the journey, achievements, and the enduring bond shared by the IIT Jodhpur community. The event features networking sessions, keynote speeches from distinguished alumni, campus tours showcasing new developments, and various cultural activities that rekindle the spirit of student life.",
+        "Dashak is the prestigious 10-yearly alumni meetup of IIT Jodhpur — a grand celebration of connection, nostalgia, and pride. More than a reunion, Dashak honors the journeys of alumni who have carried the institute’s legacy across the globe. The event serves as a bridge between the past and the present, bringing together graduates, faculty, and current students to celebrate milestones and envision the future. Through keynote sessions, cultural evenings, campus walks, and networking opportunities, Dashak revives the cherished memories of campus life while strengthening the lifelong bond that defines the IIT Jodhpur community.",
       highlights: [
         'Alumni networking sessions across multiple batches',
         'Inspiring keynote speeches from successful alumni',
@@ -324,8 +349,8 @@ export default function FlagshipEvents() {
       title: 'Convocation',
       description:
         'Celebrating academic milestones and officially welcoming graduates into the alumni family.',
-      image: about2,
-      images: [about2, about3, about1],
+      image: convocation_4,
+      images: [convocation_1, convocation_2, convocation_3,convocation_4,convocation_5,convocation_6,convocation_7,convocation_8,convocation_9],
       imageFirst: false,
       fullDescription:
         "The Convocation ceremony is a momentous occasion marking the culmination of years of hard work and dedication. It's where students transition from being members of the institute to becoming part of the illustrious alumni network. The ceremony features the conferring of degrees, inspiring speeches from distinguished guests, and the symbolic passing of the torch to the next generation. It's not just an end, but the beginning of a lifelong association with IIT Jodhpur.",
@@ -342,8 +367,8 @@ export default function FlagshipEvents() {
       title: 'Farewell',
       description:
         'Heartfelt send-off to graduates, cherishing memories and celebrating new beginnings.',
-      image: about3,
-      images: [about3, about1, about2],
+      image: farewell_1,
+      images: [farewell_1, farewell_2, farewell_3,farewell_4,farewell_5,farewell_6],
       imageFirst: true,
       fullDescription:
         "The Farewell event is an emotional celebration organized by juniors to bid adieu to graduating seniors. It's a night filled with nostalgia, laughter, and tears as students reminisce about their time at IIT Jodhpur. The event includes cultural performances, heartfelt speeches, fun activities, and awards that capture the unique personalities and contributions of each graduate. It's a beautiful transition from student life to alumni status, marking the beginning of new adventures while celebrating the bonds formed during their time at the institute.",

@@ -8,11 +8,29 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { Link } from "react-router-dom";
-import about1 from "../assets/about_1.jpg";
-import about2 from "../assets/about_2.jpg";
-import about3 from "../assets/about_3.jpg";
 import g9 from "../assets/g9.png";
 import ParticlesBg from "./ParticlesBg";
+import dashak_1 from '../assets/dashak_1.jpg';
+import dashak_2 from '../assets/dashak_2.jpg';
+import dashak_3 from '../assets/dashak_3.jpg';
+import dashak_4 from '../assets/dashak_4.jpg';
+import dashak_5 from '../assets/dashak_5.jpg';
+import dashak_6 from '../assets/dashak_6.jpg';
+import convocation_1 from '../assets/convocation_1.jpg';
+import convocation_2 from '../assets/convocation_2.jpg';
+import convocation_3 from '../assets/convocation_3.jpg';
+import convocation_4 from '../assets/convocation_4.jpg';
+import convocation_5 from '../assets/convocation_5.jpg';
+import convocation_6 from '../assets/convocation_6.jpg';
+import convocation_7 from '../assets/convocation_7.jpg';
+import convocation_8 from '../assets/convocation_8.jpg';
+import convocation_9 from '../assets/convocation_9.jpg';
+import farewell_1 from '../assets/farewell_1.jpeg';
+import farewell_2 from '../assets/farewell_2.jpeg';
+import farewell_3 from '../assets/farewell_3.jpeg';
+import farewell_4 from '../assets/farewell_4.jpeg';
+import farewell_5 from '../assets/farewell_5.jpeg';
+import farewell_6 from '../assets/farewell_6.jpeg';
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -165,17 +183,16 @@ const EventModal = ({ event, isOpen, onClose }) => {
 };
 
 export default function Initiatives() {
-  const images = [about1, about2, about3];
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const flagshipEvents = [
     {
       title: "Dashak",
       desc: "Our flagship alumni festival bringing together the IITJ family for celebrations, networking, and cultural exchange.",
-      link: "/dashak",
-      images: [about1, about2, about3],
+      image: dashak_2,
+      images: [dashak_1, dashak_2, dashak_3,dashak_4,dashak_5,dashak_6],
       fullDescription:
-        "Dashak is the annual homecoming event that brings together alumni from all batches to reconnect with their alma mater and fellow graduates. It's a celebration of the journey, achievements, and the enduring bond shared by the IIT Jodhpur community. The event features networking sessions, keynote speeches from distinguished alumni, campus tours showcasing new developments, and various cultural activities that rekindle the spirit of student life.",
+        "Dashak is the prestigious 10-yearly alumni meetup of IIT Jodhpur — a grand celebration of connection, nostalgia, and pride. More than a reunion, Dashak honors the journeys of alumni who have carried the institute’s legacy across the globe. The event serves as a bridge between the past and the present, bringing together graduates, faculty, and current students to celebrate milestones and envision the future. Through keynote sessions, cultural evenings, campus walks, and networking opportunities, Dashak revives the cherished memories of campus life while strengthening the lifelong bond that defines the IIT Jodhpur community.",
       highlights: [
         'Alumni networking sessions across multiple batches',
         'Inspiring keynote speeches from successful alumni',
@@ -188,8 +205,8 @@ export default function Initiatives() {
     {
       title: "Convocation",
       desc: "A milestone event honoring our graduates as they step into the next chapter of their journey with pride and achievement.",
-      link: "/convocation",
-      images: [about2, about3, about1],
+      image: convocation_4,
+      images: [convocation_1, convocation_2, convocation_3,convocation_4,convocation_5,convocation_6,convocation_7,convocation_8,convocation_9],
       fullDescription:
         "The Convocation ceremony is a momentous occasion marking the culmination of years of hard work and dedication. It's where students transition from being members of the institute to becoming part of the illustrious alumni network. The ceremony features the conferring of degrees, inspiring speeches from distinguished guests, and the symbolic passing of the torch to the next generation. It's not just an end, but the beginning of a lifelong association with IIT Jodhpur.",
       highlights: [
@@ -204,8 +221,8 @@ export default function Initiatives() {
     {
       title: "Farewell",
       desc: "A heartfelt send-off for our graduating students, filled with nostalgia, celebration, and wishes for a bright future ahead.",
-      link: "/farewell",
-      images: [about3, about1, about2],
+      image: farewell_1,
+      images: [farewell_1, farewell_2, farewell_3,farewell_4,farewell_5,farewell_6],
       fullDescription:
         "The Farewell event is an emotional celebration organized by juniors to bid adieu to graduating seniors. It's a night filled with nostalgia, laughter, and tears as students reminisce about their time at IIT Jodhpur. The event includes cultural performances, heartfelt speeches, fun activities, and awards that capture the unique personalities and contributions of each graduate. It's a beautiful transition from student life to alumni status, marking the beginning of new adventures while celebrating the bonds formed during their time at the institute.",
       highlights: [
@@ -220,15 +237,15 @@ export default function Initiatives() {
   ];
 
   const initiatives = [
-    { title: "Alumni Mentorship Program", desc: "Pairing experienced alumni with current students to provide guidance, career advice, and networking opportunities.", link: "/asmp" },
-    { title: "Mock Interviews", desc: "Helping students prepare for placements and internships with realistic interview simulations by alumni and professionals.", link: "/mi" },
-    { title: "Legacy", desc: "A long-term impact program: caution depot, money donation, reading rooms, co-working spaces, and game rooms for the IITJ community.", link: "/legacy" },
-    { title: "Roommate Rewind", desc: "A new tradition where juniors host their seniors, reliving memories, gaining guidance, and fostering heartfelt reunions.", link: "/rr" },
-    { title: "Intern Bridge", desc: "Bridging academic learning with real-world experience through daily updates, opportunities, and guidance for career readiness.", link: "/ib" },
-    { title: "Memoirs Lane", desc: "Celebrating the memories of our graduating batch—friendships, experiences, and stories that shaped their IITJ journey.", link: "/ml" },
-    { title: "Alumni Induction Dinner", desc: "A special dinner welcoming graduating students into the alumni community, fostering connections and celebrating their journey.", link: "/aid" },
-    { title: "Alumni Sessions", desc: "Interactive talks and networking opportunities where distinguished alumni share career insights, experiences, and guidance with current students.", link: "/as" },
-    { title: "Crack The Call", desc: "Alumni-led mock internship interviews where 3rd-year students gain real-world practice, insider feedback, and confidence to crack their internship calls.", link: "/ctc" },
+    { title: "Alumni Mentorship Program", desc: "Pairing experienced alumni with current students to provide guidance, career advice, and networking opportunities.", link: "/asmp", image: dashak_1 },
+    { title: "Mock Interviews", desc: "Helping students prepare for placements and internships with realistic interview simulations by alumni and professionals.", link: "/mi", image: convocation_1 },
+    { title: "Legacy", desc: "A long-term impact program: caution depot, money donation, reading rooms, co-working spaces, and game rooms for the IITJ community.", link: "/legacy", image:farewell_2 },
+    { title: "Roommate Rewind", desc: "A new tradition where juniors host their seniors, reliving memories, gaining guidance, and fostering heartfelt reunions.", link: "/rr", image: dashak_3 },
+    { title: "Intern Bridge", desc: "Bridging academic learning with real-world experience through daily updates, opportunities, and guidance for career readiness.", link: "/ib", image: convocation_3},
+    { title: "Memoirs Lane", desc: "Celebrating the memories of our graduating batch—friendships, experiences, and stories that shaped their IITJ journey.", link: "/ml", image: farewell_4 },
+    { title: "Alumni Induction Dinner", desc: "A special dinner welcoming graduating students into the alumni community, fostering connections and celebrating their journey.", link: "/aid", image: dashak_4},
+    { title: "Alumni Sessions", desc: "Interactive talks and networking opportunities where distinguished alumni share career insights, experiences, and guidance with current students.", link: "/as", image: convocation_8},
+    { title: "Crack The Call", desc: "Alumni-led mock internship interviews where 3rd-year students gain real-world practice, insider feedback, and confidence to crack their internship calls.", link: "/ctc", image:farewell_3},
   ];
 
   function InitiativeCard({ item, image, delay, isFlagship = false }) {
@@ -419,24 +436,22 @@ export default function Initiatives() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {flagshipEvents.map((item, idx) => {
-              const image = images[idx % images.length];
               return (
                 <InitiativeCard
                   key={idx}
                   item={item}
-                  image={image}
+                  image={item.image}
                   delay={idx % 3}
                   isFlagship={true}
                 />
               );
             })}
             {initiatives.map((item, idx) => {
-              const image = images[idx % images.length];
               return (
                 <InitiativeCard
                   key={idx + 3}
                   item={item}
-                  image={image}
+                  image={item.image}
                   delay={idx % 3}
                   isFlagship={false}
                 />
