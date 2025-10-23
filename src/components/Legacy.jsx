@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "The Legacy Initiative was created to leave a lasting impact on campus, ensuring future students benefit from enhanced facilities and a vibrant community long after we graduate.",
-    author: "Dr. Priya Sharma",
-    role: "Program Founder",
-    avatar: "🏛️",
+    // author: "Dr. Priya Sharma",
+    // role: "Program Founder",
+    // avatar: "🏛️",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "We fund reading rooms for focused study, co-working spaces for collaboration, and game rooms for relaxation, all designed to enrich student life for future batches.",
-    author: "Amit Desai",
-    role: "Initiative Coordinator",
-    avatar: "🛠️",
+    // author: "Amit Desai",
+    // role: "Initiative Coordinator",
+    // avatar: "🛠️",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "How It Works",
     content: "The Batch of 2024 contributes through donations from their caution deposits (100%, 50%, or 25%), building a legacy that stands the test of time.",
-    author: "Neha Patel",
-    role: "Student Ambassador",
-    avatar: "🌟",
+    // author: "Neha Patel",
+    // role: "Student Ambassador",
+    // avatar: "🌟",
     color: "from-purple-500 to-pink-600"
   }
 ];

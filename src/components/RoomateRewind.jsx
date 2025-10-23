@@ -11,27 +11,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "Roommate Rewind, launched by the Society of Alumni Affairs at IIT Jodhpur, aims to reconnect juniors with seniors, fostering heartfelt reunions filled with cherished memories and guidance.",
-    author: "Dr. Anjali Mehta",
-    role: "Alumni Affairs Director",
-    avatar: "🤗",
+    // author: "Dr. Anjali Mehta",
+    // role: "Alumni Affairs Director",
+    // avatar: "🤗",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "Juniors host their esteemed seniors for nostalgic gatherings, mentorship sessions, and storytelling, creating lasting bonds and invaluable guidance for future success.",
-    author: "Rahul Sharma",
-    role: "Event Coordinator",
-    avatar: "🏠",
+    // author: "Rahul Sharma",
+    // role: "Event Coordinator",
+    // avatar: "🏠",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "Roommate Rewind strengthens the IIT Jodhpur community, with 95% of participants reporting deeper connections and inspired career paths through senior mentorship.",
-    author: "Priya Singh",
-    role: "Student Organizer",
-    avatar: "🌈",
+    // author: "Priya Singh",
+    // role: "Student Organizer",
+    // avatar: "🌈",
     color: "from-purple-500 to-pink-600"
   }
 ];

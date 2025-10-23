@@ -1,39 +1,103 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-import about1 from '../assets/about_1.jpg';
-import about2 from '../assets/about_2.jpg';
-import about3 from '../assets/about_3.jpg';
+// ============================================
+// IMPORT YOUR IMAGES HERE - ONE BY ONE
+// ============================================
+// Dashak Event Images
+import dashak_1 from '../assets/dashak_1.jpg';
+import dashak_2 from '../assets/dashak_2.jpg';
+import dashak_3 from '../assets/dashak_3.jpg';
+import dashak_4 from '../assets/dashak_4.jpg';
+import dashak_5 from '../assets/dashak_5.jpg';
+import dashak_6 from '../assets/dashak_6.jpg';
 
-const IMG = { about1, about2, about3 };
+// Convocation Event Images
+import convocation_1 from '../assets/convocation_1.jpg';
+import convocation_2 from '../assets/convocation_2.jpg';
+import convocation_3 from '../assets/convocation_3.jpg';
+import convocation_4 from '../assets/convocation_4.jpg';
+import convocation_5 from '../assets/convocation_5.jpg';
+import convocation_6 from '../assets/convocation_6.jpg';
+import convocation_7 from '../assets/convocation_7.jpg';
+import convocation_8 from '../assets/convocation_8.jpg';
+import convocation_9 from '../assets/convocation_9.jpg';
+// Farewell Event Images
+import farewell_1 from '../assets/farewell_1.jpeg';
+import farewell_2 from '../assets/farewell_2.jpeg';
+import farewell_3 from '../assets/farewell_3.jpeg';
+import farewell_4 from '../assets/farewell_4.jpeg';
+import farewell_5 from '../assets/farewell_5.jpeg';
+import farewell_6 from '../assets/farewell_6.jpeg';
 
+// ============================================
+// IMAGE MAPPING OBJECT
+// ============================================
+// Add each imported image here with its key name
+const IMAGE_MAP = {
+  // Dashak images
+  dashak_1: dashak_1,
+  dashak_2: dashak_2,
+  dashak_3: dashak_3,
+  dashak_4: dashak_4,
+  dashak_5: dashak_5,
+  dashak_6: dashak_6,
+  
+  // Convocation images
+  convocation_1: convocation_1,
+  convocation_2: convocation_2,
+  convocation_3: convocation_3,
+  convocation_4: convocation_4,
+  convocation_5: convocation_5,
+  convocation_6: convocation_6,
+  convocation_7: convocation_7,
+  convocation_8: convocation_8,
+  convocation_9: convocation_9,
+  
+  // Farewell images
+  farewell_1: farewell_1,
+  farewell_2: farewell_2,
+  farewell_3: farewell_3,
+  farewell_4: farewell_4,
+  farewell_5: farewell_5,
+  farewell_6: farewell_6,
+};
+
+// ============================================
+// GALLERY DATA CONFIGURATION
+// ============================================
+// Reference images by their key names from IMAGE_MAP
 const galleryData = [
   {
     id: 'dashak',
     title: 'Dashak',
-    images: ['about1', 'about2', 'about3'],
-    captions: ['Opening ceremony', 'Alumni interactions', 'Cultural evening'],
+    images: ['dashak_1', 'dashak_2', 'dashak_3', 'dashak_4', 'dashak_5', 'dashak_6'],
   },
   {
     id: 'convocation',
     title: 'Convocation Ceremony',
-    images: ['about1', 'about1', 'about2'],
-    captions: ['Graduation walk', 'Ceremony moments', 'Keynote address'],
+    images: ['convocation_1', 'convocation_2', 'convocation_3','convocation_4', 'convocation_5', 'convocation_6','convocation_7', 'convocation_8', 'convocation_9'],
   },
   {
     id: 'farewell',
     title: 'Farewell',
-    images: ['about3', 'about2', 'about1'],
-    captions: ['Stage & speeches', 'Memories wall', 'Closing notes'],
+    images: ['farewell_1', 'farewell_2', 'farewell_3','farewell_4', 'farewell_5', 'farewell_6'],
   },
 ];
 
-function Card({ title, src, caption }) {
+// ============================================
+// CARD COMPONENT
+// ============================================
+function Card({ title, src }) {
+  // Debug: Log if image source is missing
+  if (!src) {
+    console.error(`Missing image source for card: ${title}`);
+  }
+
   return (
     <div
       className="relative rounded-lg md:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -48,12 +112,13 @@ function Card({ title, src, caption }) {
         msUserSelect: 'none'
       }}
     >
-      {/* folded corner */}
+      {/* Folded corner */}
       <div
         className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#4f46e5] rotate-45 transition-all duration-300 pointer-events-none"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
       />
-      {/* header */}
+      
+      {/* Header */}
       <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4 relative z-10 pointer-events-none">
         <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-gray-200 dark:border-gray-600 bg-white shrink-0">
           <img 
@@ -62,6 +127,10 @@ function Card({ title, src, caption }) {
             className="w-full h-full object-cover bg-white"
             loading="lazy"
             draggable="false"
+            onError={(e) => {
+              console.error(`Failed to load thumbnail image: ${src}`);
+              e.target.style.backgroundColor = '#f3f4f6';
+            }}
           />
         </div>
         <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white bg-[#4f46e5] px-2 sm:px-3 py-1 rounded-md truncate">
@@ -69,8 +138,8 @@ function Card({ title, src, caption }) {
         </h3>
       </div>
 
-      {/* image */}
-      <div className="px-3 sm:px-4 pt-3 sm:pt-4 pointer-events-none">
+      {/* Main Image */}
+      <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 pointer-events-none">
         <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 bg-white">
           <img
             src={src}
@@ -78,32 +147,31 @@ function Card({ title, src, caption }) {
             className="w-full h-[180px] xs:h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] object-cover bg-white"
             loading="lazy"
             draggable="false"
+            onError={(e) => {
+              console.error(`Failed to load main image: ${src}`);
+              e.target.style.backgroundColor = '#f3f4f6';
+            }}
           />
         </div>
       </div>
-
-      {/* caption */}
-      {caption && (
-        <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-2 sm:pt-3 pointer-events-none">
-          <p className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-gray-300 line-clamp-2">
-            {caption}
-          </p>
-        </div>
-      )}
     </div>
   );
 }
 
-function EventDeck({ title, images, captions = [] }) {
-  // Duplicate slides to ensure proper infinite looping (minimum 9 slides for smooth loop)
+// ============================================
+// EVENT DECK COMPONENT
+// ============================================
+function EventDeck({ title, images }) {
+  // Debug: Log event deck info
+  console.log(`EventDeck: ${title}, Images count: ${images.length}`);
+  
+  // Duplicate slides to ensure proper infinite looping
   const minimumSlides = 9;
   const duplicatedImages = [];
-  const duplicatedCaptions = [];
   
   while (duplicatedImages.length < minimumSlides) {
-    images.forEach((img, idx) => {
-      duplicatedImages.push(img);
-      duplicatedCaptions.push(captions[idx] || '');
+    images.forEach((imgKey) => {
+      duplicatedImages.push(imgKey);
     });
   }
 
@@ -111,34 +179,8 @@ function EventDeck({ title, images, captions = [] }) {
     <div className="relative mx-auto w-full px-2 sm:px-4">
       <style dangerouslySetInnerHTML={{
         __html: `
-          .gallery-swiper .swiper-pagination {
-            bottom: 10px !important;
-            text-align: center;
-            z-index: 10;
-          }
-          .gallery-swiper .swiper-pagination-bullet {
-            background: #4f46e5 !important;
-            opacity: 0.4 !important;
-            width: 10px !important;
-            height: 10px !important;
-            margin: 0 6px !important;
-            border-radius: 50% !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease;
-          }
-          @media (min-width: 640px) {
-            .gallery-swiper .swiper-pagination-bullet {
-              width: 12px !important;
-              height: 12px !important;
-              margin: 0 8px !important;
-            }
-          }
-          .gallery-swiper .swiper-pagination-bullet-active {
-            opacity: 1 !important;
-            transform: scale(1.2);
-          }
           .gallery-swiper {
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             overflow: visible !important;
           }
           .gallery-swiper .swiper-wrapper {
@@ -193,7 +235,7 @@ function EventDeck({ title, images, captions = [] }) {
 
       <div className="mx-auto gallery-swiper" style={{ maxWidth: 700 }}>
         <Swiper
-          modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
+          modules={[Autoplay, EffectCoverflow, Navigation]}
           effect="coverflow"
           coverflowEffect={{
             rotate: 15,
@@ -264,18 +306,19 @@ function EventDeck({ title, images, captions = [] }) {
             reverseDirection: false,
           }}
           speed={600}
-          pagination={{
-            clickable: true,
-            dynamicBullets: false,
-          }}
           className="w-full"
         >
-          {duplicatedImages.map((key, idx) => {
-            const src = IMG[key];
-            const caption = duplicatedCaptions[idx] || '';
+          {duplicatedImages.map((imageKey, idx) => {
+            const src = IMAGE_MAP[imageKey];
+            
+            // Debug: Log if image is missing from IMAGE_MAP
+            if (!src) {
+              console.error(`Image key "${imageKey}" not found in IMAGE_MAP`);
+            }
+            
             return (
-              <SwiperSlide key={`${title}-slide-${idx}-${key}`}>
-                <Card title={title} src={src} caption={caption} />
+              <SwiperSlide key={`${title}-slide-${idx}-${imageKey}`}>
+                <Card title={title} src={src} />
               </SwiperSlide>
             );
           })}
@@ -285,10 +328,20 @@ function EventDeck({ title, images, captions = [] }) {
   );
 }
 
+// ============================================
+// MAIN GALLERY COMPONENT
+// ============================================
 export default function Gallery() {
+  // Debug: Log gallery data on mount
+  React.useEffect(() => {
+    console.log('Gallery Data:', galleryData);
+    console.log('Image Map Keys:', Object.keys(IMAGE_MAP));
+  }, []);
+
   return (
     <div className="relative min-h-screen pt-28 pb-16 px-4 sm:px-6 lg:px-8 mt-10">
       <div className="fixed inset-0 -z-10 pointer-events-none">
+        {/* Background can be added here */}
       </div>
 
       <div className="max-w-6xl mx-auto space-y-16">
@@ -298,7 +351,7 @@ export default function Gallery() {
               {event.title}
             </h2>
 
-            <EventDeck title={event.title} images={event.images} captions={event.captions} />
+            <EventDeck title={event.title} images={event.images} />
           </section>
         ))}
       </div>

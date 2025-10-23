@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "Mock Interviews was created to help students and professionals build confidence and excel in job interviews through realistic practice sessions with experienced mentors.",
-    author: "Dr. Emma Carter",
-    role: "Program Director",
-    avatar: "🎤",
+    // author: "Dr. Emma Carter",
+    // role: "Program Director",
+    // avatar: "🎤",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "We provide tailored mock interview sessions, feedback from industry experts, resume reviews, and workshops to prepare participants for real-world job interviews.",
-    author: "Rachel Kim",
-    role: "Interview Coach",
-    avatar: "📝",
+    // author: "Rachel Kim",
+    // role: "Interview Coach",
+    // avatar: "📝",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "Participants in Mock Interviews report a 70% increase in interview success rates and 85% feel more confident walking into high-stakes interviews.",
-    author: "Mark Davis",
-    role: "Career Mentor",
-    avatar: "✅",
+    // author: "Mark Davis",
+    // role: "Career Mentor",
+    // avatar: "✅",
     color: "from-purple-500 to-pink-600"
   }
 ];

@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Matters",
     content: "The Alumni Induction Dinner celebrates the Class of 2024’s achievements, honoring their contributions to IIT Jodhpur and fostering lifelong connections with the alumni community.",
-    author: "Dr. Sanjay Patel",
-    role: "Society of Alumni Affairs Chair",
-    avatar: "🎉",
+    // author: "Dr. Sanjay Patel",
+    // role: "Society of Alumni Affairs Chair",
+    // avatar: "🎉",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What to Expect",
     content: "Join us for an evening of grandeur with networking, camaraderie, and interactions with The Director and fellow alumni, commemorating your unforgettable journey at IIT Jodhpur.",
-    author: "Meera Kapoor",
-    role: "Event Organizer",
-    avatar: "🍽️",
+    // author: "Meera Kapoor",
+    // role: "Event Organizer",
+    // avatar: "🍽️",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "The Alumni Induction Dinner strengthens bonds, with 90% of attendees reporting enhanced professional networks and cherished memories from this prestigious event.",
-    author: "Vikram Singh",
-    role: "Alumni Representative",
-    avatar: "🤝",
+    // author: "Vikram Singh",
+    // role: "Alumni Representative",
+    // avatar: "🤝",
     color: "from-purple-500 to-pink-600"
   }
 ];

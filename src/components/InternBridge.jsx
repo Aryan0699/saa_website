@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "Intern Bridge was launched to connect students with real-world opportunities, providing hands-on internship experiences and mentorship to prepare them for professional success.",
-    author: "Dr. Lisa Thompson",
-    role: "Program Founder",
-    avatar: "💼",
+    // author: "Dr. Lisa Thompson",
+    // role: "Program Founder",
+    // avatar: "💼",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "We pair students with industry professionals for internships, offer career workshops, networking events, and personalized guidance to help students transition from classroom to workplace.",
-    author: "James Patel",
-    role: "Internship Coordinator",
-    avatar: "🤝",
+    // author: "James Patel",
+    // role: "Internship Coordinator",
+    // avatar: "🤝",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "Intern Bridge participants achieve 75% higher internship placement rates and gain critical skills, with 90% reporting increased confidence in their career paths.",
-    author: "Sophie Nguyen",
-    role: "Career Advisor",
-    avatar: "🚀",
+    // author: "Sophie Nguyen",
+    // role: "Career Advisor",
+    // avatar: "🚀",
     color: "from-purple-500 to-pink-600"
   }
 ];

@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "Crack the Call was launched to bridge the gap between academic learning and industry expectations, providing 3rd-year students with real-world interview practice through alumni mentorship.",
-    author: "Dr. Neha Sharma",
-    role: "Society of Alumni Affairs Lead",
-    avatar: "🎤",
+    // author: "Dr. Neha Sharma",
+    // role: "Society of Alumni Affairs Lead",
+    // avatar: "🎤",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "We pair students with alumni in domains like Data Science, Software Development, and Consulting for mock internship interviews, offering personalized feedback and insider insights.",
-    author: "Amit Patel",
-    role: "Program Coordinator",
-    avatar: "💼",
+    // author: "Amit Patel",
+    // role: "Program Coordinator",
+    // avatar: "💼",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "90% of participants report improved confidence and interview skills, with many securing internships thanks to tailored guidance from IIT Jodhpur alumni.",
-    author: "Sneha Verma",
-    role: "Student Participant",
-    avatar: "🌟",
+    // author: "Sneha Verma",
+    // role: "Student Participant",
+    // avatar: "🌟",
     color: "from-purple-500 to-pink-600"
   }
 ];

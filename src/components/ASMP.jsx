@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "The Alumni Student Mentorship Program was created to bridge the gap between academic learning and real-world career success. We realized that students needed guidance from those who had walked the same path before them.",
-    author: "Dr. Sarah Johnson",
-    role: "Program Director",
-    avatar: "🎓",
+    // author: "Dr. Sarah Johnson",
+    // role: "Program Director",
+    // avatar: "🎓",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What Happens Here",
     content: "ASMP connects current students with successful alumni mentors through structured mentoring sessions, career guidance workshops, networking events, and personalized development plans tailored to each student's goals.",
-    author: "Michael Chen",
-    role: "Alumni Mentor Coordinator",
-    avatar: "🤝",
+    // author: "Michael Chen",
+    // role: "Alumni Mentor Coordinator",
+    // avatar: "🤝",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "How It Helps",
     content: "Our mentees show 80% higher job placement rates and 65% faster career progression. ASMP transforms student potential into professional success through experienced alumni guidance and industry insights.",
-    author: "Emily Rodriguez",
-    role: "Student Success Manager",
-    avatar: "📈",
+    // author: "Emily Rodriguez",
+    // role: "Student Success Manager",
+    // avatar: "📈",
     color: "from-purple-500 to-pink-600"
   }
 ];

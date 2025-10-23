@@ -12,27 +12,27 @@ const testimonials = [
     id: 1,
     title: "Why It Started",
     content: "Alumni Sessions were launched by IIT Jodhpur’s Society of Alumni Affairs to connect current students with alumni, fostering mentorship and sharing valuable career insights.",
-    author: "Dr. Vikram Rao",
-    role: "Alumni Affairs Coordinator",
-    avatar: "🎓",
+    // author: "Dr. Vikram Rao",
+    // role: "Alumni Affairs Coordinator",
+    // avatar: "🎓",
     color: "from-blue-500 to-purple-600"
   },
   {
     id: 2,
     title: "What We Do",
     content: "We organize interactive sessions where alumni share their experiences, offer career guidance, and inspire students through workshops and Q&A forums.",
-    author: "Anita Desai",
-    role: "Session Organizer",
-    avatar: "💬",
+    // author: "Anita Desai",
+    // role: "Session Organizer",
+    // avatar: "💬",
     color: "from-green-500 to-blue-600"
   },
   {
     id: 3,
     title: "Our Impact",
     content: "Alumni Sessions have empowered 80% of participants with clearer career paths and stronger professional networks, bridging the gap between students and industry.",
-    author: "Rohan Gupta",
-    role: "Student Liaison",
-    avatar: "🌍",
+    // author: "Rohan Gupta",
+    // role: "Student Liaison",
+    // avatar: "🌍",
     color: "from-purple-500 to-pink-600"
   }
 ];
