@@ -1,5 +1,5 @@
 import React from 'react';
-
+import president from "../assets/president_team.jpg";
 // Social Media Icons
 const InstagramIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ const FacultyAdvisorCard = () => (
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
         <img
           className="relative h-32 w-32 rounded-full object-cover ring-4 ring-white dark:ring-gray-700 shadow-xl group-hover:ring-blue-200 dark:group-hover:ring-blue-600 transition-all duration-300"
-          src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face"
+          src = {president}
           alt="Faculty Advisor"
         />
       </div>
@@ -46,7 +46,7 @@ const FacultyAdvisorCard = () => (
         <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full hover:scale-110 transition-all duration-200 shadow-lg">
           <InstagramIcon />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full hover:scale-110 transition-all duration-200 shadow-lg">
+        <a href="https://www.linkedin.com/in/smanoharan-naan/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full hover:scale-110 transition-all duration-200 shadow-lg">
           <LinkedInIcon />
         </a>
         <a href="#" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full hover:scale-110 transition-all duration-200 shadow-lg">
