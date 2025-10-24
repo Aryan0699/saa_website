@@ -149,7 +149,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/sarc_iitb/"
+                href="https://www.instagram.com/saa.iitj/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
@@ -160,7 +160,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/sarc.iitb"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
@@ -171,7 +171,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/sarc_iitb"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
@@ -182,7 +182,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/company/sarc-iitb"
+                href="https://www.linkedin.com/company/society-of-alumni-affairs-iit-jodhpur/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"

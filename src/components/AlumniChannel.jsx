@@ -21,6 +21,7 @@ import vikas from '../assets/AlumniChannel/marquee_vikas.jpeg'
 import vinod from '../assets/AlumniChannel/marquee_vinod.jpeg'
 import downArrow from "../assets/right_DownArrow.svg"
 import channelArt from "../assets/channelArt.jpg"
+import dashak40 from "../assets/dashak40.jpg"
 const AlumniChannelSection = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-10">
@@ -54,7 +55,7 @@ const AlumniChannelSection = () => {
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <img
-            src={channelArt}
+            src={dashak40}
             alt="Distinguished Alumni"
             className="h-full w-full rounded-xl shadow-xl animate-fade-in"
             width={800}

@@ -16,8 +16,9 @@ import g8 from "../assets/g8.jpg";
 import g9 from "../assets/g9.png";
 import g10 from "../assets/g10.jpg";
 import VisitIITj from "../assets/Visitiitj.jpg";
-import yuvraj from '../assets/yuvraj_team.jpg';
 import ParticlesBg from './ParticlesBg';
+import mahi from '../../asset/mahi_team.jpg'
+import raghuveer from '../../asset/raghuveer_team.jpg'
 
 // Inline CSS for FlipCard, Bloom Effect, and SAATeam
 const styles = `
@@ -102,21 +103,21 @@ const styles = `
 // Sample team data
 const teamData = [
   {
-    name: 'John Doe',
-    role: 'President',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-    instagram: 'https://instagram.com/johndoe',
-    linkedin: 'https://linkedin.com/in/johndoe',
-    github: 'https://github.com/johndoe'
-  },
+        name: 'Raghuveer Kulkarni',
+        role:'Vice President',
+        img: raghuveer,
+        instagram: 'https://www.instagram.com/raghuveerkulkarni007/',
+        linkedin: 'https://www.linkedin.com/in/raghuveer-kulkarni-185450281/',
+        github: 'https://github.com/rahulmehta'
+      },
   {
-    name: 'Yuvraj Saran',
-    role: 'Vice President',
-    img: yuvraj,
-    instagram: 'https://instagram.com/janesmith',
-    linkedin: 'https://linkedin.com/in/janesmith',
-    github: 'https://github.com/janesmith'
-  }
+        name: 'Mahi Chouhan',
+        role: 'Overall Coordinator',
+        img: mahi,
+        instagram: 'https://www.instagram.com/mahi_06chouhan/',
+        linkedin: 'https://www.linkedin.com/in/mahi-chouhan-50579728a/',
+        github: 'https://github.com/rahulmehta'
+      },
 ];
 
 // Social Media Icons Components
