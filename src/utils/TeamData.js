@@ -21,6 +21,15 @@ import akhil from '../../asset/akhil_crop.png'
 import anuraag from '../../asset/anuraag.jpg'
 import harpreet from '../../asset/harpreet.jpg'
 import khush from '../../asset/khushvendra.jpg'
+import tushar from '../../asset/tushar.jpg'
+import asthana from '../../asset/asthana.jpg'
+import mansi from '../../asset/mansi.jpg'
+import maji from '../../asset/maji.jpg'
+import prasad from '../../asset/prasad.jpg'
+import siri from '../../asset/siri.jpg'
+import suthar from '../../asset/suthar.jpg'
+import yash from '../../asset/yash.png'
+import rahul from '../../asset/rahul.png'
 
 export const teamDataByYear = {
   '2025': [
@@ -257,58 +266,103 @@ export const teamDataByYear = {
   ],
   '2023': [
     {
-      name: 'Emily Davis',
+      name: 'Tushar Sharma',
       position: 'Vice President',
       verticle: '',
-      img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/emilydavis',
-      linkedin: 'https://linkedin.com/in/emilydavis',
+      img: tushar,
+      instagram: 'https://www.instagram.com/tushar_shrm45/',
+      linkedin: 'https://www.linkedin.com/in/tushar-sharma-136bb1245/',
       github: 'https://github.com/emilydavis'
     },
     {
-      name: 'Alex Chen',
+      name: 'Shashank Asthana',
       position: 'Overall Coordinator',
       verticle: '',
-      img: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/alexchen',
-      linkedin: 'https://linkedin.com/in/alexchen',
+      img: asthana,
+      instagram: 'https://www.instagram.com/point.archer02/',
+      linkedin: 'https://www.linkedin.com/in/shashank-asthana-55269a196/',
       github: 'https://github.com/alexchen'
     },
     {
-      name: 'Lisa Garcia',
+      name: 'Yuvaraj Saran',
       position: 'Coordinator',
       verticle: 'Events',
-      img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/lisagarcia',
-      linkedin: 'https://linkedin.com/in/lisagarcia',
+      img: yuvraj,
+      instagram: 'https://www.instagram.com/yuvrajsrn/',
+      linkedin: 'https://www.linkedin.com/in/yuvrajsrn/',
       github: 'https://github.com/lisagarcia'
     },
     {
-      name: 'David Brown',
+      name: 'Yashraj Chaturvedi',
       position: 'Coordinator',
-      verticle: 'Technical',
-      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/davidbrown',
-      linkedin: 'https://linkedin.com/in/davidbrown',
+      verticle: 'Events',
+      img: yash,
+      instagram: 'https://www.instagram.com/yashrajup70/',
+      linkedin: '#',
       github: 'https://github.com/davidbrown'
     },
     {
-      name: 'Sofia Thomas',
-      position: 'Core Member',
-      verticle: 'Events',
-      img: 'https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/sofiathomas',
-      linkedin: 'https://linkedin.com/in/sofiathomas',
+      name: 'Souvik Maji',
+      position: 'Coordinator',
+      verticle: 'Technical',
+      img: maji,
+      instagram: 'https://www.instagram.com/souvikmaji22/',
+      linkedin: 'https://www.linkedin.com/in/souvik-maji-a12543251/',
       github: 'https://github.com/sofiathomas'
     },
     {
-      name: 'Ishan Agarwal',
-      position: 'Core Member',
+      name: 'B Rahul Naik',
+      position: 'Coordinator',
       verticle: 'Technical',
-      img: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face',
-      instagram: 'https://instagram.com/ishanagarwal',
-      linkedin: 'https://linkedin.com/in/ishanagarwal',
+      img: rahul,
+      instagram: '#',
+      linkedin: 'https://www.linkedin.com/in/rahul-naik-rk918/details/experience/',
       github: 'https://github.com/ishanagarwal'
+    },
+    {
+      name: 'Sowmya Siri Didla',
+      position: 'Coordinator',
+      verticle: 'Content Team',
+      img: siri,
+      instagram: 'https://www.instagram.com/siri_didla/',
+      linkedin: 'https://www.linkedin.com/in/sowmya-siri-didla-175b40255/',
+      github: 'https://github.com/ishanagarwal'
+    },
+    {
+      name: 'Tharakadatta Hegde',
+      position: 'Coordinator',
+      verticle: 'Content Team',
+      img: tharak,
+      instagram: 'https://www.instagram.com/tharak_hegde/',
+      linkedin: 'https://www.linkedin.com/in/tharakadattahegde/',
+      github: 'https://github.com/yuvrajsaran'
+    },
+    {
+      name: 'Ram Suthar',
+      position: 'Coordinator',
+      verticle: 'Design Team',
+      img: suthar,
+      instagram: 'https://www.instagram.com/rsuthar__12/',
+      linkedin: 'https://www.linkedin.com/in/ram-suthar-8b263a291/',
+      github: 'https://github.com/ishanagarwal'
+    },
+    {
+      name: 'Harsh Prasad',
+      position: 'Coordinator',
+      verticle: 'Design Team',
+      img: prasad,
+      instagram: 'https://www.instagram.com/harsh_prasad14/',
+      linkedin: 'https://www.linkedin.com/in/harsh-prasad-141bb5255/',
+      github: 'https://github.com/ishanagarwal'
+    },
+    {
+      name: 'Mansi Choudhary',
+      position: 'Coordinator',
+      verticle: 'Design Team',
+      img: mansi,
+      instagram: 'https://www.instagram.com/mansi_anwla94/',
+      linkedin: 'https://www.linkedin.com/in/mansi-choudhary-a0a144257/',
+      github: 'https://github.com/yuvrajsaran'
     }
   ]
 };
