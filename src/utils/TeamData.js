@@ -48,8 +48,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'ASMP',
       img: sumedha,
-      instagram: 'https://instagram.com/meerasharma',
-      linkedin: 'https://linkedin.com/in/meerasharma',
+      instagram: 'https://www.instagram.com/sumedha_14/',
+      linkedin: 'https://www.linkedin.com/in/sumedha-singh-304169316/',
       github: 'https://github.com/meerasharma'
     },
     {
@@ -57,8 +57,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'ASMP',
       img: khush,
-      instagram: 'https://instagram.com/kabirsingh',
-      linkedin: 'https://linkedin.com/in/kabirsingh',
+      instagram: 'https://www.instagram.com/mai_khush_hoon_/',
+      linkedin: 'https://www.linkedin.com/in/khushvendra-singh-64827420a/',
       github: 'https://github.com/kabirsingh'
     },
     
@@ -67,8 +67,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'ASMP',
       img: harpreet,
-      instagram: 'https://instagram.com/kabirsingh',
-      linkedin: 'https://linkedin.com/in/kabirsingh',
+      instagram: 'https://www.instagram.com/2.harpreet.2/',
+      linkedin: 'https://www.linkedin.com/in/harpreet-singh-bawa-276040331/',
       github: 'https://github.com/kabirsingh'
     },
     {
@@ -76,8 +76,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'Operations',
       img: nirni,
-      instagram: 'https://instagram.com/kabirsingh',
-      linkedin: 'https://linkedin.com/in/kabirsingh',
+      instagram: 'https://www.instagram.com/s._nirni_/',
+      linkedin: 'https://www.linkedin.com/in/sidagam-nirni-naidu-696ba2202/',
       github: 'https://github.com/kabirsingh'
     },
     {
@@ -85,8 +85,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'Operations',
       img: anuraag,
-      instagram: 'https://instagram.com/kabirsingh',
-      linkedin: 'https://linkedin.com/in/kabirsingh',
+      instagram: 'https://www.instagram.com/anuraaggudipati/',
+      linkedin: 'https://www.linkedin.com/in/anuraag-gudipati-191ba4327/',
       github: 'https://github.com/kabirsingh'
     },
     {
@@ -94,8 +94,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'Operations',
       img: nayanp,
-      instagram: 'https://instagram.com/priyanair',
-      linkedin: 'https://linkedin.com/in/priyanair',
+      instagram: 'https://www.instagram.com/nayan_9617n/',
+      linkedin: 'https://www.linkedin.com/in/nayan-patidar-0318b8318/',
       github: 'https://github.com/priyanair'
     },
     {
@@ -103,8 +103,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'Technical',
       img: akhil,
-      instagram: 'https://instagram.com/rohitverma',
-      linkedin: 'https://linkedin.com/in/rohitverma',
+      instagram: 'https://www.instagram.com/akhil_cipher/',
+      linkedin: 'https://www.linkedin.com/in/akhil-dhyani-b39a37312/',
       github: 'https://github.com/rohitverma'
     },
     {
@@ -112,8 +112,8 @@ export const teamDataByYear = {
       position: 'Coordinator',
       verticle: 'Technical',
       img: div,
-      instagram: 'https://instagram.com/rohitverma',
-      linkedin: 'https://linkedin.com/in/rohitverma',
+      instagram: 'https://www.instagram.com/its_.divyansh10/',
+      linkedin: 'https://www.linkedin.com/in/divyansh-yadav-b17b2b328/',
       github: 'https://github.com/rohitverma'
     }
   ],
