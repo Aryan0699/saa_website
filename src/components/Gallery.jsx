@@ -9,12 +9,12 @@ import 'swiper/css/effect-coverflow';
 // IMPORT YOUR IMAGES HERE - ONE BY ONE
 // ============================================
 // Dashak Event Images
-import dashak_1 from '../assets/dashak_1.jpg';
-import dashak_2 from '../assets/dashak_2.jpg';
-import dashak_3 from '../assets/dashak_3.jpg';
-import dashak_4 from '../assets/dashak_4.jpg';
-import dashak_5 from '../assets/dashak_5.jpg';
-import dashak_6 from '../assets/dashak_6.jpg';
+import dashak_1 from '../assets/dashak_1.JPG';
+import dashak_2 from '../assets/dashak_2.JPG';
+import dashak_3 from '../assets/dashak_3.JPG';
+import dashak_4 from '../assets/dashak_4.JPG';
+import dashak_5 from '../assets/dashak_5.JPG';
+import dashak_6 from '../assets/dashak_6.JPG';
 
 // Convocation Event Images
 import convocation_1 from '../assets/convocation_1.jpg';
