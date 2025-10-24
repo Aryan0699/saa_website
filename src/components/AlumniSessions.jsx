@@ -6,6 +6,10 @@ import { Helmet } from 'react-helmet';
 import about1 from "../assets/about_1.jpg";
 import about2 from "../assets/about_2.jpg";
 import about3 from "../assets/about_3.jpg";
+import as_1 from "../assets/as_1.jpeg";
+import as_2 from "../assets/as_2.jpg";
+import as_3 from "../assets/as_3.jpg";
+import as_4 from "../assets/as_4.jpg";
 
 const testimonials = [
   {
@@ -37,7 +41,7 @@ const testimonials = [
   }
 ];
 
-const carouselImages = [about1, about2, about3];
+const carouselImages = [as_1, as_2, as_3, as_4];
 
 export default function AlumniSessions() {
   const [currentCard, setCurrentCard] = useState(0);

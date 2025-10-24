@@ -34,6 +34,35 @@ import farewell_4 from '../assets/farewell_4.jpeg';
 import farewell_5 from '../assets/farewell_5.jpeg';
 import farewell_6 from '../assets/farewell_6.jpeg';
 
+import alt_1 from '../assets/alt_1.jpg';
+import alt_2 from '../assets/alt_2.jpg';
+import alt_3 from '../assets/alt_3.jpg';
+import alt_4 from '../assets/alt_4.jpg';
+import alt_5 from '../assets/alt_5.jpg';
+import alt_6 from '../assets/alt_6.jpg';
+import alt_7 from '../assets/alt_7.jpg';
+import alt_8 from '../assets/alt_8.jpg';
+import alt_9 from '../assets/alt_9.jpg';
+import alt_10 from '../assets/alt_10.jpg';
+import alt_11 from '../assets/alt_11.jpg';
+import alt_12 from '../assets/alt_12.jpg';
+import alt_13 from '../assets/alt_13.jpg';
+import alt_14 from '../assets/alt_14.jpg';
+import alt_15 from '../assets/alt_15.jpg';
+import alt_16 from '../assets/alt_16.jpg';
+import alt_17 from '../assets/alt_17.jpg';
+import alt_18 from '../assets/alt_18.jpg';
+import alt_19 from '../assets/alt_19.jpg';
+import alt_20 from '../assets/alt_20.jpg';
+import alt_21 from '../assets/alt_21.jpg';
+import alt_22 from '../assets/alt_22.jpg';
+import alt_23 from '../assets/alt_23.jpg';
+import alt_24 from '../assets/alt_24.jpg';
+import alt_25 from '../assets/alt_25.jpg';
+import alt_26 from '../assets/alt_26.jpg';
+import alt_27 from '../assets/alt_27.jpg';
+import alt_28 from '../assets/alt_28.jpg';
+
 // ============================================
 // IMAGE MAPPING OBJECT
 // ============================================
@@ -65,6 +94,37 @@ const IMAGE_MAP = {
   farewell_4: farewell_4,
   farewell_5: farewell_5,
   farewell_6: farewell_6,
+
+  //Insti
+  alt_1: alt_1,
+  alt_2: alt_2,
+  alt_3: alt_3,
+  alt_4: alt_4,
+  alt_5: alt_5,
+  alt_6: alt_6,
+  alt_7: alt_7,
+  alt_8: alt_8,
+  alt_9: alt_9,
+  alt_10: alt_10,
+  alt_11: alt_11,
+  alt_12: alt_12,
+  alt_13: alt_13,
+  alt_14: alt_14,
+  alt_15: alt_15,
+  alt_16: alt_16,
+  alt_17: alt_17,
+  alt_18: alt_18,
+  alt_19: alt_19,
+  alt_20: alt_20,
+  alt_21: alt_21,
+  alt_22: alt_22,
+  alt_23: alt_23,
+  alt_24: alt_24,
+  alt_25: alt_25,
+  alt_26: alt_26,
+  alt_27: alt_27,
+  alt_28: alt_28,
+
 };
 
 // ============================================
@@ -86,6 +146,11 @@ const galleryData = [
     id: 'farewell',
     title: 'Farewell',
     images: ['farewell_1', 'farewell_2', 'farewell_3','farewell_4', 'farewell_5', 'farewell_6'],
+  },
+  {
+    id: 'Insti',
+    title: 'Insti',
+    images: ['alt_1','alt_2','alt_3','alt_4','alt_5','alt_6','alt_7','alt_8','alt_9','alt_10','alt_11','alt_12','alt_13','alt_14','alt_15','alt_16','alt_17','alt_18','alt_19','alt_20','alt_21','alt_22','alt_23','alt_24','alt_25','alt_26','alt_27','alt_28'],
   },
 ];
 

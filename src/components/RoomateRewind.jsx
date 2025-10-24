@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import about1 from "../assets/about_1.jpg";
-import about2 from "../assets/about_2.jpg";
-import about3 from "../assets/about_3.jpg";
+import about1 from "../assets/alt_25.jpg";
+import about2 from "../assets/alt_26.jpg";
+import about3 from "../assets/alt_27.jpg";
+import about4 from "../assets/alt_28.jpg";
 
 const testimonials = [
   {
@@ -36,7 +37,7 @@ const testimonials = [
   }
 ];
 
-const carouselImages = [about1, about2, about3];
+const carouselImages = [about1, about2, about3, about4];
 
 export default function RoommateRewind() {
   const [currentCard, setCurrentCard] = useState(0);
@@ -65,9 +66,11 @@ export default function RoommateRewind() {
         <meta name="description" content="Join Roommate Rewind by IIT Jodhpur’s Society of Alumni Affairs to reconnect juniors with seniors for memories and mentorship" />
       </Helmet>
 
-      <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-10 text-center">
+      <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-10 text-center">
+        
+        {/* Image Carousel at the top */}
         <div className="relative w-full max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
+          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]">
             {carouselImages.map((image, index) => (
               <div
                 key={index}
