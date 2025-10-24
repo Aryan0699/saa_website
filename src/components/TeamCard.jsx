@@ -29,7 +29,7 @@ const EmailIcon = ({ className = "" }) => (
 // ========================
 
 const TeamMemberCard = ({ member }) => (
-  <div className="group relative bg-white/80 dark:bg-[#18181b]/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 flex-shrink-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)] min-w-[280px] max-w-[320px]">
+  <div className="group relative bg-white/80 dark:bg-[#18181b]/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full max-w-xs mx-auto">
     {/* Decorative background gradient */}
     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     
@@ -113,8 +113,11 @@ const TeamMemberCard = ({ member }) => (
 const RoleSection = ({ title, members, isCenter = false }) => {
   if (members.length === 0) return null;
 
+  // Determine if we should center this section (few members or explicitly requested)
+  const shouldCenter = isCenter || members.length <= 2;
+
   return (
-    <div className="mb-16 sm:mb-20">
+    <div className="mb-12 sm:mb-16">
       {/* Section Header */}
       <div className="flex items-center justify-center mb-8 sm:mb-12">
         <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent flex-1 max-w-32 sm:max-w-48"></div>
@@ -124,12 +127,20 @@ const RoleSection = ({ title, members, isCenter = false }) => {
         <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent flex-1 max-w-32 sm:max-w-48"></div>
       </div>
 
-      {/* Members Grid */}
-      <div className={`flex flex-wrap justify-center items-stretch gap-4 sm:gap-6 lg:gap-8 ${isCenter && members.length === 1 ? 'justify-center' : ''}`}>
-        {members.map((member, idx) => (
-          <TeamMemberCard key={idx} member={member} />
-        ))}
-      </div>
+      {/* Members Grid - Responsive (uses flex to center few items) */}
+      {shouldCenter ? (
+        <div className="flex justify-center flex-wrap gap-6 sm:gap-8 w-full max-w-7xl mx-auto px-2">
+          {members.map((member, idx) => (
+            <TeamMemberCard key={idx} member={member} />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 w-full max-w-7xl mx-auto px-2 overflow-x-hidden justify-items-center">
+          {members.map((member, idx) => (
+            <TeamMemberCard key={idx} member={member} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -169,8 +180,8 @@ const SAATeam = () => {
   }, {});
 
   return (
-    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10">
-      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative overflow-hidden">
+    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10 overflow-x-hidden">
+      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-2 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative">
         
         {/* Header Section */}
         <div className="relative z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
