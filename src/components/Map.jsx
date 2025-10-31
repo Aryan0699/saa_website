@@ -89,16 +89,16 @@ export default function Alumni_Map() {
 
   // Color logic
   const getColorGradient = (count) => {
-    if (count <= 2) return ["#00ffff", "#00ff00"];
-    if (count <= 4) return ["#00ff00", "#ffff00"];
-    if (count <= 6) return ["#ffff00", "#ff8c00"];
-    return ["#ff0000", "#8b0000"];
+    if (count <= 2) return ["#ffcccc", "#ff9999"];
+    if (count <= 4) return ["#ff9999", "#ff4d4d"];
+    if (count <= 6) return ["#ff4d4d", "#e60000"];
+    return ["#ff0000", "#990000"];
   };
 
   const getRingColor = (count) => {
-    if (count <= 2) return "#00ffff";
-    if (count <= 4) return "#00ff00";
-    if (count <= 6) return "#ffff00";
+    if (count <= 2) return "#ffcccc";
+    if (count <= 4) return "#ff9999";
+    if (count <= 6) return "#ff4d4d";
     return "#ff0000";
   };
 
@@ -163,7 +163,7 @@ export default function Alumni_Map() {
         polygonsData={countries}
         polygonCapColor={"rgba(255, 255, 255, 0)"}
         polygonSideColor={"rgba(255, 255, 255, 0.03)"}
-        polygonStrokeColor={"#00ffff"}
+        polygonStrokeColor={"#ff0000"}
         polygonStrokeWidth={0.5}
         ringsData={cityPoints}
         ringMaxRadius={(d) => Math.min(1 + d.alumni.length * 0.2, 3)}

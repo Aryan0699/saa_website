@@ -29,7 +29,7 @@ const EmailIcon = ({ className = "" }) => (
 // ========================
 
 const TeamMemberCard = ({ member }) => (
-  <div className="group relative bg-white/80 dark:bg-[#18181b]/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full max-w-xs mx-auto">
+  <div className="group relative bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full max-w-xs mx-auto">
     {/* Decorative background gradient */}
     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     
@@ -39,7 +39,7 @@ const TeamMemberCard = ({ member }) => (
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
         
         <img
-          className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full object-cover ring-4 ring-white dark:ring-gray-700 shadow-xl group-hover:ring-blue-200 dark:group-hover:ring-blue-600 transition-all duration-300"
+          className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full object-cover ring-4 ring-red-200 dark:ring-red-800 shadow-xl group-hover:ring-red-400 dark:group-hover:ring-red-600 transition-all duration-300"
           src={member.img}
           alt={member.name}
         />
@@ -47,11 +47,11 @@ const TeamMemberCard = ({ member }) => (
 
       {/* Name and Role */}
       <div className="mb-4 sm:mb-6 flex-grow flex flex-col justify-center">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors duration-300 hover-underline-animation">
           {member.name}
         </h3>
         {member.verticle && (
-          <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium mt-1">
+          <p className="text-xs sm:text-sm text-red-600 dark:text-red-400 font-medium mt-1">
             {member.verticle}
           </p>
         )}
@@ -185,7 +185,7 @@ const SAATeam = () => {
         
         {/* Header Section */}
         <div className="relative z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <div className="mt-16 md:mt-12 lg:mt-10 inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-blue-600 dark:text-[#A7ADBE] bg-blue-50 dark:bg-white/10 rounded-full border border-blue-200 dark:border-white/10">
+          <div className="mt-16 md:mt-12 lg:mt-10 inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-red-600 dark:text-white/80 bg-white dark:bg-white/10 rounded-full border border-red-200 dark:border-white/10">
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
             </svg>
@@ -210,9 +210,9 @@ const SAATeam = () => {
                     const container = document.getElementById('year-carousel');
                     container.scrollBy({ left: -120, behavior: 'smooth' });
                   }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-[#18181b] border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
@@ -221,7 +221,7 @@ const SAATeam = () => {
               {/* Scrollable Years */}
               <div 
                 id="year-carousel"
-                className="flex items-center gap-2 sm:gap-3 p-1 sm:p-1.5 bg-gray-100/80 dark:bg-gray-800/80 backdrop-blur-md rounded-xl shadow-lg overflow-x-auto scrollbar-hide"
+                className="flex items-center gap-2 sm:gap-3 p-1 sm:p-1.5 bg-gray-100/80 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg overflow-x-auto scrollbar-hide"
                 style={{
                   scrollbarWidth: 'none',
                   msOverflowStyle: 'none'
@@ -233,8 +233,8 @@ const SAATeam = () => {
                     onClick={() => setSelectedYear(year)}
                     className={`flex-shrink-0 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 transform hover:scale-105 whitespace-nowrap ${
                       selectedYear === year
-                        ? 'bg-white dark:bg-[#18181b] text-blue-600 dark:text-blue-400 shadow-md border border-blue-200 dark:border-blue-800'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-white/50 dark:hover:bg-gray-700/50'
+                        ? 'bg-white dark:bg-black text-red-600 dark:text-red-400 shadow-md border border-red-200 dark:border-red-800'
+                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-white/50 dark:hover:bg-black/50'
                     }`}
                   >
                     Team '{year.slice(-2)}
@@ -249,9 +249,9 @@ const SAATeam = () => {
                     const container = document.getElementById('year-carousel');
                     container.scrollBy({ left: 120, behavior: 'smooth' });
                   }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-[#18181b] border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

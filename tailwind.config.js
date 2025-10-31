@@ -6,11 +6,73 @@ export default {
     "./public/index.html",
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000000',
+      white: '#ffffff',
+      // Primary red scale (all hues map to red variants)
+      red: {
+        50: '#ffe5e5',
+        100: '#ffcccc',
+        200: '#ffb2b2',
+        300: '#ff9999',
+        400: '#ff4d4d',
+        500: '#ff0000',
+        600: '#e60000',
+        700: '#cc0000',
+        800: '#b30000',
+        900: '#990000',
+        950: '#4d0000',
+      },
+      // Map common neutrals entirely to black/white
+      gray: {
+        50: '#ffffff', 100: '#ffffff', 200: '#ffffff', 300: '#ffffff', 400: '#ffffff',
+        500: '#000000', 600: '#000000', 700: '#000000', 800: '#000000', 900: '#000000', 950: '#000000',
+      },
+      slate: {
+        50: '#ffffff', 100: '#ffffff', 200: '#ffffff', 300: '#ffffff', 400: '#ffffff',
+        500: '#000000', 600: '#000000', 700: '#000000', 800: '#000000', 900: '#000000', 950: '#000000',
+      },
+      zinc: {
+        50: '#ffffff', 100: '#ffffff', 200: '#ffffff', 300: '#ffffff', 400: '#ffffff',
+        500: '#000000', 600: '#000000', 700: '#000000', 800: '#000000', 900: '#000000', 950: '#000000',
+      },
+      neutral: {
+        50: '#ffffff', 100: '#ffffff', 200: '#ffffff', 300: '#ffffff', 400: '#ffffff',
+        500: '#000000', 600: '#000000', 700: '#000000', 800: '#000000', 900: '#000000', 950: '#000000',
+      },
+      // Remap other hues used in codebase to red scale
+      blue: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+      indigo: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+      purple: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+      pink: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+      green: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+      emerald: {
+        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
+        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+      },
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-glow': 'radial-gradient(ellipse 80% 60% at top, rgba(255,255,255,0.1), transparent)',
+        'hero-glow': 'radial-gradient(ellipse 80% 60% at top, rgba(255,0,0,0.1), transparent)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

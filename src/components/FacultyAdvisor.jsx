@@ -29,7 +29,7 @@ const EmailIcon = ({ className = "" }) => (
 // ========================
 
 const FacultyAdvisorCard = () => (
-  <div className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md group relative bg-white/80 dark:bg-[#18181b]/80 backdrop-blur-md rounded-xl sm:rounded-2xl py-6 px-4 sm:px-6 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 flex flex-col items-center">
+  <div className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md group relative bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl py-6 px-4 sm:px-6 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 flex flex-col items-center">
     {/* Decorative gradient background */}
     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -38,7 +38,7 @@ const FacultyAdvisorCard = () => (
       <div className="relative mb-4 sm:mb-6">
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
         <img
-          className="relative h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full object-cover ring-4 ring-white dark:ring-gray-700 shadow-xl group-hover:ring-blue-200 dark:group-hover:ring-blue-600 transition-all duration-300"
+          className="relative h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full object-cover ring-4 ring-red-200 dark:ring-red-800 shadow-xl group-hover:ring-red-400 dark:group-hover:ring-red-600 transition-all duration-300"
           src={president}
           alt="Shankar Manoharan"
         />
@@ -46,10 +46,10 @@ const FacultyAdvisorCard = () => (
 
       {/* Name & Role */}
       <div className="mb-4 sm:mb-6 w-full">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors duration-300 hover-underline-animation">
           Shankar Manoharan
         </h3>
-        <p className="text-sm sm:text-base text-blue-600 dark:text-blue-400 font-medium">President</p>
+        <p className="text-sm sm:text-base text-red-600 dark:text-[#60a5fa] font-medium">President</p>
       </div>
 
       {/* UPDATED Social Icons - RESPONSIVE */}

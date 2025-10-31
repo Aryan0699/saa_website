@@ -143,26 +143,21 @@ const alumniData = [
 //from slate 50
 const AlumniMemoir = () => {
   return (
-    <section className="mt-10 mb-10 bg-white dark:bg-[#18181b]/10 rounded-3xl shadow-xl border border-gray-100 dark:border-white/10 backdrop-blur-md dark:ring-white/10">
+    <section className="mt-10 mb-10 bg-white dark:bg-black/10 rounded-3xl shadow-xl border border-gray-100 dark:border-white/10 backdrop-blur-md dark:ring-white/10">
       <div className="py-12 px-6 mx-auto max-w-screen-xl text-center relative overflow-hidden">
         {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200/20 dark:bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-red-200/20 dark:bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/20 dark:bg-white/3 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
         
         {/* Header Section */}
         <div className="relative z-10 mb-12">
-          <div className="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-blue-600 dark:text-[#A7ADBE] bg-blue-50 dark:bg-white/10 rounded-full border border-blue-200 dark:border-white/10">
-            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            Success Stories
-          </div>
+        
           
-          <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100 md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
+          <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100 md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-red-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
             Alumni Memoirs
           </h1>
    
-          <p className="mb-8 text-xl font-normal text-gray-600 dark:text-[#A7ADBE] lg:text-2xl sm:px-16 xl:px-48 leading-relaxed">
+          <p className="mb-8 text-xl font-normal text-gray-600 dark:text-white/80 lg:text-2xl sm:px-16 xl:px-48 leading-relaxed">
             Everybody has a story. And there's something to be learnt from every experience.
           </p>
         </div>
@@ -188,13 +183,13 @@ const AlumniMemoir = () => {
             grabCursor={true}
             touchRatio={1}
             threshold={5}
-            className="memoir-swiper bg-white/80 dark:bg-[#18181b]/80 rounded-2xl p-8 shadow-2xl backdrop-blur-md border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500"
+            className="memoir-swiper bg-white/80 dark:bg-black/80 rounded-2xl p-8 shadow-2xl backdrop-blur-md border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500"
           >
             {alumniData.map((alumnus, idx) => (
               <SwiperSlide key={idx}>
                 <figure className="group relative flex flex-col items-center justify-center p-8 text-center">
                   {/* Decorative quote icon */}
-                  <div className="absolute top-2 left-6 text-blue-200/40 dark:text-blue-700/30 text-6xl font-serif leading-none">
+                  <div className="absolute top-2 left-6 text-red-200/40 dark:text-red-700/30 text-6xl font-serif leading-none">
                     "
                   </div>
                   
@@ -203,9 +198,9 @@ const AlumniMemoir = () => {
                       {alumnus.title}
                     </h3>
                     <p className="my-6 text-gray-700 dark:text-gray-300 italic text-xl leading-relaxed font-light relative px-8">
-                      <span className="text-blue-500 dark:text-blue-400 text-3xl absolute -left-2 -top-2">"</span>
+                      <span className="text-red-500 dark:text-red-400 text-3xl absolute -left-2 -top-2">"</span>
                       {alumnus.quote}
-                      <span className="text-blue-500 dark:text-blue-400 text-3xl ml-1">"</span>
+                      <span className="text-red-500 dark:text-red-400 text-3xl ml-1">"</span>
                     </p>
                   </blockquote>
                   
@@ -217,10 +212,10 @@ const AlumniMemoir = () => {
                       className="relative transition-all hover:scale-110 duration-300 group/avatar mr-5"
                     >
                       {/* Glowing ring effect */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover/avatar:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 via-red-500 to-red-700 dark:from-[#3b82f6] dark:via-[#3b82f6] dark:to-[#1d4ed8] opacity-0 group-hover/avatar:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
                       
                       <img
-                        className="relative h-20 w-20 rounded-full object-cover ring-4 ring-white dark:ring-gray-700 shadow-xl group-hover/avatar:ring-blue-200 dark:group-hover/avatar:ring-blue-600 transition-all duration-300"
+                        className="relative h-20 w-20 rounded-full object-cover ring-4 ring-red-200 dark:ring-[#1f2937] shadow-xl group-hover/avatar:ring-red-400 dark:group-hover/avatar:ring-[#3b82f6] transition-all duration-300"
                         src={alumnus.img}
                         alt={alumnus.name}
                         width={80}
@@ -228,7 +223,7 @@ const AlumniMemoir = () => {
                       />
                       
                       {/* LinkedIn indicator */}
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-red-600 dark:bg-[#3b82f6] rounded-full flex items-center justify-center shadow-lg">
                         <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/>
                         </svg>
@@ -236,7 +231,7 @@ const AlumniMemoir = () => {
                     </a>
                     
                     <div className="space-y-1 font-medium text-left">
-                      <div className="text-gray-900 dark:text-white font-bold text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      <div className="text-gray-900 dark:text-white font-bold text-xl group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors duration-300 hover-underline-animation">
                         {alumnus.name}
                       </div>
                       <div className="text-base text-gray-600 dark:text-gray-400 font-medium">
@@ -259,10 +254,10 @@ const AlumniMemoir = () => {
           .memoir-pagination-bullet {
             width: 12px !important;
             height: 12px !important;
-            background: linear-gradient(135deg, #d1d5db, #9ca3af) !important;
-            opacity: 0.6 !important;
+            background: linear-gradient(135deg, #ffffff, #e5e7eb) !important; /* light grey/white */
+            opacity: 0.7 !important;
             transition: all 0.3s ease !important;
-            border: 2px solid transparent !important;
+            border: 2px solid rgba(0,0,0,0.1) !important;
           }
           
           .memoir-pagination-bullet:hover {
@@ -271,20 +266,21 @@ const AlumniMemoir = () => {
           }
           
           .dark .memoir-pagination-bullet {
-            background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+            background: linear-gradient(135deg, #1f2937, #111827) !important; /* dark greys */
+            border-color: rgba(255,255,255,0.15) !important;
           }
           
           .memoir-pagination-bullet-active {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+            background: linear-gradient(135deg, #ff0000, #b30000) !important; /* red */
             opacity: 1 !important;
             transform: scale(1.3) !important;
-            border: 2px solid rgba(59, 130, 246, 0.3) !important;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4) !important;
+            border: 2px solid rgba(255, 0, 0, 0.3) !important;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.35) !important;
           }
           
           .dark .memoir-pagination-bullet-active {
-            background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
-            border: 2px solid rgba(96, 165, 250, 0.3) !important;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6) !important; /* blue */
+            border: 2px solid rgba(96, 165, 250, 0.35) !important;
             box-shadow: 0 0 20px rgba(96, 165, 250, 0.4) !important;
           }
           
@@ -304,7 +300,7 @@ const AlumniMemoir = () => {
             left: -10px;
             right: -10px;
             bottom: -10px;
-            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 0, 0.1), transparent);
             border-radius: 24px;
             opacity: 0;
             transition: opacity 0.3s ease;

@@ -39,15 +39,15 @@ export default function ParticlesBg() {
         background: { color: 'transparent' },
         particles: {
           ...commonOptions.particles,
-          color: { value: '#1662de' },
+          color: { value: '#ff0000' },
           number: { value: 200, density: { enable: true, area: 800 } },
           opacity: { value: 0.3 },
-          links: { ...commonOptions.particles.links, color: '#60a5fa', opacity: 0.4 },
+          links: { ...commonOptions.particles.links, color: '#ff0000', opacity: 0.4 },
         },
       }
     : {
         ...commonOptions,
-        background: { color: '#18181b' },
+        background: { color: '#000000' },
         particles: {
           ...commonOptions.particles,
           color: { value: '#ffffff' },

@@ -127,7 +127,7 @@ export default function CommunityLinks() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors hover-underline-animation">
                   {link.title}
                 </h3>
 
@@ -137,7 +137,7 @@ export default function CommunityLinks() {
                 </p>
 
                 {/* Arrow Icon */}
-                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm">
+                <div className="mt-4 flex items-center text-red-600 dark:text-[#60a5fa] font-medium text-sm hover-underline-animation">
                   <span className="mr-2">Join Now</span>
                   <svg
                     className={`w-4 h-4 transition-transform duration-300 ${
@@ -165,12 +165,12 @@ export default function CommunityLinks() {
           <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
             Can't find what you're looking for?
           </h2>
-          <p className="dark:text-blue-100 text-gray-700 mb-6 text-lg">
+          <p className="text-gray-700 mb-6 text-lg">
             Reach out to us and we'll help you connect with the right community.
           </p>
           <a
             href="mailto:alumni@iitj.ac.in"
-            className="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-block bg-white text-red-600 dark:text-[#60a5fa] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover-underline-animation"
           >
             Contact Us
           </a>

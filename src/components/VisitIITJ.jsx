@@ -62,7 +62,7 @@ const styles = `
 }
 
 .flip-card-back {
-  background-color: #1e3a8a;
+  background-color: #ff0000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +181,7 @@ const SAATeam = () => {
           Normal Visit
         </h1>
   
-        <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-gray-600 dark:text-[#A7ADBE] sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-6xl mx-auto">
+        <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-gray-600 dark:text-white/80 sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-6xl mx-auto">
           Contact Us.
         </p>
       </div>
@@ -192,7 +192,7 @@ const SAATeam = () => {
           {teamData.map((member, idx) => (
             <div
               key={idx}
-              className="group relative bg-white/80 dark:bg-[#18181b]/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full sm:w-80 md:w-72 lg:w-80 min-h-[400px]"
+              className="group relative bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full sm:w-80 md:w-72 lg:w-80 min-h-[400px]"
             >
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -203,7 +203,7 @@ const SAATeam = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
                   
                   <img
-                    className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full object-cover ring-4 ring-white dark:ring-gray-700 shadow-xl group-hover:ring-blue-200 dark:group-hover:ring-blue-600 transition-all duration-300"
+                    className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full object-cover ring-4 ring-red-200 dark:ring-red-800 shadow-xl group-hover:ring-red-400 dark:group-hover:ring-red-600 transition-all duration-300"
                     src={member.img}
                     alt={member.name}
                   />
@@ -211,7 +211,7 @@ const SAATeam = () => {
 
                 {/* Name and Role */}
                 <div className="mb-4 sm:mb-6 flex-grow flex flex-col justify-center">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors duration-300 hover-underline-animation">
                     {member.name}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium">

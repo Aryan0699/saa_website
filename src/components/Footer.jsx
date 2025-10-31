@@ -3,7 +3,7 @@ import logo from "../assets/saa_logo_no_background.png";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white/80 dark:bg-slate-500/10 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10">
+    <footer className="w-full bg-white/80 dark:bg-black/10 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
         {/* Header Section - Logo and Name Centered */}
         <div className="text-center mb-8">
@@ -26,16 +26,16 @@ const Footer = () => {
           {/* Resources */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 relative">
-              <span className="text-blue-500 dark:text-blue-400 bg-clip-text">
+              <span className="text-red-500 dark:text-red-400 bg-clip-text">
                 RESOURCES
               </span>
-              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-900 dark:from-indigo-300 dark:t0-blue-900"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-red-300 to-red-900"></div>
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Home
                 </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/faculty-advisor"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Faculty Advisor
                 </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/teams"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Student Team
                 </Link>
@@ -59,7 +59,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/events"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Initiatives
                 </Link>
@@ -70,17 +70,17 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 relative">
-              <span className="text-blue-500 dark:text-blue-400 bg-clip-text">
+              <span className="text-red-500 dark:text-red-400 bg-clip-text">
                 QUICK ACCESS
               </span>
-              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-900 dark:from-indigo-300 dark:t0-blue-900"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-red-300 to-red-900"></div>
             </h3>
             <ul className="space-y-3">
               
               <li>
                 <Link
                   to="/visitIITJ"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Visit IITJ
                 </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
                   href="https://www.iitj.ac.in/main/en/iitj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   IIT Jodhpur
                 </a>
@@ -100,7 +100,7 @@ const Footer = () => {
                   to="https://alumni.iitj.ac.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-[#A7ADBE] hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
+                  className="text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 text-sm hover:underline underline-offset-2"
                 >
                   Alumni Portal
                 </Link>
@@ -111,30 +111,30 @@ const Footer = () => {
           {/* Contact & Social */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 relative">
-              <span className="text-blue-500 dark:text-blue-400 bg-clip-text ">
+              <span className="text-red-500 dark:text-red-400 bg-clip-text ">
                 CONNECT WITH US
               </span>
-              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-900 dark:from-indigo-300 dark:t0-blue-900"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-red-300 to-red-900"></div>
             </h3>
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-center text-sm text-gray-600 dark:text-[#A7ADBE]">
-                <svg className="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center text-sm text-gray-600 dark:text-white/80">
+                <svg className="w-4 h-4 mr-2 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
                 +91 74990 27852
               </div>
-              <div className="flex items-center text-sm text-gray-600 dark:text-[#A7ADBE]">
-                <svg className="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center text-sm text-gray-600 dark:text-white/80">
+                <svg className="w-4 h-4 mr-2 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
                 saa@iitj.ac.in
               </div>
-              <div className="text-sm text-gray-600 dark:text-[#A7ADBE]">
+              <div className="text-sm text-gray-600 dark:text-white/80">
                 <div className="flex items-start">
-                  <svg className="w-4 h-4 mr-2 mt-0.5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 mr-2 mt-0.5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                   <div>
@@ -152,7 +152,7 @@ const Footer = () => {
                 href="https://www.instagram.com/saa.iitj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
+                className="p-2 text-gray-600 dark:text-white/80 hover:text-red-500 dark:hover:text-red-400 bg-gray-100/50 dark:bg-white/10 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full transition-all duration-200 hover:scale-110"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
+                className="p-2 text-gray-600 dark:text-white/80 hover:text-red-500 dark:hover:text-red-400 bg-gray-100/50 dark:bg-white/10 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full transition-all duration-200 hover:scale-110"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -174,7 +174,7 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
+                className="p-2 text-gray-600 dark:text-white/80 hover:text-red-500 dark:hover:text-red-400 bg-gray-100/50 dark:bg-white/10 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full transition-all duration-200 hover:scale-110"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -185,7 +185,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/society-of-alumni-affairs-iit-jodhpur/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-gray-600 dark:text-[#A7ADBE] hover:text-blue-500 dark:hover:text-blue-400 bg-gray-100/50 dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-blue-500/10 rounded-full transition-all duration-200 hover:scale-110"
+                className="p-2 text-gray-600 dark:text-white/80 hover:text-red-500 dark:hover:text-red-400 bg-gray-100/50 dark:bg-white/10 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-full transition-all duration-200 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -198,16 +198,16 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 relative">
-              <span className="text-blue-500 dark:text-blue-400 bg-clip-text">
+              <span className="text-red-500 dark:text-red-400 bg-clip-text">
                 CONTACT US
               </span>
-              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-indigo-400 to-blue-900 dark:from-indigo-300 dark:t0-blue-900"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-red-300 to-red-900"></div>
             </h3>
             
             <div className="space-y-4">
               <div className="group">
                 <h4 className="text-sm font-medium text-gray-800 dark:text-white mb-2">Our Location</h4>
-                <div className="text-sm text-gray-600 dark:text-[#A7ADBE] leading-relaxed">
+                <div className="text-sm text-gray-600 dark:text-white/80 leading-relaxed">
                   <div>Office of Alumni Relations</div>
                   <div>Indian Institute of Technology Jodhpur</div>
                   <div>NH 62 Nagaur Road</div>
@@ -219,7 +219,7 @@ const Footer = () => {
                   href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(IIT),+Jodhpur/@26.4710115,73.1086586,17z/data=!4m10!1m2!2m1!1sIIT+JODHPUT!3m6!1s0x39418c5ea672337b:0xb6c9a5a9b08db22e!8m2!3d26.4710115!4d73.1134222!15sCgtJSVQgSk9ESFBVUpIBFHRlY2huaWNhbF91bml2ZXJzaXR5qgEzEAEyHhABIhq-jvzLu99otABrlFoPzb9UTf6DPfaHULyJezIPEAIiC2lpdCBqb2RocHVy4AEA!16s%2Fm%2F04ydk20?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center mt-2 text-xs text-blue-500 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-200 group-hover:underline underline-offset-2"
+                className="inline-flex items-center mt-2 text-xs text-red-500 hover:text-red-800 dark:hover:text-red-400 transition-colors duration-200 group-hover:underline underline-offset-2"
                 >
                   <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -234,12 +234,12 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-8 pt-6 border-t border-gray-200/50 dark:border-white/10">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-sm text-gray-600 dark:text-[#A7ADBE] text-center sm:text-left">
+            <div className="text-sm text-gray-600 dark:text-white/80 text-center sm:text-left">
               © 2025 Society of Alumni Affairs, IIT Jodhpur. All rights reserved.
             </div>
-            <div className="flex items-center text-sm text-gray-600 dark:text-[#A7ADBE]">
+            <div className="flex items-center text-sm text-gray-600 dark:text-white/80">
               <span>Made with</span>
-              <svg className="w-4 h-4 mx-1 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 mx-1 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"/>
               </svg>
               <span>by SAA Tech Team</span>

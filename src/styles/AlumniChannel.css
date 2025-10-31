@@ -35,8 +35,8 @@
   width: 300px;
   height: 100px;
   /* Light mode styling */
-  background-color: #f1eedc;
-  border: 2px solid #e5e7eb;
+  background-color: #ffffff;
+  border: 2px solid #000000;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   position: absolute;
@@ -53,9 +53,9 @@
 
 /* Dark mode styling */
 .dark .item-rtl {
-  background-color: #1f2937;
-  border: 2px solid #374151;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.15), 0 2px 4px -1px rgba(255, 255, 255, 0.1);
 }
 
 /* Hover effects for both themes */

@@ -125,7 +125,7 @@ export default function ASMP() {
 
         {/* Header Section with safe spacing from top */}
         <div className="mb-16 sm:mb-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-blue-500 drop-shadow-lg dark:text-blue-400">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-red-600 dark:text-red-400">
             Alumni Student Mentorship Program
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 text-black dark:text-gray-300">

@@ -125,14 +125,14 @@ export default function CrackTheCall() {
         </div>
 
         <div className="mb-16 sm:mb-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-blue-500 drop-shadow-lg dark:text-blue-400">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-red-600 dark:text-red-400">
             Crack the Call
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-black dark:text-gray-300">
             Alumni-Led Mock Internship Interviews
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 max-w-3xl mx-auto mb-4">
-            <span className="font-bold text-blue-600 dark:text-blue-400">Face it. Ace it. Crack it.</span> Join IIT Jodhpur’s Society of Alumni Affairs for mock internship interviews with alumni, offering domain-specific practice and personalized feedback.
+            <span className="font-bold text-red-600 dark:text-red-400">Face it. Ace it. Crack it.</span> Join IIT Jodhpur’s Society of Alumni Affairs for mock internship interviews with alumni, offering domain-specific practice and personalized feedback.
           </p>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             Organized by the Society of Alumni Affairs, Crack the Call pairs 3rd-year students with alumni for real-world interview practice in various domains, boosting confidence and industry-ready skills.

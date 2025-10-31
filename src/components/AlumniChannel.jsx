@@ -87,7 +87,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text ">
             <h3 className="text-xl font-bold tracking-tight  text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Nirmal Kumawat</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Nirmal Kumawat</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Computer Scientist-II Adobe
@@ -103,7 +103,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Lal Chand Bisu</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Lal Chand Bisu</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Co-Founder & CEO at Kuku FM
@@ -119,7 +119,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vinod Kumar Meena</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Vinod Kumar Meena</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">Co-Founder at Kuku FM</span>
           </div>
@@ -133,7 +133,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Vikas Goyal</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Vikas Goyal</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Co-founder, CTO-Kuku FM
@@ -149,7 +149,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tapish Rathore</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Tapish Rathore</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Co-founder & CTO @ Vibinex
@@ -165,7 +165,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Utkarsh Trivedi</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Utkarsh Trivedi</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Co-Founder @Verifast AI
@@ -181,7 +181,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tanmay sethi</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Tanmay sethi</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">Co-Founder @Verifast</span>
           </div>
@@ -195,7 +195,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Himanshu Jaiswal</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Himanshu Jaiswal</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Senior Product Manager @ Visa Inc
@@ -213,7 +213,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Gurjot Singh </a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Gurjot Singh </a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               VP, Quant at Deutsche Bank
@@ -229,7 +229,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Shobhit Srivastava</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Shobhit Srivastava</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Co-Founder at Shovel Company
@@ -245,7 +245,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Darshan Joshi</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Darshan Joshi</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Partner at McKinsey & Company
@@ -261,7 +261,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Suraj Nadipelly</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Suraj Nadipelly</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Partner at AlphaAdvisors
@@ -277,7 +277,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Siddharth Jain</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Siddharth Jain</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Summer associate @ McKinsey
@@ -293,7 +293,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Manu Agrawal</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Manu Agrawal</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
               Software Engineer @Google
@@ -309,7 +309,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Shivam Verma</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Shivam Verma</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">Co-founder & CTO @ Chat360</span>
           </div>
@@ -323,7 +323,7 @@ const AlumniChannelSection = () => {
           </div>
           <div className="Text ">
             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              <a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Aditya Ranjan</a>
+              <a href="#" className="hover:text-red-600 dark:hover:text-[#60a5fa] transition-colors hover-underline-animation">Aditya Ranjan</a>
             </h3>
             <span className="text-gray-600 dark:text-gray-400 text-xs">
             Lead - Customer Experience @ IDfy

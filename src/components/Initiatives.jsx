@@ -163,7 +163,7 @@ const EventModal = ({ event, isOpen, onClose }) => {
                           <ul className="space-y-2">
                             {event.highlights.map((highlight, index) => (
                               <li key={index} className="flex items-start gap-3">
-                                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                                <span className="text-red-600 dark:text-red-400 mt-1">•</span>
                                 <span className="text-gray-700 dark:text-gray-300">{highlight}</span>
                               </li>
                             ))}
@@ -330,7 +330,7 @@ export default function Initiatives() {
             rotateY: shouldReduceMotion ? 0 : rY,
             transformStyle: "preserve-3d",
           }}
-          className="group relative rounded-2xl bg-white/80 dark:bg-[#18181b]/80 shadow-md hover:shadow-2xl border border-white/50 dark:border-white/10 overflow-hidden transform-gpu transition-shadow duration-300 hover:scale-105 hover:-translate-y-2 z-10 cursor-pointer"
+          className="group relative rounded-2xl bg-white/80 dark:bg-black/80 shadow-md hover:shadow-2xl border border-white/50 dark:border-white/10 overflow-hidden transform-gpu transition-shadow duration-300 hover:scale-105 hover:-translate-y-2 z-10 cursor-pointer"
         >
           <div className="relative w-full h-60 bg-gray-200 dark:bg-gray-700 overflow-hidden">
             <img

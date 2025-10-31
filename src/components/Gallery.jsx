@@ -165,7 +165,7 @@ function Card({ title, src }) {
 
   return (
     <div
-      className="relative rounded-lg md:rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="relative rounded-lg md:rounded-xl overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300"
       style={{ 
         width: '100%',
         maxWidth: 600, 
@@ -179,13 +179,13 @@ function Card({ title, src }) {
     >
       {/* Folded corner */}
       <div
-        className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#4f46e5] rotate-45 transition-all duration-300 pointer-events-none"
+        className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-red-600 rotate-45 transition-all duration-300 pointer-events-none"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
       />
       
       {/* Header */}
       <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4 relative z-10 pointer-events-none">
-        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-gray-200 dark:border-gray-600 bg-white shrink-0">
+        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white shrink-0">
           <img 
             src={src} 
             alt={`${title} thumb`} 
@@ -194,18 +194,18 @@ function Card({ title, src }) {
             draggable="false"
             onError={(e) => {
               console.error(`Failed to load thumbnail image: ${src}`);
-              e.target.style.backgroundColor = '#f3f4f6';
+              e.target.style.backgroundColor = '#ffffff';
             }}
           />
         </div>
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white bg-[#4f46e5] px-2 sm:px-3 py-1 rounded-md truncate">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white bg-red-600 px-2 sm:px-3 py-1 rounded-md truncate">
           {title}
         </h3>
       </div>
 
       {/* Main Image */}
       <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 pointer-events-none">
-        <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600 bg-white">
+        <div className="rounded-lg overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white">
           <img
             src={src}
             alt={title}
@@ -214,7 +214,7 @@ function Card({ title, src }) {
             draggable="false"
             onError={(e) => {
               console.error(`Failed to load main image: ${src}`);
-              e.target.style.backgroundColor = '#f3f4f6';
+              e.target.style.backgroundColor = '#ffffff';
             }}
           />
         </div>
@@ -267,7 +267,7 @@ function EventDeck({ title, images }) {
           }
           .gallery-swiper .swiper-button-next,
           .gallery-swiper .swiper-button-prev {
-            background: rgba(79, 70, 229, 0.9);
+            background: rgba(255, 0, 0, 0.9);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -276,7 +276,7 @@ function EventDeck({ title, images }) {
           }
           .gallery-swiper .swiper-button-next:hover,
           .gallery-swiper .swiper-button-prev:hover {
-            background: rgba(79, 70, 229, 1);
+            background: rgba(255, 0, 0, 1);
             transform: scale(1.1);
           }
           .gallery-swiper .swiper-button-next::after,
