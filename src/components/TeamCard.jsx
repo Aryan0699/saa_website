@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { teamDataByYear } from '../utils/TeamData';
 import ChromaGrid from './ChromaGrid';
 
@@ -22,7 +21,7 @@ const convertToChromaGridItem = (member, index) => {
     title: member.name,
     subtitle: member.position,
     handle: member.verticle || '',
-    location: member.verticle ? `${member.verticle}` : '',
+    location: '', // Remove duplicate verticle display
     borderColor: colorScheme.borderColor,
     gradient: colorScheme.gradient,
     url: member.linkedin || member.instagram || member.mailto || '#'
@@ -159,7 +158,7 @@ const RoleSection = ({ title, members, isCenter = false }) => {
       </div>
 
       {/* Members Grid with ChromaGrid */}
-      <div className="w-full max-w-7xl mx-auto px-2" style={{ minHeight: shouldCenter ? 'auto' : '600px' }}>
+      <div className="w-full max-w-7xl mx-auto px-2 overflow-hidden" style={{ minHeight: shouldCenter ? 'auto' : '600px' }}>
         <ChromaGrid 
           items={chromaItems}
           radius={300}
@@ -178,41 +177,40 @@ const RoleSection = ({ title, members, isCenter = false }) => {
 // ========================
 
 const SAATeam = () => {
-  const [selectedYear, setSelectedYear] = useState('2025');
-  
   const years = Object.keys(teamDataByYear).sort((a, b) => b - a);
-  const currentTeamData = teamDataByYear[selectedYear] || [];
 
-  // Group team members by position
-  const groupedMembers = currentTeamData.reduce((acc, member) => {
-    const position = member.position.toLowerCase();
-    
-    if (position.includes('vice president') || position.includes('vp')) {
-      if (!acc.vicePresident) acc.vicePresident = [];
-      acc.vicePresident.push(member);
-    } else if (position.includes('overall coordinator')) {
-      if (!acc.overallCoordinators) acc.overallCoordinators = [];
-      acc.overallCoordinators.push(member);
-    } else if (position.includes('coordinator') && !position.includes('overall')) {
-      if (!acc.coordinators) acc.coordinators = [];
-      acc.coordinators.push(member);
-    } else if (position.includes('core member')) {
-      if (!acc.coreMembers) acc.coreMembers = [];
-      acc.coreMembers.push(member);
-    } else {
-      if (!acc.others) acc.others = [];
-      acc.others.push(member);
-    }
-    
-    return acc;
-  }, {});
+  // Function to group team members by position for a given year
+  const groupMembersByPosition = (teamData) => {
+    return teamData.reduce((acc, member) => {
+      const position = member.position.toLowerCase();
+      
+      if (position.includes('vice president') || position.includes('vp')) {
+        if (!acc.vicePresident) acc.vicePresident = [];
+        acc.vicePresident.push(member);
+      } else if (position.includes('overall coordinator')) {
+        if (!acc.overallCoordinators) acc.overallCoordinators = [];
+        acc.overallCoordinators.push(member);
+      } else if (position.includes('coordinator') && !position.includes('overall')) {
+        if (!acc.coordinators) acc.coordinators = [];
+        acc.coordinators.push(member);
+      } else if (position.includes('core member')) {
+        if (!acc.coreMembers) acc.coreMembers = [];
+        acc.coreMembers.push(member);
+      } else {
+        if (!acc.others) acc.others = [];
+        acc.others.push(member);
+      }
+      
+      return acc;
+    }, {});
+  };
 
   return (
-    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10 overflow-x-hidden">
-      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-2 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative">
+    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10 overflow-hidden">
+      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-2 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative overflow-hidden">
         
         {/* Header Section */}
-        <div className="relative z-10 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="relative z-10 mb-12 sm:mb-16 md:mb-20">
           <div className="mt-16 md:mt-12 lg:mt-10 inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-red-600 dark:text-white/80 bg-white dark:bg-white/10 rounded-full border border-red-200 dark:border-white/10">
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
@@ -227,119 +225,61 @@ const SAATeam = () => {
           <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl font-normal text-gray-600 dark:text-[#A7ADBE] sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-6xl mx-auto">
             Fostering Connections and Facilitating Tech Receiving Alumni Cooperation through Collaboration and Active Engagement.
           </p>
-
-          {/* Year Carousel */}
-          <div className="flex justify-center mb-8">
-            <div className="relative max-w-[300px] sm:max-w-[400px] md:max-w-lg">
-              {/* Left Navigation */}
-              {years.length > 4 && (
-                <button
-                  onClick={() => {
-                    const container = document.getElementById('year-carousel');
-                    container.scrollBy({ left: -120, behavior: 'smooth' });
-                  }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-              )}
-              
-              {/* Scrollable Years */}
-              <div 
-                id="year-carousel"
-                className="flex items-center gap-2 sm:gap-3 p-1 sm:p-1.5 bg-gray-100/80 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg overflow-x-auto scrollbar-hide"
-                style={{
-                  scrollbarWidth: 'none',
-                  msOverflowStyle: 'none'
-                }}
-              >
-                {years.map((year) => (
-                  <button
-                    key={year}
-                    onClick={() => setSelectedYear(year)}
-                    className={`flex-shrink-0 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 transform hover:scale-105 whitespace-nowrap ${
-                      selectedYear === year
-                        ? 'bg-white dark:bg-black text-red-600 dark:text-red-400 shadow-md border border-red-200 dark:border-red-800'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-white/50 dark:hover:bg-black/50'
-                    }`}
-                  >
-                    Team '{year.slice(-2)}
-                  </button>
-                ))}
-              </div>
-              
-              {/* Right Navigation */}
-              {years.length > 4 && (
-                <button
-                  onClick={() => {
-                    const container = document.getElementById('year-carousel');
-                    container.scrollBy({ left: 120, behavior: 'smooth' });
-                  }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-4 w-8 h-8 sm:w-10 sm:h-10 bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              )}
-            </div>
-          </div>
         </div>
 
-        {/* Team Sections */}
+        {/* All Teams - Continuous Scrollable Layout */}
         <div className="relative z-10">
-          <RoleSection 
-            title="VICE PRESIDENT" 
-            members={groupedMembers.vicePresident || []} 
-            isCenter={true}
-          />
-          
-          <RoleSection 
-            title="OVERALL COORDINATORS" 
-            members={groupedMembers.overallCoordinators || []}
-          />
-          
-          <RoleSection 
-            title="COORDINATORS" 
-            members={groupedMembers.coordinators || []}
-          />
-          
-          <RoleSection 
-            title="CORE MEMBERS" 
-            members={groupedMembers.coreMembers || []}
-          />
-          
-          {groupedMembers.others && groupedMembers.others.length > 0 && (
-            <RoleSection 
-              title="TEAM MEMBERS" 
-              members={groupedMembers.others}
-            />
-          )}
-        </div>
+          {years.map((year, yearIndex) => {
+            const teamData = teamDataByYear[year] || [];
+            if (teamData.length === 0) return null;
 
-        {/* No data fallback */}
-        {currentTeamData.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-500 dark:text-gray-400 text-lg">
-              No team data available for {selectedYear}
-            </p>
-          </div>
-        )}
+            const groupedMembers = groupMembersByPosition(teamData);
+
+            return (
+              <div key={year} className={`mb-20 sm:mb-24 md:mb-32 ${yearIndex > 0 ? 'pt-12 sm:pt-16 md:pt-20 border-t-2 border-gray-200 dark:border-gray-800' : ''}`}>
+                {/* Year Header */}
+                <div className="mb-12 sm:mb-16">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-3">
+                    Team {year}
+                  </h2>
+                  <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+                </div>
+
+                {/* Team Sections for this year */}
+                <RoleSection 
+                  title="VICE PRESIDENT" 
+                  members={groupedMembers.vicePresident || []} 
+                  isCenter={true}
+                />
+                
+                <RoleSection 
+                  title="OVERALL COORDINATORS" 
+                  members={groupedMembers.overallCoordinators || []}
+                />
+                
+                <RoleSection 
+                  title="COORDINATORS" 
+                  members={groupedMembers.coordinators || []}
+                />
+                
+                <RoleSection 
+                  title="CORE MEMBERS" 
+                  members={groupedMembers.coreMembers || []}
+                />
+                
+                {groupedMembers.others && groupedMembers.others.length > 0 && (
+                  <RoleSection 
+                    title="TEAM MEMBERS" 
+                    members={groupedMembers.others}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
 
         {/* Custom CSS */}
         <style jsx>{`
-          .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-          #year-carousel {
-            scroll-behavior: smooth;
-          }
           @keyframes float {
             0%, 100% { transform: translateY(0px) scale(1); }
             50% { transform: translateY(-5px) scale(1.02); }
