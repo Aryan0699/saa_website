@@ -1,9 +1,5 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
+import BounceCards from './BounceCards';
 
 // ============================================
 // IMPORT YOUR IMAGES HERE - ONE BY ONE
@@ -155,240 +151,34 @@ const galleryData = [
 ];
 
 // ============================================
-// CARD COMPONENT
-// ============================================
-function Card({ title, src }) {
-  // Debug: Log if image source is missing
-  if (!src) {
-    console.error(`Missing image source for card: ${title}`);
-  }
-
-  return (
-    <div
-      className="relative rounded-lg md:rounded-xl overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300"
-      style={{ 
-        width: '100%',
-        maxWidth: 600, 
-        margin: '0 auto',
-        willChange: 'transform',
-        userSelect: 'none',
-        WebkitUserSelect: 'none',
-        MozUserSelect: 'none',
-        msUserSelect: 'none'
-      }}
-    >
-      {/* Folded corner */}
-      <div
-        className="absolute -top-3 -right-3 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-red-600 rotate-45 transition-all duration-300 pointer-events-none"
-        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
-      />
-      
-      {/* Header */}
-      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 pt-3 sm:pt-4 relative z-10 pointer-events-none">
-        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-sm overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white shrink-0">
-          <img 
-            src={src} 
-            alt={`${title} thumb`} 
-            className="w-full h-full object-cover bg-white"
-            loading="lazy"
-            draggable="false"
-            onError={(e) => {
-              console.error(`Failed to load thumbnail image: ${src}`);
-              e.target.style.backgroundColor = '#ffffff';
-            }}
-          />
-        </div>
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white bg-red-600 px-2 sm:px-3 py-1 rounded-md truncate">
-          {title}
-        </h3>
-      </div>
-
-      {/* Main Image */}
-      <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 pointer-events-none">
-        <div className="rounded-lg overflow-hidden border border-red-200 dark:border-[#1e40af] bg-white">
-          <img
-            src={src}
-            alt={title}
-            className="w-full h-[180px] xs:h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] object-cover bg-white"
-            loading="lazy"
-            draggable="false"
-            onError={(e) => {
-              console.error(`Failed to load main image: ${src}`);
-              e.target.style.backgroundColor = '#ffffff';
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ============================================
 // EVENT DECK COMPONENT
 // ============================================
-function EventDeck({ title, images }) {
-  // Debug: Log event deck info
-  console.log(`EventDeck: ${title}, Images count: ${images.length}`);
+function EventDeck({ images }) {
+  // Take first 5 images for bounce cards display
+  const displayImages = images.slice(0, 5).map(imgKey => IMAGE_MAP[imgKey]);
   
-  // Duplicate slides to ensure proper infinite looping
-  const minimumSlides = 9;
-  const duplicatedImages = [];
-  
-  while (duplicatedImages.length < minimumSlides) {
-    images.forEach((imgKey) => {
-      duplicatedImages.push(imgKey);
-    });
-  }
+  // Responsive transform styles
+  const transformStyles = [
+    "rotate(5deg) translate(-150px)",
+    "rotate(0deg) translate(-70px)",
+    "rotate(-5deg)",
+    "rotate(5deg) translate(70px)",
+    "rotate(-5deg) translate(150px)"
+  ];
 
   return (
-    <div className="relative mx-auto w-full px-2 sm:px-4">
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          .gallery-swiper {
-            padding-bottom: 20px;
-            overflow: visible !important;
-          }
-          .gallery-swiper .swiper-wrapper {
-            align-items: center;
-          }
-          .gallery-swiper .swiper-slide {
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .gallery-swiper .swiper-slide-active {
-            z-index: 2;
-          }
-          .gallery-swiper .swiper-slide-prev,
-          .gallery-swiper .swiper-slide-next {
-            opacity: 0.85;
-          }
-          .gallery-swiper .swiper-button-next,
-          .gallery-swiper .swiper-button-prev {
-            background: rgba(255, 0, 0, 0.9);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white !important;
-            transition: all 0.3s ease;
-          }
-          .gallery-swiper .swiper-button-next:hover,
-          .gallery-swiper .swiper-button-prev:hover {
-            background: rgba(255, 0, 0, 1);
-            transform: scale(1.1);
-          }
-          .gallery-swiper .swiper-button-next::after,
-          .gallery-swiper .swiper-button-prev::after {
-            font-size: 18px;
-            font-weight: bold;
-          }
-          @media (max-width: 640px) {
-            .gallery-swiper .swiper-button-next,
-            .gallery-swiper .swiper-button-prev {
-              width: 32px;
-              height: 32px;
-            }
-            .gallery-swiper .swiper-button-next::after,
-            .gallery-swiper .swiper-button-prev::after {
-              font-size: 14px;
-            }
-          }
-        `
-      }} />
-
-      <div className="mx-auto gallery-swiper" style={{ maxWidth: 700 }}>
-        <Swiper
-          modules={[Autoplay, EffectCoverflow, Navigation]}
-          effect="coverflow"
-          coverflowEffect={{
-            rotate: 15,
-            stretch: 0,
-            depth: 200,
-            modifier: 1,
-            slideShadows: false,
-          }}
-          navigation={true}
-          centeredSlides={true}
-          slidesPerView="auto"
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 8
-            },
-            480: { 
-              slidesPerView: 1.1,
-              spaceBetween: 10
-            },
-            640: { 
-              slidesPerView: 1.15,
-              spaceBetween: 12
-            },
-            768: { 
-              slidesPerView: 1.2,
-              spaceBetween: 16
-            },
-            1024: { 
-              slidesPerView: 1.3,
-              spaceBetween: 20
-            },
-            1280: { 
-              slidesPerView: 1.4,
-              spaceBetween: 24
-            },
-          }}
-          spaceBetween={8}
-          loop={true}
-          loopedSlides={minimumSlides}
-          loopAdditionalSlides={3}
-          slideToClickedSlide={true}
-          watchSlidesProgress={true}
-          watchOverflow={false}
-          grabCursor={true}
-          touchRatio={1.5}
-          touchAngle={45}
-          threshold={10}
-          longSwipesRatio={0.3}
-          longSwipesMs={150}
-          shortSwipes={true}
-          resistanceRatio={0.5}
-          allowTouchMove={true}
-          simulateTouch={true}
-          touchStartPreventDefault={false}
-          touchMoveStopPropagation={false}
-          preventInteractionOnTransition={false}
-          runCallbacksOnInit={true}
-          observer={true}
-          observeParents={true}
-          observeSlideChildren={true}
-          updateOnWindowResize={true}
-          resizeObserver={true}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            reverseDirection: false,
-          }}
-          speed={600}
-          className="w-full"
-        >
-          {duplicatedImages.map((imageKey, idx) => {
-            const src = IMAGE_MAP[imageKey];
-            
-            // Debug: Log if image is missing from IMAGE_MAP
-            if (!src) {
-              console.error(`Image key "${imageKey}" not found in IMAGE_MAP`);
-            }
-            
-            return (
-              <SwiperSlide key={`${title}-slide-${idx}-${imageKey}`}>
-                <Card title={title} src={src} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+    <div className="relative mx-auto w-full px-2 sm:px-4 py-8">
+      <BounceCards
+        className="custom-bounceCards"
+        images={displayImages}
+        containerWidth={600}
+        containerHeight={300}
+        animationDelay={0.3}
+        animationStagger={0.08}
+        easeType="elastic.out(1, 0.5)"
+        transformStyles={transformStyles}
+        enableHover={true}
+      />
     </div>
   );
 }
@@ -397,12 +187,6 @@ function EventDeck({ title, images }) {
 // MAIN GALLERY COMPONENT
 // ============================================
 export default function Gallery() {
-  // Debug: Log gallery data on mount
-  React.useEffect(() => {
-    console.log('Gallery Data:', galleryData);
-    console.log('Image Map Keys:', Object.keys(IMAGE_MAP));
-  }, []);
-
   return (
     <div className="relative min-h-screen pt-28 pb-16 px-4 sm:px-6 lg:px-8 mt-10">
       <div className="fixed inset-0 -z-10 pointer-events-none">
@@ -416,7 +200,7 @@ export default function Gallery() {
               {event.title}
             </h2>
 
-            <EventDeck title={event.title} images={event.images} />
+            <EventDeck images={event.images} />
           </section>
         ))}
       </div>
