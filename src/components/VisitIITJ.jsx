@@ -150,7 +150,7 @@ const SAATeam = () => {
     <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl">
       <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative">
         
-        <h1 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4 hover-underline-animation">
           Normal Visit
         </h1>
   
@@ -290,7 +290,7 @@ export default function VisitIITJ() {
       <section className="text-black dark:text-white py-8 sm:py-12">
         <div className="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6 justify-items-center">
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 mt-16 md:mt-0 text-4xl sm:text-5xl tracking-tight font-bold text-black dark:text-white">
+            <h2 className="mb-4 mt-16 md:mt-0 text-4xl sm:text-5xl tracking-tight font-bold text-black dark:text-white hover-underline-animation">
               Visit IIT Jodhpur
             </h2>
             <p className="mb-6 font-normal text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -312,7 +312,7 @@ export default function VisitIITJ() {
       {/* Flip Card Carousel */}
       <section className="py-12 sm:py-16">
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white hover-underline-animation">
             Our Campus Highlights
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-2 text-base sm:text-lg">

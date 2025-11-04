@@ -118,11 +118,11 @@ export default function InternBridge() {
         </div>
 
         <div className="mb-16 sm:mb-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-red-600 dark:text-red-400">
-            Intern Bridge Program
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-red-600 dark:text-red-400 hover-underline-animation">
+            Intern Bridge Initiative
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 text-black dark:text-gray-300">
-            IBP
+            IBI
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-800 dark:text-gray-200 max-w-3xl mx-auto">
             Connecting students with industry professionals to launch successful careers through internships and mentorship.

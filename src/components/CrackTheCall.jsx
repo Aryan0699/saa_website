@@ -125,7 +125,7 @@ export default function CrackTheCall() {
         </div>
 
         <div className="mb-16 sm:mb-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-red-600 dark:text-red-400">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 text-red-600 dark:text-red-400 hover-underline-animation">
             Crack the Call
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-black dark:text-gray-300">

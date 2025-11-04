@@ -218,7 +218,7 @@ const SAATeam = () => {
             Meet the Team
           </div>
 
-          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent px-2">
+          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent px-2 hover-underline-animation">
             SAA Team
           </h1>
    
@@ -239,7 +239,7 @@ const SAATeam = () => {
               <div key={year} className={`mb-20 sm:mb-24 md:mb-32 ${yearIndex > 0 ? 'pt-12 sm:pt-16 md:pt-20 border-t-2 border-gray-200 dark:border-gray-800' : ''}`}>
                 {/* Year Header */}
                 <div className="mb-12 sm:mb-16">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-3">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-3 hover-underline-animation">
                     Team {year}
                   </h2>
                   <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
