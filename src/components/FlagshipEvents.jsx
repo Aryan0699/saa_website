@@ -409,11 +409,6 @@ export default function FlagshipEvents() {
           ))}
         </div>
 
-        <div className="mt-12 lg:mt-16 text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600">
-            <div className="w-3 h-3 bg-white dark:bg-gray-100 rounded-full animate-pulse"></div>
-          </div>
-        </div>
       </div>
 
       {/* Event Modal */}

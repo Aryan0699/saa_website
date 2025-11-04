@@ -3,6 +3,17 @@ import logo from "../assets/saa_logo_no_background.png";
 
 const Footer = () => {
   return (
+    <>
+      <style>
+        {`
+          .footer-accent {
+            color: #ef4444; /* red-500 */
+          }
+          .dark .footer-accent {
+            color: #2563eb; /* blue-600 */
+          }
+        `}
+      </style>
     <footer className="w-full bg-white/80 dark:bg-black/10 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
         
@@ -25,7 +36,7 @@ const Footer = () => {
           
           {/* Resources Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-red-500 dark:text-blue-300 uppercase hover-underline-animation">
+            <h3 className="text-lg font-bold mb-4 footer-accent uppercase hover-underline-animation">
               Resources
             </h3>
             <ul className="space-y-2.5">
@@ -66,7 +77,7 @@ const Footer = () => {
 
           {/* Quick Access Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-red-500 dark:text-blue-300 uppercase hover-underline-animation">
+            <h3 className="text-lg font-bold mb-4 footer-accent uppercase hover-underline-animation">
               Quick Access
             </h3>
             <ul className="space-y-2.5">
@@ -103,14 +114,14 @@ const Footer = () => {
 
           {/* Connect With Us Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-red-500 dark:text-blue-300 uppercase hover-underline-animation">
+            <h3 className="text-lg font-bold mb-4 footer-accent uppercase hover-underline-animation">
               Connect With Us
             </h3>
             
             {/* Contact Details */}
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-2">
-                <svg className="w-5 h-5 mt-0.5 text-red-500 dark:text-blue-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
                 <span className="text-gray-700 dark:text-gray-300 text-sm">
@@ -119,7 +130,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start gap-2">
-                <svg className="w-5 h-5 mt-0.5 text-red-500 dark:text-blue-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
@@ -183,7 +194,7 @@ const Footer = () => {
 
           {/* Contact Us Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-red-500 dark:text-blue-300 uppercase hover-underline-animation">
+            <h3 className="text-lg font-bold mb-4 footer-accent uppercase hover-underline-animation">
               Contact Us
             </h3>
             
@@ -203,7 +214,7 @@ const Footer = () => {
                   href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(IIT),+Jodhpur/@26.4710115,73.1086586,17z/data=!4m10!1m2!2m1!1sIIT+JODHPUT!3m6!1s0x39418c5ea672337b:0xb6c9a5a9b08db22e!8m2!3d26.4710115!4d73.1134222!15sCgtJSVQgSk9ESFBVUpIBFHRlY2huaWNhbF91bml2ZXJzaXR5qgEzEAEyHhABIhq-jvzLu99otABrlFoPzb9UTf6DPfaHULyJezIPEAIiC2lpdCBqb2RocHVy4AEA!16s%2Fm%2F04ydk20?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-sm text-red-500 dark:text-blue-300 hover:text-red-700 dark:hover:text-blue-200 transition-colors duration-200 hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-1 mt-3 text-sm footer-accent hover:text-red-700 dark:hover:text-blue-200 transition-colors duration-200 hover:underline underline-offset-4"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -225,7 +236,7 @@ const Footer = () => {
             
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
               <span>Made with</span>
-              <svg className="w-4 h-4 text-red-500 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 footer-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"/>
               </svg>
               <span>by SAA Tech Team</span>
@@ -235,6 +246,7 @@ const Footer = () => {
 
       </div>
     </footer>
+    </>
   );
 };
 

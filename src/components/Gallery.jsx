@@ -144,8 +144,8 @@ const galleryData = [
     images: ['farewell_1', 'farewell_2', 'farewell_3','farewell_4', 'farewell_5', 'farewell_6'],
   },
   {
-    id: 'Insti',
-    title: 'Insti',
+    id: 'Institute',
+    title: 'Institute',
     images: ['alt_1','alt_2','alt_3','alt_4','alt_5','alt_6','alt_7','alt_8','alt_9','alt_10','alt_11','alt_12','alt_13','alt_14','alt_15','alt_16','alt_17','alt_18','alt_19','alt_20','alt_21','alt_22','alt_23','alt_24','alt_25','alt_26','alt_27','alt_28'],
   },
 ];
