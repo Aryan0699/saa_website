@@ -6,6 +6,10 @@
   width: 400px;
   height: 400px;
   margin: 0 auto;
+  /* Performance optimization */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .card {
@@ -18,6 +22,11 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+  /* Performance optimization */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .card:hover {
@@ -28,6 +37,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Image optimization */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Responsive adjustments */

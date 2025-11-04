@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { gsap } from 'gsap';
 import './BounceCards.css';
 
@@ -9,7 +9,6 @@ export default function BounceCards({
   containerHeight = 400,
   animationDelay = 0.5,
   animationStagger = 0.06,
-  easeType = 'elastic.out(1, 0.8)',
   transformStyles = [
     'rotate(10deg) translate(-170px)',
     'rotate(5deg) translate(-85px)',
@@ -19,18 +18,21 @@ export default function BounceCards({
   ],
   enableHover = true
 }) {
+  const hoverTimeoutRef = useRef(null);
+  const isAnimatingRef = useRef(false);
   useEffect(() => {
+    // Optimize initial animation with reduced stagger for better performance
     gsap.fromTo(
       '.card',
-      { scale: 0 },
+      { scale: 0, rotation: 0 },
       {
         scale: 1,
-        stagger: animationStagger,
-        ease: easeType,
-        delay: animationDelay
+        stagger: animationStagger * 0.5, // Reduced stagger for faster loading
+        ease: 'power2.out', // Simpler easing for better performance
+        delay: animationDelay * 0.5 // Reduced delay
       }
     );
-  }, [animationStagger, easeType, animationDelay]);
+  }, [animationStagger, animationDelay]);
 
   const getNoRotationTransform = transformStr => {
     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
@@ -55,52 +57,71 @@ export default function BounceCards({
     }
   };
 
-  const pushSiblings = hoveredIdx => {
+  const pushSiblings = useCallback((hoveredIdx) => {
+    if (!enableHover || isAnimatingRef.current) return;
+
+    isAnimatingRef.current = true;
+
+    // Clear any existing timeout
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+
+    // Debounce hover animations
+    hoverTimeoutRef.current = setTimeout(() => {
+      images.forEach((_, i) => {
+        gsap.killTweensOf(`.card-${i}`);
+
+        const baseTransform = transformStyles[i] || 'none';
+
+        if (i === hoveredIdx) {
+          const noRotationTransform = getNoRotationTransform(baseTransform);
+          gsap.to(`.card-${i}`, {
+            transform: noRotationTransform,
+            duration: 0.3, // Reduced duration for snappier response
+            ease: 'power2.out', // Simpler easing
+            overwrite: 'auto',
+            onComplete: () => { isAnimatingRef.current = false; }
+          });
+        } else {
+          const offsetX = i < hoveredIdx ? -120 : 120; // Reduced offset for better performance
+          const pushedTransform = getPushedTransform(baseTransform, offsetX);
+
+          const distance = Math.abs(hoveredIdx - i);
+          const delay = distance * 0.03; // Reduced delay
+
+          gsap.to(`.card-${i}`, {
+            transform: pushedTransform,
+            duration: 0.3,
+            ease: 'power2.out',
+            delay,
+            overwrite: 'auto'
+          });
+        }
+      });
+    }, 50); // 50ms debounce
+  }, [enableHover, images, transformStyles]);
+
+  const resetSiblings = useCallback(() => {
     if (!enableHover) return;
-    images.forEach((_, i) => {
-      gsap.killTweensOf(`.card-${i}`);
 
-      const baseTransform = transformStyles[i] || 'none';
+    // Clear timeout on mouse leave
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
 
-      if (i === hoveredIdx) {
-        const noRotationTransform = getNoRotationTransform(baseTransform);
-        gsap.to(`.card-${i}`, {
-          transform: noRotationTransform,
-          duration: 0.4,
-          ease: 'back.out(1.4)',
-          overwrite: 'auto'
-        });
-      } else {
-        const offsetX = i < hoveredIdx ? -160 : 160;
-        const pushedTransform = getPushedTransform(baseTransform, offsetX);
-
-        const distance = Math.abs(hoveredIdx - i);
-        const delay = distance * 0.05;
-
-        gsap.to(`.card-${i}`, {
-          transform: pushedTransform,
-          duration: 0.4,
-          ease: 'back.out(1.4)',
-          delay,
-          overwrite: 'auto'
-        });
-      }
-    });
-  };
-
-  const resetSiblings = () => {
-    if (!enableHover) return;
     images.forEach((_, i) => {
       gsap.killTweensOf(`.card-${i}`);
       const baseTransform = transformStyles[i] || 'none';
       gsap.to(`.card-${i}`, {
         transform: baseTransform,
-        duration: 0.4,
-        ease: 'back.out(1.4)',
-        overwrite: 'auto'
+        duration: 0.2, // Faster reset
+        ease: 'power2.out',
+        overwrite: 'auto',
+        onComplete: () => { isAnimatingRef.current = false; }
       });
     });
-  };
+  }, [enableHover, images, transformStyles]);
 
   return (
     <div
@@ -121,7 +142,18 @@ export default function BounceCards({
           onMouseEnter={() => pushSiblings(idx)}
           onMouseLeave={resetSiblings}
         >
-          <img className="image" src={src} alt={`card-${idx}`} />
+          <img
+            className="image"
+            src={src}
+            alt={`card-${idx}`}
+            loading="lazy"
+            decoding="async"
+            fetchpriority={idx === 0 ? "high" : "low"}
+            style={{
+              willChange: 'transform',
+              transform: 'translateZ(0)', // Force GPU acceleration
+            }}
+          />
         </div>
       ))}
     </div>
