@@ -1,5 +1,33 @@
 import { useState } from 'react';
 import { teamDataByYear } from '../utils/TeamData';
+import ChromaGrid from './ChromaGrid';
+
+// Gradient color palette for cards
+const gradientColors = [
+  { borderColor: '#3B82F6', gradient: 'linear-gradient(145deg, #3B82F6, #000)' },
+  { borderColor: '#10B981', gradient: 'linear-gradient(180deg, #10B981, #000)' },
+  { borderColor: '#8B5CF6', gradient: 'linear-gradient(225deg, #8B5CF6, #000)' },
+  { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg, #F59E0B, #000)' },
+  { borderColor: '#EF4444', gradient: 'linear-gradient(195deg, #EF4444, #000)' },
+  { borderColor: '#06B6D4', gradient: 'linear-gradient(135deg, #06B6D4, #000)' },
+  { borderColor: '#EC4899', gradient: 'linear-gradient(210deg, #EC4899, #000)' },
+  { borderColor: '#14B8A6', gradient: 'linear-gradient(155deg, #14B8A6, #000)' },
+];
+
+// Convert team member data to ChromaGrid format
+const convertToChromaGridItem = (member, index) => {
+  const colorScheme = gradientColors[index % gradientColors.length];
+  return {
+    image: member.img,
+    title: member.name,
+    subtitle: member.position,
+    handle: member.verticle || '',
+    location: member.verticle ? `${member.verticle}` : '',
+    borderColor: colorScheme.borderColor,
+    gradient: colorScheme.gradient,
+    url: member.linkedin || member.instagram || member.mailto || '#'
+  };
+};
 
 // ========================
 // Social Media Icons - UPDATED FOR RESPONSIVENESS
@@ -107,7 +135,7 @@ const TeamMemberCard = ({ member }) => (
 );
 
 // ========================
-// Role Section
+// Role Section with ChromaGrid
 // ========================
 
 const RoleSection = ({ title, members, isCenter = false }) => {
@@ -115,6 +143,9 @@ const RoleSection = ({ title, members, isCenter = false }) => {
 
   // Determine if we should center this section (few members or explicitly requested)
   const shouldCenter = isCenter || members.length <= 2;
+
+  // Convert members to ChromaGrid format
+  const chromaItems = members.map((member, idx) => convertToChromaGridItem(member, idx));
 
   return (
     <div className="mb-12 sm:mb-16">
@@ -127,20 +158,17 @@ const RoleSection = ({ title, members, isCenter = false }) => {
         <div className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent flex-1 max-w-32 sm:max-w-48"></div>
       </div>
 
-      {/* Members Grid - Responsive (uses flex to center few items) */}
-      {shouldCenter ? (
-        <div className="flex justify-center flex-wrap gap-6 sm:gap-8 w-full max-w-7xl mx-auto px-2">
-          {members.map((member, idx) => (
-            <TeamMemberCard key={idx} member={member} />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 w-full max-w-7xl mx-auto px-2 overflow-x-hidden justify-items-center">
-          {members.map((member, idx) => (
-            <TeamMemberCard key={idx} member={member} />
-          ))}
-        </div>
-      )}
+      {/* Members Grid with ChromaGrid */}
+      <div className="w-full max-w-7xl mx-auto px-2" style={{ minHeight: shouldCenter ? 'auto' : '600px' }}>
+        <ChromaGrid 
+          items={chromaItems}
+          radius={300}
+          columns={shouldCenter ? members.length : 4}
+          damping={0.45}
+          fadeOut={0.6}
+          ease="power3.out"
+        />
+      </div>
     </div>
   );
 };
