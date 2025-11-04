@@ -13,20 +13,17 @@ import g5 from "../assets/g5.jpg";
 import g6 from "../assets/g6.jpg";
 import g7 from "../assets/g7.jpg";
 import g8 from "../assets/g8.jpg";
-import g9 from "../assets/g9.png";
 import g10 from "../assets/g10.jpg";
 import VisitIITj from "../assets/Visitiitj.jpg";
-import ParticlesBg from './ParticlesBg';
 import mahi from '../../asset/mahi_team.jpg';
 import raghuveer from '../../asset/raghuveer_team.jpg';
 
-// Inline CSS for FlipCard, Bloom Effect
+// Inline CSS for FlipCard
 const styles = `
 .flip-card {
   background-color: transparent;
   width: 100%;
   height: 16rem;
-  perspective: 1000px;
   cursor: pointer;
 }
 
@@ -34,12 +31,11 @@ const styles = `
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s ease;
+  transition: transform 0.5s ease;
   transform-style: preserve-3d;
 }
 
-.flip-card.flipped .flip-card-inner,
-.flip-card:hover .flip-card-inner {
+.flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -62,7 +58,7 @@ const styles = `
 }
 
 .flip-card-back {
-  background-color: #ff0000;
+  background-color: #1f2937;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,29 +68,6 @@ const styles = `
   text-align: center;
   padding: 1rem;
   transform: rotateY(180deg);
-}
-
-/* Bloom effect animation */
-@keyframes bloom {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-    filter: brightness(0.8) blur(4px);
-  }
-  60% {
-    transform: scale(1.05);
-    opacity: 1;
-    filter: brightness(1.2) blur(0);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    filter: brightness(1);
-  }
-}
-
-.bloom-effect {
-  animation: bloom 1.2s ease-out forwards;
 }
 
 /* Responsive icon fixes */
@@ -174,36 +147,31 @@ const EmailIcon = ({ className = "" }) => (
 
 const SAATeam = () => {
   return (
-    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10">
-      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative overflow-hidden">
+    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl">
+      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative">
         
-        <h1 className="text-4xl font-extrabold text-black dark:text-white">
+        <h1 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4">
           Normal Visit
         </h1>
   
-        <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-gray-600 dark:text-white/80 sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-6xl mx-auto">
-          Contact Us.
+        <p className="mb-8 sm:mb-10 text-base sm:text-lg md:text-xl font-normal text-gray-600 dark:text-gray-300 sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-4xl mx-auto">
+          Contact Us
         </p>
       </div>
 
       {/* Team Cards Grid */}
       <div className="relative z-10 flex justify-center w-full">
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-7xl">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 max-w-7xl px-4">
           {teamData.map((member, idx) => (
             <div
               key={idx}
-              className="group relative bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/50 dark:border-white/10 hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 w-full sm:w-80 md:w-72 lg:w-80 min-h-[400px]"
+              className="group bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 w-full sm:w-80 md:w-72 lg:w-80"
             >
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <div className="relative z-10 flex flex-col items-center text-center h-full">
+              <div className="flex flex-col items-center text-center h-full">
                 {/* Profile Image */}
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300 animate-pulse"></div>
-                  
+                <div className="mb-4 sm:mb-6">
                   <img
-                    className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full object-cover ring-4 ring-red-200 dark:ring-red-800 shadow-xl group-hover:ring-red-400 dark:group-hover:ring-red-600 transition-all duration-300"
+                    className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full object-cover ring-2 ring-gray-300 dark:ring-gray-600"
                     src={member.img}
                     alt={member.name}
                   />
@@ -211,7 +179,7 @@ const SAATeam = () => {
 
                 {/* Name and Role */}
                 <div className="mb-4 sm:mb-6 flex-grow flex flex-col justify-center">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 group-hover:text-red-600 dark:group-hover:text-[#60a5fa] transition-colors duration-300 hover-underline-animation">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     {member.name}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium">
@@ -219,7 +187,7 @@ const SAATeam = () => {
                   </p>
                 </div>
 
-                {/* UPDATED Social Icons - FIXED RESPONSIVENESS */}
+                {/* Social Icons */}
                 <div className="flex items-center justify-center space-x-3 sm:space-x-4 mt-auto">
                   {/* Instagram */}
                   {member.instagram && member.instagram !== '#' && (
@@ -227,11 +195,10 @@ const SAATeam = () => {
                       href={member.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon-container group/icon relative bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full hover:from-pink-600 hover:to-purple-700 transform hover:scale-110 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Follow ${member.name} on Instagram`}
                     >
                       <InstagramIcon />
-                      <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full blur opacity-0 group-hover/icon:opacity-30 transition-opacity duration-200"></div>
                     </a>
                   )}
 
@@ -241,11 +208,10 @@ const SAATeam = () => {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon-container group/icon relative bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full hover:from-blue-600 hover:to-blue-800 transform hover:scale-110 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Connect with ${member.name} on LinkedIn`}
                     >
                       <LinkedInIcon />
-                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur opacity-0 group-hover/icon:opacity-30 transition-opacity duration-200"></div>
                     </a>
                   )}
 
@@ -253,18 +219,14 @@ const SAATeam = () => {
                   {member.mailto && (
                     <a
                       href={member.mailto}
-                      className="social-icon-container group/icon relative bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full hover:from-green-600 hover:to-emerald-700 transform hover:scale-110 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Email ${member.name}`}
                     >
                       <EmailIcon />
-                      <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full blur opacity-0 group-hover/icon:opacity-30 transition-opacity duration-200"></div>
                     </a>
                   )}
                 </div>
               </div>
-
-              {/* Hover border */}
-              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-blue-200 dark:group-hover:border-blue-800 transition-colors duration-300"></div>
             </div>
           ))}
         </div>
@@ -325,21 +287,21 @@ export default function VisitIITJ() {
       <style>{styles}</style>
 
       {/* Hero Section */}
-      <section className="text-black dark:text-white">
-        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 justify-items-center">
+      <section className="text-black dark:text-white py-8 sm:py-12">
+        <div className="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6 justify-items-center">
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 mt-24 flex justify-center md:block lg:mt-0 text-5xl tracking-tight font-semibold text-black dark:text-white">
+            <h2 className="mb-4 mt-16 md:mt-0 text-4xl sm:text-5xl tracking-tight font-bold text-black dark:text-white">
               Visit IIT Jodhpur
             </h2>
-            <p className="mb-6 font-light text-xl text-center md:text-start md:text-2xl text-gray-950 dark:text-gray-200">
+            <p className="mb-6 font-normal text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
               We invite you to tour IIT Jodhpur's impressive and picturesque campus, where you can see the foundation of our impactful endeavors.
             </p>
           </div>
-          <div className="box" style={{ animation: 'circle 1.5s', clipPath: 'circle(75%)' }}>
+          <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
               src={VisitIITj}
-              alt="dashboard image"
-              className="rounded-2xl shadow-lg bloom-effect mt-16"
+              alt="IIT Jodhpur Campus"
+              className="w-full h-auto"
               width={600}
               height={400}
             />
@@ -348,10 +310,14 @@ export default function VisitIITJ() {
       </section>
 
       {/* Flip Card Carousel */}
-      <section className="py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-extrabold text-black dark:text-white">Our Campus Highlights</h2>
-          <p className="text-gray-600 dark:text-gray-300 mt-2">Tap or hover to flip and explore</p>
+      <section className="py-12 sm:py-16">
+        <div className="text-center mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white">
+            Our Campus Highlights
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-2 text-base sm:text-lg">
+            Tap to flip and explore
+          </p>
         </div>
         <div className="w-full max-w-7xl mx-auto overflow-hidden px-4">
           <Swiper
@@ -359,7 +325,7 @@ export default function VisitIITJ() {
             loop={true}
             loopAdditionalSlides={2}
             autoplay={{ 
-              delay: 3000, 
+              delay: 4000, 
               disableOnInteraction: false,
               pauseOnMouseEnter: true
             }}
@@ -369,7 +335,7 @@ export default function VisitIITJ() {
             grabCursor={true}
             touchRatio={1}
             threshold={5}
-            speed={600}
+            speed={500}
             breakpoints={{
               480: { slidesPerView: 1.3, spaceBetween: 20 },
               640: { slidesPerView: 1.5, spaceBetween: 24 },
