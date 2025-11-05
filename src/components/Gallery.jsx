@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import BounceCards from './BounceCards';
+import QuiltedImageList from './QuiltedImageList';
 
 // ============================================
 // IMPORT YOUR IMAGES HERE - ONE BY ONE
@@ -151,12 +151,11 @@ const galleryData = [
 ];
 
 // ============================================
-// EVENT DECK COMPONENT WITH LAZY LOADING AND IMAGE OPTIMIZATION
+// EVENT DECK COMPONENT WITH QUILTED IMAGE LIST
 // ============================================
 function EventDeck({ images }) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(0);
   const deckRef = useRef(null);
 
   useEffect(() => {
@@ -169,8 +168,8 @@ function EventDeck({ images }) {
         }
       },
       {
-        threshold: 0.05, // Reduced threshold for earlier loading
-        rootMargin: '100px' // Increased root margin for earlier preloading
+        threshold: 0.05,
+        rootMargin: '100px'
       }
     );
 
@@ -185,69 +184,16 @@ function EventDeck({ images }) {
     };
   }, [hasBeenVisible]);
 
-  // Preload images when visible
-  useEffect(() => {
-    if (isVisible) {
-      const displayImages = images.slice(0, 5).map(imgKey => IMAGE_MAP[imgKey]);
-      let loaded = 0;
-      
-      displayImages.forEach((src) => {
-        const img = new Image();
-        img.onload = () => {
-          loaded++;
-          setImagesLoaded(loaded);
-        };
-        img.onerror = () => {
-          loaded++;
-          setImagesLoaded(loaded);
-        };
-        // Add srcset for responsive images
-        img.src = src;
-      });
-    }
-  }, [isVisible, images]);
-
-  // Take first 5 images for bounce cards display
-  const displayImages = images.slice(0, 5).map(imgKey => IMAGE_MAP[imgKey]);
-
-  // Responsive transform styles - optimized for performance
-  const transformStyles = [
-    "rotate(5deg) translate(-150px)",
-    "rotate(0deg) translate(-70px)",
-    "rotate(-5deg)",
-    "rotate(5deg) translate(70px)",
-    "rotate(-5deg) translate(150px)"
-  ];
-
-  const isFullyLoaded = imagesLoaded >= 5;
+  // Convert image keys to actual image sources
+  const displayImages = images.map(imgKey => IMAGE_MAP[imgKey]);
 
   return (
     <div ref={deckRef} className="relative mx-auto w-full px-2 sm:px-4 py-8">
       {isVisible ? (
-        <>
-          {!isFullyLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Loading {imagesLoaded}/5 images...
-                </p>
-              </div>
-            </div>
-          )}
-          <div className={`transition-opacity duration-500 ${isFullyLoaded ? 'opacity-100' : 'opacity-30'}`}>
-            <BounceCards
-              className="custom-bounceCards"
-              images={displayImages}
-              containerWidth={600}
-              containerHeight={300}
-              animationDelay={0.2}
-              animationStagger={0.05}
-              transformStyles={transformStyles}
-              enableHover={isFullyLoaded} // Only enable hover when fully loaded
-            />
-          </div>
-        </>
+        <QuiltedImageList
+          images={displayImages}
+          className="max-w-4xl mx-auto"
+        />
       ) : (
         // Skeleton loading placeholder
         <div className="flex items-center justify-center h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-inner">

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import ParticlesBg from './ParticlesBg';
 import { Helmet } from 'react-helmet';
 import about1 from "../assets/alt_5.jpg";
 import about2 from "../assets/alt_6.jpg";

@@ -29,44 +29,6 @@ import farewell_6 from '../assets/farewell_6.jpeg';
 
 
 
-const DURATION = 0.25;
-const STAGGER = 0.025;
-
-const FlipHeading = ({ text }) => {
-  const [flip, setFlip] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFlip((prev) => !prev);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <motion.h2 className="relative text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-8 lg:mb-12 leading-tight text-gray-900 dark:text-white">
-      {text.split('').map((char, i) => (
-        <span
-          key={i}
-          className="inline-block overflow-hidden h-[1.2em] w-fit align-middle"
-        >
-          <motion.span
-            initial={false}
-            animate={{ y: flip ? '-1.2em' : '0em' }}
-            transition={{
-              duration: DURATION,
-              ease: 'easeInOut',
-              delay: STAGGER * i,
-            }}
-            className="block"
-          >
-            <span className="block">{char === ' ' ? '\u00A0' : char}</span>
-            <span className="block">{char === ' ' ? '\u00A0' : char}</span>
-          </motion.span>
-        </span>
-      ))}
-    </motion.h2>
-  );
-};
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -386,7 +348,9 @@ export default function FlagshipEvents() {
   return (
     <section className="light:bg-gradient-to-br rounded-lg from-gray-50/10 to-blue-50/20 dark:bg-black/20 px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        <FlipHeading  text="Flagship Events of SAA" />
+        <h2 className="text-center font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-8 lg:mb-12 leading-tight text-gray-900 dark:text-white">
+          Flagship Events of SAA
+        </h2>
         <div className="flex flex-col gap-8 lg:gap-12 xl:gap-16">
           {events.map((event, index) => (
             <div key={index} className="w-full">

@@ -30,16 +30,16 @@ export default function Navbar() {
   }, [menuOpen]);
   
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center justify-between p-1 z-50 bg-white/80 dark:bg-black/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
+    <header className="fixed top-0 left-0 w-full flex items-center justify-between px-2 py-1 z-50 bg-white/80 dark:bg-black/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
       <div onClick={()=>
         {
           navigate("/");
         }
-      } className="text-gray-900 dark:text-white text-md sm:text-2xl flex items-center cursor-pointer">
+      } className="text-gray-900 dark:text-white text-sm sm:text-lg flex items-center cursor-pointer">
         <img
           src={logo}
           alt="SAA logo"
-          className="dark:invert w-[75px] h-[75px] sm:w-[100px] sm:h-[100px]"
+          className="dark:invert w-[45px] h-[45px] sm:w-[55px] sm:h-[55px]"
         />
         <Typewriter
           words={["Society of Alumni Affairs"]}
@@ -52,40 +52,40 @@ export default function Navbar() {
         />
       </div>
 
-      <nav className="absolute left-1/2 transform -translate-x-1/2 xl:flex hidden space-x-3 bg-gradient-to-r from-gray-100/80 to-gray-50/80 dark:bg-[radial-gradient(ellipse_80%_60%_at_top,rgba(255,255,255,0.1),#000000)] border border-gray-300/50 dark:border-white/10 px-2 py-1 rounded-full shadow-md text-sm backdrop-blur-sm">
+      <nav className="absolute left-1/2 transform -translate-x-1/2 xl:flex hidden space-x-2 bg-gradient-to-r from-gray-100/80 to-gray-50/80 dark:bg-[radial-gradient(ellipse_80%_60%_at_top,rgba(255,255,255,0.1),#000000)] border border-gray-300/50 dark:border-white/10 px-2 py-1 rounded-full shadow-md text-xs backdrop-blur-sm">
         <Link
           to="/"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           Home
         </Link>
         <Link
           to="/teams"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           Team
         </Link>
         <Link
           to="/initiatives"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           Initiatives
         </Link>
         <Link
           to="/visitIITJ"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           VisitIITJ
         </Link>
         <Link
           to="/community"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           Community
         </Link>
         <Link
           to="/gallery"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-4 py-2 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-3 py-1.5 rounded-full transition"
         >
           Gallery
         </Link>
@@ -145,17 +145,17 @@ export default function Navbar() {
         </Link> */}
       </nav>
 
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-2">
         <ThemeBtn />
         <div ref={menuRef}>
           <button
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="mr-3 p-2 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-black/30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-white/20"
+            className="mr-2 p-1.5 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-black/30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-white/20"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             <svg
-              className="h-6 w-6 transition-transform duration-200"
+              className="h-5 w-5 transition-transform duration-200"
               stroke="currentColor"
               fill="none"
               viewBox="0 0 24 24"

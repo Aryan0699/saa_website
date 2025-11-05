@@ -20,12 +20,11 @@ import utkarsh from '../assets/AlumniChannel/marquee_utkarsh.jpeg'
 import vikas from '../assets/AlumniChannel/marquee_vikas.jpeg'
 import vinod from '../assets/AlumniChannel/marquee_vinod.jpeg'
 import downArrow from "../assets/right_DownArrow.svg"
-import channelArt from "../assets/channelArt.jpg"
 import dashak40 from "../assets/dashak40.jpg"
 const AlumniChannelSection = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-10">
-      <div className="grid max-w-screen-xl mt-8 sm:mt-12 px-4 py-8 sm:py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-12 lg:px-0.5 lg:grid-cols-12">
+      <div className="grid mt-8 sm:mt-12 px-4 py-8 sm:py-12 mx-auto lg:gap-8 xl:gap-0 lg:py-12 lg:px-0.5 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1 className="max-w-2xl mb-4 text-2xl sm:text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-5xl dark:text-white">
             Dashak 4.0 — Coming Soon

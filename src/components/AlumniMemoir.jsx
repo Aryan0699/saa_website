@@ -144,7 +144,7 @@ const alumniData = [
 const AlumniMemoir = () => {
   return (
     <section className="mt-10 mb-10 bg-white dark:bg-black/10 rounded-3xl shadow-xl border border-gray-100 dark:border-white/10 backdrop-blur-md dark:ring-white/10">
-      <div className="py-12 px-6 mx-auto max-w-screen-xl text-center relative overflow-hidden">
+      <div className="py-12 px-6 mx-auto text-center relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-red-200/20 dark:bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/20 dark:bg-white/3 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -193,7 +193,7 @@ const AlumniMemoir = () => {
                     "
                   </div>
                   
-                  <blockquote className="relative max-w-3xl mx-auto mb-8 text-gray-800 dark:text-gray-200 lg:mb-10 z-10">
+                  <blockquote className="relative max-w-5xl mx-auto mb-8 text-gray-800 dark:text-gray-200 lg:mb-10 z-10">
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
                       {alumnus.title}
                     </h3>
