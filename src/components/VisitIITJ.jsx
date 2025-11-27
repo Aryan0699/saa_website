@@ -294,13 +294,13 @@ export default function VisitIITJ() {
       <style>{styles}</style>
 
       {/* Hero Section */}
-      <section className="text-black dark:text-white py-8 sm:py-12">
-        <div className="gap-8 items-center px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6 justify-items-center">
+      <section className="text-black dark:text-white py-6 sm:py-8 md:py-12 overflow-x-hidden">
+        <div className="gap-6 sm:gap-8 items-center px-3 sm:px-4 md:px-6 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 lg:px-6 justify-items-center">
           <div className="mt-4 md:mt-0">
-            <h2 className="mb-4 mt-16 md:mt-0 text-4xl sm:text-5xl tracking-tight font-bold text-black dark:text-white hover-underline-animation">
+            <h2 className="mb-4 mt-12 sm:mt-16 md:mt-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight font-bold text-black dark:text-white hover-underline-animation">
               Visit IIT Jodhpur
             </h2>
-            <p className="mb-6 font-normal text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="mb-6 font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
               We invite you to tour IIT Jodhpur's impressive and picturesque campus, where you can see the foundation of our impactful endeavors.
             </p>
           </div>
@@ -319,16 +319,16 @@ export default function VisitIITJ() {
       </section>
 
       {/* Flip Card Carousel */}
-      <section className="py-12 sm:py-16">
-        <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white hover-underline-animation">
+      <section className="py-8 sm:py-12 md:py-16 overflow-x-hidden">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10 px-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white hover-underline-animation">
             Our Campus Highlights
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-2 text-base sm:text-lg">
+          <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base md:text-lg">
             Tap to flip and explore
           </p>
         </div>
-        <div className="w-full max-w-7xl mx-auto overflow-hidden px-4">
+        <div className="w-full max-w-7xl mx-auto overflow-hidden px-3 sm:px-4">
           <Swiper
             modules={[Autoplay]}
             loop={true}

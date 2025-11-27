@@ -137,6 +137,18 @@ html.dark {
   /* Prevent horizontal scroll */
   html, body {
     overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  /* Ensure all containers don't overflow */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Fix common overflow culprits */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
   }
   
   /* Improve form elements */

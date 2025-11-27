@@ -214,15 +214,15 @@ function EventDeck({ images }) {
 // ============================================
 export default function Gallery() {
   return (
-    <div className="relative min-h-screen pt-28 pb-16 px-4 sm:px-6 lg:px-8 mt-10">
+    <div className="relative min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 mt-6 sm:mt-10 overflow-x-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-none">
         {/* Background can be added here */}
       </div>
 
-      <div className="max-w-6xl mx-auto space-y-16">
+      <div className="max-w-6xl mx-auto space-y-12 sm:space-y-16">
         {galleryData.map((event) => (
-          <section key={event.id} className="space-y-6">
-            <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white hover-underline-animation">
+          <section key={event.id} className="space-y-4 sm:space-y-6">
+            <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white hover-underline-animation px-2">
               {event.title}
             </h2>
 

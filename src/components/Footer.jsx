@@ -14,25 +14,25 @@ const Footer = () => {
           }
         `}
       </style>
-    <footer className="w-full bg-white/80 dark:bg-black/10 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+    <footer className="w-full bg-white/80 dark:bg-black/10 backdrop-blur-md border-t border-gray-200/50 dark:border-white/10 overflow-x-hidden">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         
         {/* Logo and Title Section */}
-        <div className="text-center mb-12">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
             <img
               src={logo}
               alt="SAA Logo"
-              className="w-24 h-24 sm:w-28 sm:h-28 dark:invert"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 dark:invert"
             />
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center sm:text-left px-2">
               Society of Alumni Affairs
             </h2>
           </div>
         </div>
 
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10">
           
           {/* Resources Column */}
           <div>

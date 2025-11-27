@@ -90,16 +90,16 @@ const SAATeam = () => {
   };
 
   return (
-    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl dark:ring-white/10 overflow-hidden">
-      <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-2 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative overflow-hidden">
+    <section className="mt-4 mb-4 sm:mt-6 sm:mb-6 md:mt-8 md:mb-8 lg:mt-10 lg:mb-10 rounded-2xl sm:rounded-3xl dark:ring-white/10 overflow-hidden">
+      <div className="py-6 sm:py-8 md:py-10 lg:py-12 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative overflow-hidden">
         
         {/* Header Section */}
-        <div className="relative z-10 mb-12 sm:mb-16 md:mb-20">
-          <h1 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent px-2 hover-underline-animation">
+        <div className="relative z-10 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h1 className="mb-3 sm:mb-4 md:mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-900 to-blue-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent px-2 hover-underline-animation">
             SAA Team
           </h1>
    
-          <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl font-normal text-gray-600 dark:text-[#A7ADBE] sm:px-8 md:px-16 lg:px-32 xl:px-48 leading-relaxed max-w-6xl mx-auto">
+          <p className="mb-4 sm:mb-6 md:mb-8 text-sm sm:text-base md:text-lg lg:text-xl font-normal text-gray-600 dark:text-[#A7ADBE] px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32 leading-relaxed max-w-6xl mx-auto">
             Fostering Connections and Facilitating Tech Receiving Alumni Cooperation through Collaboration and Active Engagement.
           </p>
         </div>

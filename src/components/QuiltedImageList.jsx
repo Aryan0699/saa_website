@@ -23,7 +23,7 @@ export default function QuiltedImageList({ images, className = '' }) {
   };
 
   return (
-    <div className={`grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 auto-rows-[120px] sm:auto-rows-[150px] md:auto-rows-[180px] ${className}`}>
+    <div className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 auto-rows-[100px] sm:auto-rows-[120px] md:auto-rows-[150px] lg:auto-rows-[180px] ${className}`}>
       {images.map((image, index) => (
         <div
           key={index}
