@@ -24,7 +24,7 @@ const TeamMemberCard = ({ member }) => (
         {member.position}
       </p>
       {member.verticle && (
-        <p className="text-xs text-red-600 dark:text-red-400">
+        <p className="text-xs text-gray-900 dark:text-gray-900">
           {member.verticle}
         </p>
       )}

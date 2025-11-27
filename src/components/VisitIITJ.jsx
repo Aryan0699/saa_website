@@ -18,21 +18,23 @@ import VisitIITj from "../assets/Visitiitj.jpg";
 import mahi from '../../asset/mahi_team.jpg';
 import raghuveer from '../../asset/raghuveer_team.jpg';
 
-// Inline CSS for FlipCard
+// Inline CSS for FlipCard - Optimized for performance
 const styles = `
 .flip-card {
   background-color: transparent;
   width: 100%;
   height: 16rem;
   cursor: pointer;
+  perspective: 1000px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .flip-card.flipped .flip-card-inner {
@@ -147,7 +149,7 @@ const EmailIcon = ({ className = "" }) => (
 
 const SAATeam = () => {
   return (
-    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl">
+    <section className="mt-6 mb-6 sm:mt-8 sm:mb-8 md:mt-10 md:mb-10 lg:mt-12 lg:mb-12 rounded-2xl sm:rounded-3xl bg-gray-50 dark:bg-gray-950 py-8 sm:py-10 md:py-12">
       <div className="py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-screen-xl text-center relative">
         
         <h1 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-4 hover-underline-animation">
@@ -165,7 +167,7 @@ const SAATeam = () => {
           {teamData.map((member, idx) => (
             <div
               key={idx}
-              className="group bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300 w-full sm:w-80 md:w-72 lg:w-80"
+              className="group bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border-2 border-gray-300 dark:border-gray-500 hover:shadow-2xl transition-shadow duration-200 w-full sm:w-80 md:w-72 lg:w-80"
             >
               <div className="flex flex-col items-center text-center h-full">
                 {/* Profile Image */}
@@ -174,6 +176,8 @@ const SAATeam = () => {
                     className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full object-cover ring-2 ring-gray-300 dark:ring-gray-600"
                     src={member.img}
                     alt={member.name}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
 
@@ -195,7 +199,7 @@ const SAATeam = () => {
                       href={member.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon-container bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Follow ${member.name} on Instagram`}
                     >
                       <InstagramIcon />
@@ -208,7 +212,7 @@ const SAATeam = () => {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon-container bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Connect with ${member.name} on LinkedIn`}
                     >
                       <LinkedInIcon />
@@ -219,7 +223,7 @@ const SAATeam = () => {
                   {member.mailto && (
                     <a
                       href={member.mailto}
-                      className="social-icon-container bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full hover:opacity-90 transition-opacity duration-200 shadow-md flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
+                      className="social-icon-container bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110 rounded-full flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 p-2 sm:p-2.5"
                       aria-label={`Email ${member.name}`}
                     >
                       <EmailIcon />
@@ -235,7 +239,7 @@ const SAATeam = () => {
   );
 };
 
-// FlipCard Component
+// FlipCard Component - Optimized with lazy loading
 function FlipCard({ imageSrc, name }) {
   const [flipped, setFlipped] = useState(false);
   return (
@@ -248,6 +252,8 @@ function FlipCard({ imageSrc, name }) {
           <img
             src={imageSrc}
             alt={name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-64 object-cover rounded-xl"
           />
         </div>
@@ -283,6 +289,7 @@ export default function VisitIITJ() {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" as="image" href={VisitIITj} />
       </Helmet>
       <style>{styles}</style>
 
@@ -304,6 +311,8 @@ export default function VisitIITJ() {
               className="w-full h-auto"
               width={600}
               height={400}
+              loading="eager"
+              decoding="async"
             />
           </div>
         </div>
@@ -323,9 +332,9 @@ export default function VisitIITJ() {
           <Swiper
             modules={[Autoplay]}
             loop={true}
-            loopAdditionalSlides={2}
+            loopAdditionalSlides={1}
             autoplay={{ 
-              delay: 4000, 
+              delay: 5000, 
               disableOnInteraction: false,
               pauseOnMouseEnter: true
             }}
@@ -334,14 +343,19 @@ export default function VisitIITJ() {
             centeredSlides={false}
             grabCursor={true}
             touchRatio={1}
-            threshold={5}
-            speed={500}
+            threshold={10}
+            speed={600}
+            lazy={{
+              loadPrevNext: true,
+              loadPrevNextAmount: 2
+            }}
+            watchSlidesProgress={true}
             breakpoints={{
               480: { slidesPerView: 1.3, spaceBetween: 20 },
               640: { slidesPerView: 1.5, spaceBetween: 24 },
-              768: { slidesPerView: 2.2, spaceBetween: 28 },
+              768: { slidesPerView: 2, spaceBetween: 28 },
               1024: { slidesPerView: 3, spaceBetween: 30 },
-              1280: { slidesPerView: 3.2, spaceBetween: 32 }
+              1280: { slidesPerView: 3, spaceBetween: 32 }
             }}
             className="!overflow-visible"
           >

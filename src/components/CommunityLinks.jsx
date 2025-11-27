@@ -71,7 +71,7 @@ export default function CommunityLinks() {
   ];
 
   return (
-    <div className="min-h-screen pt-24 md:pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-transparent mt-6">
+    <div className="min-h-screen pt-24 md:pt-28 pb-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950 mt-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 animate-fade-in">
@@ -90,16 +90,16 @@ export default function CommunityLinks() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-to-r  rounded-3xl p-8 shadow-2xl animate-fade-in">
-          <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
+        <div className="mt-16 text-center bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border-2 border-gray-200 dark:border-gray-600 animate-fade-in">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Can't find what you're looking for?
           </h2>
-          <p className="text-gray-700 mb-6 text-lg">
+          <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg">
             Reach out to us and we'll help you connect with the right community.
           </p>
           <a
             href="mailto:saa@iitj.ac.in"
-            className="inline-block bg-white text-red-600 dark:text-[#60a5fa] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover-underline-animation"
+            className="inline-block bg-red-600 dark:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-red-700 dark:hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Contact Us
           </a>
