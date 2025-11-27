@@ -85,7 +85,7 @@ export default function Navbar() {
         </Link>
         <Link
           to="/gallery"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-[#2a2a2a] border border-transparent hover:border-gray-300/50 dark:hover:border-[#3d3d3d] px-3 py-1.5 rounded-full transition"
+          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
         >
           Gallery
         </Link>

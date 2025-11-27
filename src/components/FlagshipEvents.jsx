@@ -48,7 +48,7 @@ const ImageCarousel = ({ images }) => {
           key={currentIndex}
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
@@ -226,7 +226,7 @@ const EventCard = ({
             <img
               src={event.image}
               alt={event.title}
-              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+              className="object-contain bg-gray-50 dark:bg-gray-900 w-full h-full transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/10 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>

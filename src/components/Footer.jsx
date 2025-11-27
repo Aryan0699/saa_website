@@ -43,7 +43,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Home
                 </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/faculty-advisor"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Faculty Advisor
                 </Link>
@@ -59,7 +59,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/teams"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Student Team
                 </Link>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/events"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Initiatives
                 </Link>
@@ -84,7 +84,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/visitIITJ"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Visit IITJ
                 </Link>
@@ -94,7 +94,7 @@ const Footer = () => {
                   href="https://www.iitj.ac.in/main/en/iitj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   IIT Jodhpur
                 </a>
@@ -104,7 +104,7 @@ const Footer = () => {
                   href="https://alumni.iitj.ac.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-blue-400 transition-colors duration-200 inline-block hover:underline underline-offset-4"
+                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Alumni Portal
                 </a>
@@ -120,24 +120,24 @@ const Footer = () => {
             
             {/* Contact Details */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-start gap-2">
-                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <a href="tel:+917499027852" className="flex items-start gap-2 group">
+                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0 group-hover:text-red-600 dark:group-hover:text-blue-600 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
-                <span className="text-gray-700 dark:text-gray-300 text-sm">
+                <span className="text-gray-700 dark:text-gray-300 text-sm group-hover:text-red-600 dark:group-hover:text-blue-600 transition-colors duration-200">
                   +91 74990 27852
                 </span>
-              </div>
+              </a>
               
-              <div className="flex items-start gap-2">
-                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <a href="mailto:saa@iitj.ac.in" className="flex items-start gap-2 group">
+                <svg className="w-5 h-5 mt-0.5 footer-accent flex-shrink-0 group-hover:text-red-600 dark:group-hover:text-blue-600 transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
-                <span className="text-gray-700 dark:text-gray-300 text-sm">
+                <span className="text-gray-700 dark:text-gray-300 text-sm group-hover:text-red-600 dark:group-hover:text-blue-600 transition-colors duration-200">
                   saa@iitj.ac.in
                 </span>
-              </div>
+              </a>
             </div>
 
             {/* Social Media Icons */}
@@ -146,7 +146,7 @@ const Footer = () => {
                 href="https://www.instagram.com/saa.iitj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -158,7 +158,7 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -170,7 +170,7 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/society-of-alumni-affairs-iit-jodhpur/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-500 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -214,7 +214,7 @@ const Footer = () => {
                   href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(IIT),+Jodhpur/@26.4710115,73.1086586,17z/data=!4m10!1m2!2m1!1sIIT+JODHPUT!3m6!1s0x39418c5ea672337b:0xb6c9a5a9b08db22e!8m2!3d26.4710115!4d73.1134222!15sCgtJSVQgSk9ESFBVUpIBFHRlY2huaWNhbF91bml2ZXJzaXR5qgEzEAEyHhABIhq-jvzLu99otABrlFoPzb9UTf6DPfaHULyJezIPEAIiC2lpdCBqb2RocHVy4AEA!16s%2Fm%2F04ydk20?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-sm footer-accent hover:text-red-700 dark:hover:text-blue-200 transition-colors duration-200 hover:underline underline-offset-4"
+                  className="inline-flex items-center gap-1 mt-3 text-sm footer-accent hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 hover:underline underline-offset-4"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>

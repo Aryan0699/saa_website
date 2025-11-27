@@ -42,10 +42,19 @@ export default {
         50: '#ffffff', 100: '#ffffff', 200: '#ffffff', 300: '#ffffff', 400: '#ffffff',
         500: '#000000', 600: '#000000', 700: '#000000', 800: '#000000', 900: '#000000', 950: '#000000',
       },
-      // Remap other hues used in codebase to red scale
+      // Actual blue colors for dark mode hover effects
       blue: {
-        50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
-        500: '#ff0000', 600: '#e60000', 700: '#cc0000', 800: '#b30000', 900: '#990000', 950: '#4d0000',
+        50: '#eff6ff',
+        100: '#dbeafe',
+        200: '#bfdbfe',
+        300: '#93c5fd',
+        400: '#60a5fa',
+        500: '#3b82f6',
+        600: '#2563eb',
+        700: '#1d4ed8',
+        800: '#1e40af',
+        900: '#1e3a8a',
+        950: '#172554',
       },
       indigo: {
         50: '#ffe5e5', 100: '#ffcccc', 200: '#ffb2b2', 300: '#ff9999', 400: '#ff4d4d',
