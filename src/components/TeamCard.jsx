@@ -130,7 +130,7 @@ const SAATeam = () => {
                 />
                 
                 <RoleSection 
-                  title="OVERALL COORDINATORS" 
+                  title="OVERALL COORDINATOR" 
                   members={groupedMembers.overallCoordinators || []}
                 />
                 

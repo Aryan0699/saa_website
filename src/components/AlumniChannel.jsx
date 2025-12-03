@@ -29,7 +29,7 @@ const AlumniChannelSection = () => {
           <h1 className="max-w-2xl mb-4 text-2xl sm:text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-5xl dark:text-white">
             Dashak 4.0 — Coming Soon
           </h1>
-          <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 text-sm sm:text-base md:text-lg lg:text-xl dark:text-white/20">
+          <p className="max-w-2xl mb-6 font-light text-black lg:mb-8 text-sm sm:text-base md:text-lg lg:text-xl dark:text-white/80">
             Gear up for the 4th edition of Dashak — our flagship event that blends innovation, inspiration, and impact. Stay tuned for the launch and join a legacy of brilliance and celebration!
           </p>
         </div>
