@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import g1 from "../assets/g1.jpg";
 import g2 from "../assets/g2.jpg";
 import g3 from "../assets/g3.jpg";
@@ -70,6 +72,49 @@ const styles = `
   text-align: center;
   padding: 1rem;
   transform: rotateY(180deg);
+}
+
+/* Swiper Navigation Styles */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Swiper Pagination Styles */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+  background: gray;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ef4444;
+  opacity: 1;
+}
+
+.dark .swiper-pagination-bullet-active {
+  background: #3b82f6;
 }
 
 /* Responsive icon fixes */
@@ -254,7 +299,7 @@ function FlipCard({ imageSrc, name }) {
             alt={name}
             loading="lazy"
             decoding="async"
-            className="w-full h-64 object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl"
           />
         </div>
         <div className="flip-card-back">{name}</div>
@@ -328,15 +373,23 @@ export default function VisitIITJ() {
             Tap to flip and explore
           </p>
         </div>
-        <div className="w-full max-w-7xl mx-auto overflow-hidden px-3 sm:px-4">
+        <div className="w-full max-w-7xl mx-auto overflow-hidden px-3 sm:px-4 relative">
           <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation, Pagination]}
             loop={true}
             loopAdditionalSlides={1}
             autoplay={{ 
               delay: 5000, 
               disableOnInteraction: false,
               pauseOnMouseEnter: true
+            }}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
             }}
             spaceBetween={20}
             slidesPerView={1.2}
@@ -365,6 +418,24 @@ export default function VisitIITJ() {
               </SwiperSlide>
             ))}
           </Swiper>
+          
+          {/* Custom Navigation Buttons */}
+          <button
+            className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600"
+            aria-label="Previous slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600"
+            aria-label="Next slide"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </section>
 

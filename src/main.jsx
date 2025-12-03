@@ -21,7 +21,6 @@ import MemoirsLane from './components/MemoirsLane.jsx';
 import InternBridge from './components/InternBridge.jsx';
 import CrackTheCall from './components/CrackTheCall.jsx';
 import Gallery from './components/Gallery.jsx';
-import CommunityLinks from './components/CommunityLinks.jsx';
 import FalcultyAdvisor from './components/FacultyAdvisor.jsx';
 
 const router = createBrowserRouter(
@@ -47,7 +46,6 @@ const router = createBrowserRouter(
       {/* <Route path="/alumniMap" element={<Alumni_Map/>}/> */}
       <Route path="/ctc" element={<CrackTheCall/>}/>
       <Route path="/gallery" element={<Gallery/>}/>
-      <Route path="/community" element={<CommunityLinks/>}/>
       <Route path="/faculty-advisor" element={<FalcultyAdvisor/>}/>
     </Route>
   )

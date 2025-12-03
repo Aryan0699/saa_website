@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useImageAspectRatio } from '../hooks/useImageAspectRatio';
 import about1 from "../assets/alt_25.jpg";
 import about2 from "../assets/alt_26.jpg";
 import about3 from "../assets/alt_27.jpg";
@@ -42,6 +43,7 @@ const carouselImages = [about1, about2, about3, about4];
 export default function RoommateRewind() {
   const [currentCard, setCurrentCard] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
+  const currentImageAspectRatio = useImageAspectRatio(carouselImages[currentImage]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,7 +72,14 @@ export default function RoommateRewind() {
         
         {/* Image Carousel at the top */}
         <div className="relative w-full max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]">
+          <div 
+            className="relative w-full transition-all duration-500"
+            style={{
+              aspectRatio: currentImageAspectRatio ? `${currentImageAspectRatio}` : '16/9',
+              minHeight: '300px',
+              maxHeight: '600px'
+            }}
+          >
             {carouselImages.map((image, index) => (
               <div
                 key={index}

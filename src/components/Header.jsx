@@ -20,9 +20,12 @@ export default function Navbar() {
   const menuRef = useRef(null);
   const [qaOpen, setQaOpen] = useState(false);
   const qaRef = useRef(null);
+  const [communityOpen, setCommunityOpen] = useState(false);
+  const communityRef = useRef(null);
   
   useClickOutside(qaRef, () => setQaOpen(false));
   useClickOutside(menuRef, () => setMenuOpen(false));
+  useClickOutside(communityRef, () => setCommunityOpen(false));
   
   // Debug effect to see state changes
   useEffect(() => {
@@ -77,12 +80,56 @@ export default function Navbar() {
         >
           VisitIITJ
         </Link>
-        <Link
-          to="/community"
-          className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
+        <div
+          className="relative"
+          ref={communityRef}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setCommunityOpen(false);
+          }}
         >
-          Community
-        </Link>
+          <button
+            type="button"
+            onClick={() => setCommunityOpen((v) => !v)}
+            aria-haspopup="menu"
+            aria-expanded={communityOpen}
+            className={`text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition ${
+              communityOpen ? "bg-gray-200/80 dark:bg-black/30" : ""
+            }`}
+          >
+            Community
+          </button>
+
+          {communityOpen && (
+            <div
+              role="menu"
+              tabIndex={-1}
+              className="absolute left-1/2 -translate-x-1/2 mt-3 w-56 rounded-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl ring-1 ring-black/5 dark:ring-white/10 p-1 z-50"
+            >
+              <a
+                href="https://alumni.iitj.ac.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setCommunityOpen(false)}
+              >
+                Alumni Portal
+              </a>
+              <a
+                href="https://www.iitj.ac.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="menuitem"
+                tabIndex={0}
+                className="block w-full px-4 py-2.5 rounded-lg text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                onClick={() => setCommunityOpen(false)}
+              >
+                IIT Jodhpur
+              </a>
+            </div>
+          )}
+        </div>
         <Link
           to="/gallery"
           className="text-gray-700 dark:text-neutral-300 bg-transparent hover:bg-gray-200/80 dark:hover:bg-black/30 border border-transparent hover:border-gray-300/50 dark:hover:border-white/20 px-3 py-1.5 rounded-full transition"
@@ -219,13 +266,41 @@ export default function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/community"
-                    className="btn block p-1 hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
-                    onClick={() => setMenuOpen(false)}
+                  <button
+                    type="button"
+                    className="btn block w-full text-left p-1 hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
+                    onClick={() => setCommunityOpen((v) => !v)}
                   >
-                    Community Links
-                  </Link>
+                    Community
+                  </button>
+                  {communityOpen && (
+                    <div className="mt-1 ml-2 rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg ring-1 ring-black/5 dark:ring-white/10 p-1">
+                      <a
+                        href="https://alumni.iitj.ac.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-3 py-2 text-xs hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
+                        onClick={() => {
+                          setCommunityOpen(false);
+                          setMenuOpen(false);
+                        }}
+                      >
+                        Alumni Portal
+                      </a>
+                      <a
+                        href="https://www.iitj.ac.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-3 py-2 text-xs hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
+                        onClick={() => {
+                          setCommunityOpen(false);
+                          setMenuOpen(false);
+                        }}
+                      >
+                        IIT Jodhpur
+                      </a>
+                    </div>
+                  )}
                 </li>
                 <li>
                   <Link

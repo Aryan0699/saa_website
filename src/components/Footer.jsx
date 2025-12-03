@@ -50,14 +50,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/faculty-advisor"
-                  className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
-                >
-                  Faculty Advisor
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/teams"
                   className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
@@ -66,7 +58,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/events"
+                  to="/initiatives"
                   className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 inline-block hover:underline underline-offset-4"
                 >
                   Initiatives
@@ -155,30 +147,6 @@ const Footer = () => {
               </a>
               
               <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                </svg>
-              </a>
-              
-              <a
                 href="https://www.linkedin.com/company/society-of-alumni-affairs-iit-jodhpur/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -209,18 +177,6 @@ const Footer = () => {
                   <p>NH 62 Nagaur Road</p>
                   <p>Karwar - 342030</p>
                 </div>
-                
-                <a
-                  href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(IIT),+Jodhpur/@26.4710115,73.1086586,17z/data=!4m10!1m2!2m1!1sIIT+JODHPUT!3m6!1s0x39418c5ea672337b:0xb6c9a5a9b08db22e!8m2!3d26.4710115!4d73.1134222!15sCgtJSVQgSk9ESFBVUpIBFHRlY2huaWNhbF91bml2ZXJzaXR5qgEzEAEyHhABIhq-jvzLu99otABrlFoPzb9UTf6DPfaHULyJezIPEAIiC2lpdCBqb2RocHVy4AEA!16s%2Fm%2F04ydk20?entry=ttu&g_ep=EgoyMDI1MDkyMS4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-3 text-sm footer-accent hover:text-red-600 dark:hover:text-blue-600 transition-colors duration-200 hover:underline underline-offset-4"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                  </svg>
-                  View on Google Maps
-                </a>
               </div>
             </div>
           </div>

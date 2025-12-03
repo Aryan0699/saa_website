@@ -73,11 +73,12 @@
 }
 
 .image {
-  object-fit: cover;
+  object-fit: contain;
   width: 100px;
   height: 100px;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;  
+  border-bottom-left-radius: 10px;
+  background-color: #f3f4f6;
 }
 
 .text {

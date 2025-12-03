@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useImageAspectRatio } from '../hooks/useImageAspectRatio';
 import about1 from "../assets/alt_17.jpg";
 import about2 from "../assets/alt_18.jpg";
 import about3 from "../assets/alt_19.jpg";
@@ -59,6 +60,7 @@ const carouselImages = [about1, about2, about3, about4];
 export default function AlumniMemoir() {
   const [currentCard, setCurrentCard] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
+  const currentImageAspectRatio = useImageAspectRatio(carouselImages[currentImage]);
 
   useEffect(() => {
     const cardInterval = setInterval(() => {
@@ -87,7 +89,14 @@ export default function AlumniMemoir() {
       <main className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-10 text-center">
         {/* Image Carousel */}
         <div className="relative w-full max-w-5xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem]">
+          <div 
+            className="relative w-full transition-all duration-500"
+            style={{
+              aspectRatio: currentImageAspectRatio ? `${currentImageAspectRatio}` : '16/9',
+              minHeight: '300px',
+              maxHeight: '600px'
+            }}
+          >
             {carouselImages.map((image, index) => (
               <div
                 key={index}

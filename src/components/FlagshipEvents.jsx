@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useImageAspectRatio } from '../hooks/useImageAspectRatio';
 
 import dashak_1 from '../assets/dashak_1.JPG';
 import dashak_2 from '../assets/dashak_2.JPG';
@@ -32,6 +33,7 @@ import farewell_6 from '../assets/farewell_6.jpeg';
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const currentImageAspectRatio = useImageAspectRatio(images[currentIndex]);
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -42,13 +44,20 @@ const ImageCarousel = ({ images }) => {
   };
 
   return (
-    <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 border border-red-200 dark:border-[#1e40af]">
+    <div 
+      className="relative w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 border border-red-200 dark:border-[#1e40af] transition-all duration-500"
+      style={{
+        aspectRatio: currentImageAspectRatio ? `${currentImageAspectRatio}` : '16/9',
+        minHeight: '256px',
+        maxHeight: '600px'
+      }}
+    >
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}

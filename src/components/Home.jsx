@@ -22,7 +22,7 @@ const Home = () => {
             className="dark:invert mt-4 sm:mt-6 lg:mt-7 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 max-w-full"
           />
           <p className="w-full max-w-4xl text-xs sm:text-sm md:text-base text-gray-600 dark:text-white/80 text-center mx-auto mb-4 sm:mb-6 lg:mb-8 leading-relaxed px-2">
-            The SAA community enhances the institute and student growth through organizing events like Senate Introduction, Prometeo X SAA, Convocation & Alumni Induction Dinner, Dashak 3.0 + Alumni Day, graduating batch see-off ceremony, Soon to be Alumnus, and Ask an Alumnus. The society fosters strong connections and facilitates continuous improvement and development.
+            The SAA community enhances the institute and student growth through organizing events like Convocation, Alumni Induction Dinner, Dashak, Farewell, Alumni Day, Graduating batch see-off ceremony, Soon to be Alumnus, and Ask an Alumnus. The society fosters strong connections and facilitates continuous improvement and development.
           </p>
         </div>
       </div>
