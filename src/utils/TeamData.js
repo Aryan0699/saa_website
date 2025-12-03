@@ -218,7 +218,7 @@ export const teamDataByYear = {
     {
       name: 'Nayan Kute',
       position: 'Coordinator',
-      verticle: 'Alumni Mentorship Programme',
+      verticle: 'Alumni Student Mentorship Program',
       img: nayan,
       instagram: 'https://www.instagram.com/nayankute21/',
       linkedin: 'https://www.linkedin.com/in/nayan-kute-a1b998284/',
@@ -227,7 +227,7 @@ export const teamDataByYear = {
     {
       name: 'Abhishek Garg',
       position: 'Coordinator',
-      verticle: 'Alumni Mentorship Programme',
+      verticle: 'Alumni Student Mentorship Program',
       img: abhishek,
       instagram: 'https://www.instagram.com/garg_abhishek_06/',
       linkedin: 'https://www.linkedin.com/in/abhishek-garg-003340219/',

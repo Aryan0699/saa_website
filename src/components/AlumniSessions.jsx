@@ -15,7 +15,7 @@ const testimonials = [
   {
     id: 1,
     title: "Why It Started",
-    content: "Alumni Sessions were launched by IIT Jodhpur’s Society of Alumni Affairs to connect current students with alumni, fostering mentorship and sharing valuable career insights.",
+    content: "Ask an Alumnus sessions were launched by IIT Jodhpur’s Society of Alumni Affairs to connect current students with alumni, fostering mentorship and sharing valuable career insights.",
     // author: "Dr. Vikram Rao",
     // role: "Alumni Affairs Coordinator",
     // avatar: "🎓",
@@ -33,7 +33,7 @@ const testimonials = [
   {
     id: 3,
     title: "Our Impact",
-    content: "Alumni Sessions have empowered 80% of participants with clearer career paths and stronger professional networks, bridging the gap between students and industry.",
+    content: "Ask an Alumnus sessions have empowered 80% of participants with clearer career paths and stronger professional networks, bridging the gap between students and industry.",
     // author: "Rohan Gupta",
     // role: "Student Liaison",
     // avatar: "🌍",
@@ -67,8 +67,8 @@ export default function AlumniSessions() {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <Helmet>
-        <title>Alumni Sessions - Mentorship and Networking</title>
-        <meta name="description" content="Join Alumni Sessions by IIT Jodhpur’s Society of Alumni Affairs for mentorship, career insights, and networking with alumni" />
+        <title>Ask an Alumnus sessions - Mentorship and Networking</title>
+        <meta name="description" content="Join Alumni Sessi by IIT Jodhpur’s Society of Alumni Affairs for mentorship, career insights, and networking with alumni" />
       </Helmet>
 
 
@@ -129,7 +129,7 @@ export default function AlumniSessions() {
 
         <div className="mb-16 sm:mb-20">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-red-600 dark:text-red-400">
-            Alumni Sessions
+            Ask an Alumnus sessions
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-8 text-black dark:text-gray-300">
             AS
@@ -256,12 +256,12 @@ export default function AlumniSessions() {
         </div>
 
         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 text-sm sm:text-base lg:text-lg">
-          Join Alumni Sessions Today
+          Join Ask an Alumnus sessions Today
         </button>
       </main>
 
       <footer className="absolute bottom-4 text-gray-700 dark:text-gray-400 text-xs sm:text-sm z-10">
-        © {new Date().getFullYear()} Alumni Sessions. All rights reserved.
+        © {new Date().getFullYear()} Ask an Alumnus sessions. All rights reserved.
       </footer>
 
       <style jsx>{`

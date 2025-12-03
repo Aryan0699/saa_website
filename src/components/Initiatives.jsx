@@ -238,12 +238,12 @@ export default function Initiatives() {
 
   const initiatives = [
     {
-      title: "Alumni Mentorship Program",
+      title: "Alumni Student Mentorship Program",
       desc: "Pairing experienced alumni with current students to provide guidance, career advice, and networking opportunities.",
       image: dashak_1,
       images: [dashak_1, dashak_2, dashak_3],
       fullDescription:
-        "The Alumni Mentorship Program connects current IIT Jodhpur students with experienced alumni who serve as mentors. This structured program provides personalized guidance on career development, academic planning, and professional networking. Mentors share their industry insights, help with resume building, interview preparation, and offer valuable advice on navigating the transition from academic life to professional careers. The program fosters long-term relationships that extend beyond graduation, creating a supportive network for lifelong success.",
+        "The Alumni Student Mentorship Program connects current IIT Jodhpur students with experienced alumni who serve as mentors. This structured program provides personalized guidance on career development, academic planning, and professional networking. Mentors share their industry insights, help with resume building, interview preparation, and offer valuable advice on navigating the transition from academic life to professional careers. The program fosters long-term relationships that extend beyond graduation, creating a supportive network for lifelong success.",
       highlights: [
         'One-on-one mentorship matching based on interests and career goals',
         'Regular virtual and in-person mentoring sessions',
@@ -350,12 +350,12 @@ export default function Initiatives() {
       ]
     },
     {
-      title: "Alumni Sessions",
+      title: "Ask an Alumnus sessions",
       desc: "Interactive talks and networking opportunities where distinguished alumni share career insights, experiences, and guidance with current students.",
       image: convocation_8,
       images: [convocation_8, convocation_9, convocation_1],
       fullDescription:
-        "Alumni Sessions provide a platform for distinguished alumni to share their professional journeys, career insights, and valuable experiences with current students. These interactive sessions cover diverse topics including industry trends, career planning, entrepreneurship, work-life balance, and overcoming professional challenges. Alumni speakers offer practical advice, answer student questions, and provide networking opportunities. The sessions bridge the gap between academic learning and professional reality, inspiring students and helping them make informed career decisions.",
+        "Ask an Alumnus sessions provide a platform for distinguished alumni to share their professional journeys, career insights, and valuable experiences with current students. These interactive sessions cover diverse topics including industry trends, career planning, entrepreneurship, work-life balance, and overcoming professional challenges. Alumni speakers offer practical advice, answer student questions, and provide networking opportunities. The sessions bridge the gap between academic learning and professional reality, inspiring students and helping them make informed career decisions.",
       highlights: [
         'Interactive talks by distinguished alumni speakers',
         'Career insights and professional guidance',
