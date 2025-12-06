@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import QuiltedImageList from './QuiltedImageList';
+import Masonry from './Masonry';
 
 // ============================================
 // IMPORT YOUR IMAGES HERE - ONE BY ONE
@@ -21,7 +22,6 @@ import convocation_5 from '../assets/convocation_5.jpg';
 import convocation_6 from '../assets/convocation_6.jpg';
 import convocation_7 from '../assets/convocation_7.jpg';
 import convocation_8 from '../assets/convocation_8.jpg';
-import convocation_9 from '../assets/convocation_9.jpg';
 // Farewell Event Images
 import farewell_1 from '../assets/farewell_1.jpeg';
 import farewell_2 from '../assets/farewell_2.jpeg';
@@ -81,7 +81,6 @@ const IMAGE_MAP = {
   convocation_6: convocation_6,
   convocation_7: convocation_7,
   convocation_8: convocation_8,
-  convocation_9: convocation_9,
   
   // Farewell images
   farewell_1: farewell_1,
@@ -136,7 +135,7 @@ const galleryData = [
   {
     id: 'convocation',
     title: 'Convocation Ceremony',
-    images: ['convocation_1', 'convocation_2', 'convocation_3','convocation_4', 'convocation_5', 'convocation_6','convocation_7', 'convocation_8', 'convocation_9'],
+    images: ['convocation_1', 'convocation_2', 'convocation_3','convocation_4', 'convocation_5', 'convocation_6','convocation_7', 'convocation_8'],
   },
   {
     id: 'farewell',
@@ -153,7 +152,7 @@ const galleryData = [
 // ============================================
 // EVENT DECK COMPONENT WITH QUILTED IMAGE LIST
 // ============================================
-function EventDeck({ images }) {
+function EventDeck({ images, id, aspectRatios }) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const deckRef = useRef(null);
@@ -184,35 +183,96 @@ function EventDeck({ images }) {
     };
   }, [hasBeenVisible]);
 
-  // Convert image keys to actual image sources
-  const displayImages = images.map(imgKey => IMAGE_MAP[imgKey]);
-
-  return (
-    <div ref={deckRef} className="relative mx-auto w-full px-2 sm:px-4 py-8">
-      {isVisible ? (
-        <QuiltedImageList
-          images={displayImages}
-          className="max-w-4xl mx-auto"
-        />
-      ) : (
-        // Skeleton loading placeholder
-        <div className="flex items-center justify-center h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-inner">
-          <div className="text-center space-y-3">
-            <div className="animate-pulse">
-              <div className="w-16 h-16 mx-auto bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+  if (id === 'convocation' || id === 'farewell') {
+    const portraits = images.filter(key => aspectRatios[key] < 1);
+    const landscapes = images.filter(key => aspectRatios[key] >= 1);
+    const ordered = [];
+    portraits.forEach((p, i) => {
+      ordered.push(p);
+      if (landscapes[i*2]) ordered.push(landscapes[i*2]);
+      if (landscapes[i*2+1]) ordered.push(landscapes[i*2+1]);
+    });
+    landscapes.slice(portraits.length * 2).forEach(l => ordered.push(l));
+    const masonryItems = ordered.map(key => ({
+      id: key,
+      img: IMAGE_MAP[key],
+      height: aspectRatios[key] < 1 ? 600 : 350
+    }));
+    return (
+      <div ref={deckRef} className="relative mx-auto w-full px-2 sm:px-4 py-8">
+        {isVisible ? (
+          <Masonry
+            items={masonryItems}
+            className="max-w-4xl mx-auto"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-inner">
+            <div className="text-center space-y-3">
+              <div className="animate-pulse">
+                <div className="w-16 h-16 mx-auto bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+              </div>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">Preparing gallery...</p>
             </div>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Preparing gallery...</p>
           </div>
-        </div>
-      )}
-    </div>
-  );
+        )}
+      </div>
+    );
+  } else {
+    // Convert image keys to actual image sources
+    const displayImages = images.map(imgKey => IMAGE_MAP[imgKey]);
+    return (
+      <div ref={deckRef} className="relative mx-auto w-full px-2 sm:px-4 py-8">
+        {isVisible ? (
+          <QuiltedImageList
+            images={displayImages}
+            className="max-w-4xl mx-auto"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-inner">
+            <div className="text-center space-y-3">
+              <div className="animate-pulse">
+                <div className="w-16 h-16 mx-auto bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+              </div>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">Preparing gallery...</p>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
 }
 
 // ============================================
 // MAIN GALLERY COMPONENT
 // ============================================
 export default function Gallery() {
+  const [aspectRatios, setAspectRatios] = useState({});
+
+  useEffect(() => {
+    const loadAspectRatios = async () => {
+      const ratios = {};
+      await Promise.all(
+        Object.entries(IMAGE_MAP).map(([key, imageSrc]) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              const aspectRatio = img.width / img.height;
+              ratios[key] = aspectRatio;
+              resolve();
+            };
+            img.onerror = () => {
+              ratios[key] = 1;
+              resolve();
+            };
+            img.src = imageSrc;
+          });
+        })
+      );
+      setAspectRatios(ratios);
+    };
+    loadAspectRatios();
+  }, []);
+
   return (
     <div className="relative min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 mt-6 sm:mt-10 overflow-x-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-none">
@@ -226,7 +286,7 @@ export default function Gallery() {
               {event.title}
             </h2>
 
-            <EventDeck images={event.images} />
+            <EventDeck images={event.images} id={event.id} aspectRatios={aspectRatios} />
           </section>
         ))}
       </div>

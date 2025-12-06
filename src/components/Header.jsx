@@ -265,16 +265,16 @@ export default function Navbar() {
                     VisitIITJ
                   </Link>
                 </li>
-                <li>
+                <li className="relative">
                   <button
                     type="button"
-                    className="btn block w-full text-left p-1 hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
+                    className="btn block w-full p-1 hover:bg-gray-100 rounded-md dark:hover:text-red-400 dark:hover:bg-black/60 dark:text-white"
                     onClick={() => setCommunityOpen((v) => !v)}
                   >
                     Community
                   </button>
                   {communityOpen && (
-                    <div className="mt-1 ml-2 rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg ring-1 ring-black/5 dark:ring-white/10 p-1">
+                    <div className="absolute left-0 top-full mt-1 transform -translate-x-full rounded-lg bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg ring-1 ring-black/5 dark:ring-white/10 p-1">
                       <a
                         href="https://alumni.iitj.ac.in"
                         target="_blank"

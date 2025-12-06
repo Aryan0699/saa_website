@@ -365,22 +365,22 @@ export default function Initiatives() {
         'Inspiration and motivation for career planning'
       ]
     },
-    {
-      title: "Crack The Call",
-      desc: "Alumni-led mock internship interviews where 3rd-year students gain real-world practice, insider feedback, and confidence to crack their internship calls.",
-      image: farewell_3,
-      images: [farewell_3, farewell_1, farewell_2],
-      fullDescription:
-        "Crack The Call is an intensive mock interview program specifically designed for third-year students preparing for internship placements. Experienced alumni conduct realistic interview simulations that replicate actual company recruitment processes. The program covers technical interviews, coding challenges, system design problems, and behavioral questions. Participants receive detailed feedback on their performance, communication skills, and technical knowledge. This hands-on preparation builds confidence, improves interview skills, and significantly increases the chances of securing coveted internship positions.",
-      highlights: [
-        'Mock interviews conducted by experienced alumni',
-        'Realistic simulation of company recruitment processes',
-        'Technical and behavioral interview practice',
-        'Detailed performance feedback and improvement tips',
-        'Coding challenges and system design problems',
-        'Confidence building for actual internship interviews'
-      ]
-    },
+    // {
+    //   title: "Crack The Call",
+    //   desc: "Alumni-led mock internship interviews where 3rd-year students gain real-world practice, insider feedback, and confidence to crack their internship calls.",
+    //   image: farewell_3,
+    //   images: [farewell_3, farewell_1, farewell_2],
+    //   fullDescription:
+    //     "Crack The Call is an intensive mock interview program specifically designed for third-year students preparing for internship placements. Experienced alumni conduct realistic interview simulations that replicate actual company recruitment processes. The program covers technical interviews, coding challenges, system design problems, and behavioral questions. Participants receive detailed feedback on their performance, communication skills, and technical knowledge. This hands-on preparation builds confidence, improves interview skills, and significantly increases the chances of securing coveted internship positions.",
+    //   highlights: [
+    //     'Mock interviews conducted by experienced alumni',
+    //     'Realistic simulation of company recruitment processes',
+    //     'Technical and behavioral interview practice',
+    //     'Detailed performance feedback and improvement tips',
+    //     'Coding challenges and system design problems',
+    //     'Confidence building for actual internship interviews'
+    //   ]
+    // },
   ];
 
   // Prepare masonry items for all events and initiatives

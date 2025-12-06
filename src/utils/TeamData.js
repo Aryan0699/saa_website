@@ -30,6 +30,8 @@ import siri from '../../asset/siri.jpg'
 import suthar from '../../asset/suthar.jpg'
 import yash from '../../asset/yash.png'
 import rahul from '../../asset/rahul.png'
+import sarthak from '../../asset/sarthak_team.jpg'
+import tejas from '../../asset/tejas_team.jpg'
 
 export const teamDataByYear = {
   '2025': [
@@ -214,6 +216,24 @@ export const teamDataByYear = {
       instagram: 'https://www.instagram.com/raghuveerkulkarni007/',
       linkedin: 'https://www.linkedin.com/in/raghuveer-kulkarni-185450281/',
       mailto: 'mailto:b23es1020@iitj.ac.in'
+    },
+    {
+      name: 'Sarthak Kolekar',
+      position: 'Coordinator',
+      verticle: 'Events',
+      img: sarthak,
+      instagram: '',
+      linkedin: '',
+      mailto: ''
+    },
+    {
+      name: 'Tejas Joshi',
+      position: 'Coordinator',
+      verticle: 'Events',
+      img: tejas,
+      instagram: '',
+      linkedin: '',
+      mailto: ''
     },
     {
       name: 'Nayan Kute',

@@ -58,7 +58,8 @@ const Masonry = ({
   hoverScale = 0.95,
   blurToFocus = true,
   colorShiftOnHover = false,
-  onItemClick = null
+  onItemClick = null,
+  className = ''
 }) => {
   const columns = useMedia(
     ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
@@ -165,6 +166,11 @@ const Masonry = ({
     });
 
     hasMounted.current = true;
+
+    if (containerRef.current) {
+      const totalHeight = Math.max(...grid.map(item => item.y + item.h));
+      containerRef.current.style.height = `${totalHeight}px`;
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
 
@@ -215,7 +221,7 @@ const Masonry = ({
   };
 
   return (
-    <div ref={containerRef} className="list">
+    <div ref={containerRef} className={`list ${className}`}>
       {grid.map(item => {
         const handleClick = () => {
           if (onItemClick) {
