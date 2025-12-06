@@ -31,7 +31,7 @@ import suthar from '../../asset/suthar.jpg'
 import yash from '../../asset/yash.png'
 import rahul from '../../asset/rahul.png'
 import sarthak from '../../asset/sarthak_team.jpg'
-import tejas from '../../asset/tejas_team.jpg'
+import tejas from '../../asset/Tejas_team.jpg'
 
 export const teamDataByYear = {
   '2025': [
