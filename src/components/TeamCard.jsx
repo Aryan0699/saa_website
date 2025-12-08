@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { teamDataByYear } from '../utils/TeamData';
 
 // ========================
@@ -36,8 +37,10 @@ const TeamMemberCard = ({ member }) => (
 // Simple Role Section - Basic Grid Layout
 // ========================
 
-const RoleSection = ({ title, members }) => {
+const RoleSection = ({ title, members, columns }) => {
   if (members.length === 0) return null;
+
+  const colsForSection = Math.min(columns, Math.max(members.length, 1));
 
   return (
     <div className="mb-12">
@@ -47,7 +50,14 @@ const RoleSection = ({ title, members }) => {
       </h3>
 
       {/* Simple Grid Layout - Centered */}
-      <div className="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
+      <div
+        className="grid gap-6 sm:gap-8 justify-items-center mx-auto"
+        style={{
+          gridTemplateColumns: `repeat(${colsForSection}, minmax(0, 1fr))`,
+          width: 'fit-content',
+          maxWidth: '100%'
+        }}
+      >
         {members.map((member, index) => (
           <TeamMemberCard key={index} member={member} />
         ))}
@@ -61,6 +71,23 @@ const RoleSection = ({ title, members }) => {
 // ========================
 
 const SAATeam = () => {
+  const getColumnsForWidth = (width) => {
+    if (width >= 1280) return 4; // xl and up
+    if (width >= 768) return 3; // md and up
+    if (width >= 640) return 2; // sm and up
+    return 1;
+  };
+
+  const [columns, setColumns] = useState(() =>
+    typeof window !== 'undefined' ? getColumnsForWidth(window.innerWidth) : 1
+  );
+
+  useEffect(() => {
+    const handleResize = () => setColumns(getColumnsForWidth(window.innerWidth));
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const years = Object.keys(teamDataByYear).sort((a, b) => b - a);
 
   // Function to group team members by position for a given year
@@ -125,29 +152,34 @@ const SAATeam = () => {
                 {/* Team Sections for this year */}
                 <RoleSection 
                   title="VICE PRESIDENT" 
-                  members={groupedMembers.vicePresident || []} 
+                  members={groupedMembers.vicePresident || []}
+                  columns={columns}
                   isCenter={true}
                 />
                 
                 <RoleSection 
                   title="OVERALL COORDINATOR" 
                   members={groupedMembers.overallCoordinators || []}
+                  columns={columns}
                 />
                 
                 <RoleSection 
                   title="COORDINATORS" 
                   members={groupedMembers.coordinators || []}
+                  columns={columns}
                 />
                 
                 <RoleSection 
                   title="CORE MEMBERS" 
                   members={groupedMembers.coreMembers || []}
+                  columns={columns}
                 />
                 
                 {groupedMembers.others && groupedMembers.others.length > 0 && (
                   <RoleSection 
                     title="TEAM MEMBERS" 
                     members={groupedMembers.others}
+                    columns={columns}
                   />
                 )}
               </div>
