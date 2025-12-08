@@ -33,7 +33,7 @@ export default function Navbar() {
   }, [menuOpen]);
   
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center justify-between px-2 py-1 z-50 bg-white/80 dark:bg-black/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
+    <header className="fixed top-0 left-0 w-full flex items-center justify-between pl-2 pr-0 sm:pr-2 py-1 z-50 bg-white/80 dark:bg-black/10 backdrop-blur-md border-b border-gray-200/50 dark:border-white/10">
       <div onClick={()=>
         {
           navigate("/");
@@ -198,7 +198,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="mr-2 p-1.5 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-black/30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-white/20"
+            className="p-1.5 xl:hidden rounded text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200/80 dark:hover:bg-black/30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 dark:focus:ring-white/20"
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             <svg
